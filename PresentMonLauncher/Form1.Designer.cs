@@ -55,6 +55,7 @@
             this.currentflags = new System.Windows.Forms.Label();
             this.refresh = new System.Windows.Forms.Button();
             this.openfolder = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // launch
@@ -318,11 +319,22 @@
             this.openfolder.UseVisualStyleBackColor = true;
             this.openfolder.Click += new System.EventHandler(this.openfolder_Click);
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(9, 303);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(464, 26);
+            this.label18.TabIndex = 29;
+            this.label18.Text = "Created by Andrew from TechteamGB: http://youtube.com/techteamgb\r\nPresentMon crea" +
+    "ted by Intel and available here: https://github.com/GameTechDev/PresentMon";
+            // 
             // PresentMonLauncher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1108, 341);
+            this.ClientSize = new System.Drawing.Size(1108, 338);
+            this.Controls.Add(this.label18);
             this.Controls.Add(this.openfolder);
             this.Controls.Add(this.refresh);
             this.Controls.Add(this.currentflags);
@@ -390,6 +402,7 @@
         private System.Windows.Forms.Label currentflags;
         private System.Windows.Forms.Button refresh;
         private System.Windows.Forms.Button openfolder;
+        private System.Windows.Forms.Label label18;
     }
 }
 
