@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PresentMonLauncher));
             this.launch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,6 +57,11 @@
             this.refresh = new System.Windows.Forms.Button();
             this.openfolder = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
+            this.bencher = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // launch
@@ -63,7 +69,7 @@
             this.launch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.launch.Location = new System.Drawing.Point(12, 250);
             this.launch.Name = "launch";
-            this.launch.Size = new System.Drawing.Size(162, 45);
+            this.launch.Size = new System.Drawing.Size(148, 45);
             this.launch.TabIndex = 0;
             this.launch.Text = "Run PresentMon";
             this.launch.UseVisualStyleBackColor = true;
@@ -180,7 +186,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(724, 183);
+            this.label9.Location = new System.Drawing.Point(724, 176);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(269, 13);
             this.label9.TabIndex = 15;
@@ -199,7 +205,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(724, 207);
+            this.label11.Location = new System.Drawing.Point(724, 195);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(382, 13);
             this.label11.TabIndex = 16;
@@ -208,7 +214,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(724, 233);
+            this.label12.Location = new System.Drawing.Point(724, 215);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(352, 26);
             this.label12.TabIndex = 17;
@@ -218,7 +224,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(724, 267);
+            this.label13.Location = new System.Drawing.Point(724, 249);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(272, 13);
             this.label13.TabIndex = 18;
@@ -227,7 +233,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(725, 291);
+            this.label14.Location = new System.Drawing.Point(725, 271);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(381, 13);
             this.label14.TabIndex = 19;
@@ -236,7 +242,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(725, 316);
+            this.label15.Location = new System.Drawing.Point(725, 292);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(306, 13);
             this.label15.TabIndex = 20;
@@ -311,9 +317,9 @@
             // openfolder
             // 
             this.openfolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openfolder.Location = new System.Drawing.Point(530, 247);
+            this.openfolder.Location = new System.Drawing.Point(560, 247);
             this.openfolder.Name = "openfolder";
-            this.openfolder.Size = new System.Drawing.Size(162, 45);
+            this.openfolder.Size = new System.Drawing.Size(132, 45);
             this.openfolder.TabIndex = 28;
             this.openfolder.Text = "Open Folder";
             this.openfolder.UseVisualStyleBackColor = true;
@@ -322,18 +328,82 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(9, 303);
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(797, 341);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(464, 26);
+            this.label18.Size = new System.Drawing.Size(309, 45);
             this.label18.TabIndex = 29;
-            this.label18.Text = "Created by Andrew from TechteamGB: http://youtube.com/techteamgb\r\nPresentMon crea" +
-    "ted by Intel and available here: https://github.com/GameTechDev/PresentMon";
+            this.label18.Text = "Created by Andrew from TechteamGB\r\nPresentMon created by Intel and available here" +
+    "\r\nBencher tool created by Jim from AdoredTV";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // bencher
+            // 
+            this.bencher.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bencher.Location = new System.Drawing.Point(12, 302);
+            this.bencher.Name = "bencher";
+            this.bencher.Size = new System.Drawing.Size(189, 45);
+            this.bencher.TabIndex = 30;
+            this.bencher.Text = "View Min/Max/AVG FPS";
+            this.bencher.UseVisualStyleBackColor = true;
+            this.bencher.Click += new System.EventHandler(this.bencher_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(12, 350);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(562, 26);
+            this.label19.TabIndex = 31;
+            this.label19.Text = resources.GetString("label19.Text");
+            this.label19.Click += new System.EventHandler(this.label19_Click);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(1017, 341);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(89, 15);
+            this.linkLabel1.TabIndex = 32;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "TechteamGB";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.Location = new System.Drawing.Point(1070, 356);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(36, 15);
+            this.linkLabel2.TabIndex = 33;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "here";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
+            // linkLabel3
+            // 
+            this.linkLabel3.AutoSize = true;
+            this.linkLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel3.Location = new System.Drawing.Point(1038, 371);
+            this.linkLabel3.Name = "linkLabel3";
+            this.linkLabel3.Size = new System.Drawing.Size(68, 15);
+            this.linkLabel3.TabIndex = 34;
+            this.linkLabel3.TabStop = true;
+            this.linkLabel3.Text = "AdoredTV";
+            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
             // 
             // PresentMonLauncher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1108, 338);
+            this.ClientSize = new System.Drawing.Size(1108, 386);
+            this.Controls.Add(this.linkLabel3);
+            this.Controls.Add(this.linkLabel2);
+            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.bencher);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.openfolder);
             this.Controls.Add(this.refresh);
@@ -403,6 +473,11 @@
         private System.Windows.Forms.Button refresh;
         private System.Windows.Forms.Button openfolder;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button bencher;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel linkLabel3;
     }
 }
 

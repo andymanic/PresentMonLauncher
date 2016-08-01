@@ -128,5 +128,30 @@ namespace PresentMonLauncher
                 MessageBox.Show("The program done goofed. Not sure why, try opening the folder manually.");
             }
         }
+
+        private void bencher_Click(object sender, EventArgs e)
+        {
+            Process.Start("presentmonbencher.exe");
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("http://youtube.com/techteamgb");
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/GameTechDev/PresentMon");
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("http://youtube.com/adoredtv");
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
