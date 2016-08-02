@@ -117,8 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label19.Text" xml:space="preserve">
-    <value>You'll need to enter the exact file name (without ".csv") to get this to show the average, min and max FPS.
-You'll need to make note of the min/max/avg before closing as the output file it creates is currently just the frametimes.</value>
-  </data>
 </root>

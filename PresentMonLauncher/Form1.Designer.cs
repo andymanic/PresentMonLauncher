@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PresentMonLauncher));
             this.launch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -329,7 +328,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(797, 341);
+            this.label18.Location = new System.Drawing.Point(797, 316);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(309, 45);
             this.label18.TabIndex = 29;
@@ -340,7 +339,7 @@
             // bencher
             // 
             this.bencher.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bencher.Location = new System.Drawing.Point(12, 302);
+            this.bencher.Location = new System.Drawing.Point(12, 301);
             this.bencher.Name = "bencher";
             this.bencher.Size = new System.Drawing.Size(189, 45);
             this.bencher.TabIndex = 30;
@@ -351,18 +350,18 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(12, 350);
+            this.label19.Location = new System.Drawing.Point(12, 349);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(562, 26);
+            this.label19.Size = new System.Drawing.Size(200, 13);
             this.label19.TabIndex = 31;
-            this.label19.Text = resources.GetString("label19.Text");
+            this.label19.Text = "Hint: Enter your file names without \".csv\"";
             this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(1017, 341);
+            this.linkLabel1.Location = new System.Drawing.Point(1017, 316);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(89, 15);
             this.linkLabel1.TabIndex = 32;
@@ -374,7 +373,7 @@
             // 
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.Location = new System.Drawing.Point(1070, 356);
+            this.linkLabel2.Location = new System.Drawing.Point(1070, 331);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(36, 15);
             this.linkLabel2.TabIndex = 33;
@@ -386,7 +385,7 @@
             // 
             this.linkLabel3.AutoSize = true;
             this.linkLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel3.Location = new System.Drawing.Point(1038, 371);
+            this.linkLabel3.Location = new System.Drawing.Point(1038, 346);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(68, 15);
             this.linkLabel3.TabIndex = 34;
@@ -398,7 +397,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1108, 386);
+            this.ClientSize = new System.Drawing.Size(1108, 366);
             this.Controls.Add(this.linkLabel3);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
