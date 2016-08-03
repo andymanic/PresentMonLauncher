@@ -2,6 +2,7 @@ import csv, os
 # Initialise lists and variables
 PresentMs = []
 PresentFPS = []
+PresentTime = []
 # Get filename and load
 workingdirectory = "C:\PresentMonLauncher"
 print "Directory: ", workingdirectory
@@ -23,13 +24,15 @@ line = pmfile.readline()
 for line in pmfile:
    # Create PresentMs list data
    blocks = line.split(",")
+   PresentTime.append(blocks[9])
+   PresentTime = map(float, PresentTime)
    PresentMs.append(blocks[10])
    PresentMs = map(float, PresentMs)
    # Create PresentFPS array data
 for item in PresentMs:
     fps = 1000/float(item)
     PresentFPS.append(fps)
-avgfps = sum(PresentFPS)/len(PresentFPS)
+avgfps = len(PresentMs)/round(PresentTime[-1], 0)
 minfps = min(PresentFPS)
 maxfps = max(PresentFPS)
 print "Minimum FPS: ", minfps
@@ -46,6 +49,6 @@ if not outputfilename.endswith(".csv"):
    outputfilename = outputfilename+ ".csv"
 zip(PresentMs, PresentFPS)
 with open(outputfilename, "w") as f:
-   writer = csv.writer(f, delimiter='\t', lineterminator='\n')
-   writer.writerows(zip(PresentMs, PresentFPS))
+   writer = csv.writer(f, delimiter=',', lineterminator='\n')
+   writer.writerows(zip(PresentTime, PresentMs, PresentFPS))
 print "File saved as " + outputfilename
