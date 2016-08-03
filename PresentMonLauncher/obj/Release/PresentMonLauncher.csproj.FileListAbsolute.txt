@@ -1,9 +1,0 @@
-D:\Desktop\PresentMon-master\PRESENTMONLAUNCHER\PresentMonLauncher\PresentMonLauncher\bin\Release\PresentMonLauncher.exe.config
-D:\Desktop\PresentMon-master\PRESENTMONLAUNCHER\PresentMonLauncher\PresentMonLauncher\bin\Release\PresentMonLauncher.exe
-D:\Desktop\PresentMon-master\PRESENTMONLAUNCHER\PresentMonLauncher\PresentMonLauncher\bin\Release\PresentMonLauncher.pdb
-D:\Desktop\PresentMon-master\PRESENTMONLAUNCHER\PresentMonLauncher\PresentMonLauncher\obj\Release\PresentMonLauncher.PresentMonLauncher.resources
-D:\Desktop\PresentMon-master\PRESENTMONLAUNCHER\PresentMonLauncher\PresentMonLauncher\obj\Release\PresentMonLauncher.Properties.Resources.resources
-D:\Desktop\PresentMon-master\PRESENTMONLAUNCHER\PresentMonLauncher\PresentMonLauncher\obj\Release\PresentMonLauncher.csproj.GenerateResource.Cache
-D:\Desktop\PresentMon-master\PRESENTMONLAUNCHER\PresentMonLauncher\PresentMonLauncher\obj\Release\PresentMonLauncher.exe
-D:\Desktop\PresentMon-master\PRESENTMONLAUNCHER\PresentMonLauncher\PresentMonLauncher\obj\Release\PresentMonLauncher.pdb
-D:\Desktop\PresentMon-master\PRESENTMONLAUNCHER\PresentMonLauncher\PresentMonLauncher\obj\Release\PresentMonLauncher.csprojResolveAssemblyReference.cache
