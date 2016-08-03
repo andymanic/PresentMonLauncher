@@ -27,6 +27,8 @@ namespace PresentMonLauncher
         {
             InitializeComponent();
             Process[] processlist = Process.GetProcesses();
+            // This will alphabetize the processes.
+            processlist = processlist.OrderBy(n => n.ProcessName).ToArray();
             foreach (Process theprocess in processlist)
             {
                 process_list.Items.Add(theprocess.ProcessName);
@@ -43,23 +45,56 @@ namespace PresentMonLauncher
 
         private void launch_Click(object sender, EventArgs e)
         {
-            if (delay.Text != "")
+            if (!String.IsNullOrEmpty(delay.Text))
             {
-                delaynum = Convert.ToInt32(delay.Text);
-                delaynum = delaynum * 1000;
-                delaytext = Convert.ToString(delaynum);
-                textstring = textstring + " -delay " + delay.Text;
+                try
+                {
+                    delaynum = Convert.ToInt32(delay.Text);
+                    delaynum = delaynum * 1000;
+                    delaytext = Convert.ToString(delaynum);
+                    textstring = textstring + " -delay " + delay.Text;
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show("Source: " + exception.Source + "\nMessage: " + exception.Message);
+                }
             }
-            if (time.Text != "")
+            if (!String.IsNullOrEmpty(time.Text))
             {
                 timenum = Convert.ToInt32(time.Text);
                 timenum = timenum * 1000;
                 timetext = Convert.ToString(timenum);
                 textstring = textstring + " -timed " + time.Text;
             }
-            if (flags.Text != "")
+            if (!String.IsNullOrEmpty(flags.Text))
             {
                 textstring = textstring + " " + flags.Text;
+            }
+            if (!textstring.Contains("-output_file") && process_list.CheckedItems.Count > 0)
+            {
+                textstring +=
+                  (" -output_file \"" + process_list.SelectedItem.ToString()
+                  + DateTime.Now.Day.ToString() + '-'
+                  + DateTime.Now.Hour.ToString() + '-'
+                  + DateTime.Now.Minute.ToString() + ".csv\"");
+            }
+
+            if (nocsv.Checked)
+            {
+                textstring = textstring + " -no_csv";
+            }
+            if (Simple.Checked)
+            {
+                textstring = textstring + " -simple";
+            }
+            if (scroll.Checked)
+            {
+                textstring = textstring + " -scroll_toggle";
+            }
+            if (process_list.SelectedIndex == -1)
+            {
+                textstring = textstring + " " + flags.Text;
+                MessageBox.Show("Please select a process to trace.");
             }
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.FileName = @"C:\PresentMonLauncher\PresentMon64.exe";
@@ -72,17 +107,18 @@ namespace PresentMonLauncher
             catch(Win32Exception ex)
             {
                 MessageBox.Show("The program could not find PresentMon64.exe, please place it C:\\PresentMonLauncher");
+                MessageBox.Show(ex.ToString());
             }
         }
 
         private void Simple_CheckedChanged(object sender, EventArgs e)
         {
-            textstring = textstring + " -simple";
+            
         }
 
         private void nocsv_CheckedChanged(object sender, EventArgs e)
         {
-            textstring = textstring + " -no_csv";
+            
         }
 
         private void process_list_SelectedIndexChanged(object sender, EventArgs e)
@@ -110,6 +146,8 @@ namespace PresentMonLauncher
         {
             process_list.Items.Clear();
             Process[] processlist = Process.GetProcesses();
+            // This will alphabetize the processes.
+            processlist = processlist.OrderBy(n => n.ProcessName).ToArray();
             foreach (Process theprocess in processlist)
             {
                 process_list.Items.Add(theprocess.ProcessName);
@@ -126,6 +164,7 @@ namespace PresentMonLauncher
             catch (Win32Exception ex)
             {
                 MessageBox.Show("The program done goofed. Not sure why, try opening the folder manually.");
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -156,7 +195,7 @@ namespace PresentMonLauncher
 
         private void scroll_CheckedChanged(object sender, EventArgs e)
         {
-            textstring = textstring + " -scroll_toggle";
+           
         }
     }
 }
