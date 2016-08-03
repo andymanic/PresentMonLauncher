@@ -18,11 +18,7 @@ namespace PresentMonLauncher
 {
     public partial class PresentMonLauncher : Form
     {
-        String textstring = "";
-        String timetext = "";
-        String delaytext = "";
-        int delaynum = 0;
-        int timenum = 0;
+
         public PresentMonLauncher()
         {
             InitializeComponent();
@@ -31,10 +27,7 @@ namespace PresentMonLauncher
             {
                 process_list.Items.Add(theprocess.ProcessName);
             }
-
-            
         }
-
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -43,67 +36,53 @@ namespace PresentMonLauncher
 
         private void launch_Click(object sender, EventArgs e)
         {
-            if (delay.Text != "")
+            if (process_list.SelectedIndex == -1)
             {
-                delaynum = Convert.ToInt32(delay.Text);
-                delaynum = delaynum * 1000;
-                delaytext = Convert.ToString(delaynum);
-                textstring = textstring + " -delay " + delay.Text;
+                MessageBox.Show("Please select a process to trace.");
+                return;
             }
-            if (time.Text != "")
-            {
-                timenum = Convert.ToInt32(time.Text);
-                timenum = timenum * 1000;
-                timetext = Convert.ToString(timenum);
-                textstring = textstring + " -timed " + time.Text;
-            }
-            if (flags.Text != "")
-            {
-                textstring = textstring + " " + flags.Text;
-            }
+
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.FileName = @"C:\PresentMonLauncher\PresentMon64.exe";
-            startInfo.Arguments = textstring;
+            startInfo.Arguments = buildArgumentString();
 
             try
             {
                 Process.Start(startInfo);
+
             }
             catch(Win32Exception ex)
             {
                 MessageBox.Show("The program could not find PresentMon64.exe, please place it C:\\PresentMonLauncher");
+                MessageBox.Show(ex.ToString());
             }
         }
 
-        private void Simple_CheckedChanged(object sender, EventArgs e)
+        private string buildArgumentString()
         {
-            textstring = textstring + " -simple";
-        }
+            StringBuilder argString = new StringBuilder();
 
-        private void nocsv_CheckedChanged(object sender, EventArgs e)
-        {
-            textstring = textstring + " -no_csv";
-        }
+            if (Simple.Checked)
+                argString.Append(" -simple");
 
-        private void process_list_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            textstring = "-process_name " + Convert.ToString(process_list.SelectedItem)+ ".exe";
-            currentflags.Text = Convert.ToString(process_list.SelectedItem);
-        }            
+            if (nocsv.Checked)
+                argString.Append(" -no_csv");
 
-        private void flags_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
+            if (flags.Text != String.Empty)
+                argString.Append(" " + flags.Text);
 
-        private void delay_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
+            if (nud_Delay.Value != 0)
+                argString.Append(" -delay " + (nud_Delay.Value * 1000).ToString());
 
-        private void time_TextChanged(object sender, EventArgs e)
-        {
-                           
+            if (nud_Duration.Value != 0)
+                argString.Append(" -timed " + (nud_Duration.Value * 1000).ToString());
+
+            if (scroll.Checked)
+                argString.Append(" -scroll_toggle");
+
+            argString.Append(" -process_name " + process_list.SelectedItem.ToString() + ".exe");
+
+            return argString.ToString();
         }
 
         private void refresh_Click(object sender, EventArgs e)
@@ -126,6 +105,7 @@ namespace PresentMonLauncher
             catch (Win32Exception ex)
             {
                 MessageBox.Show("The program done goofed. Not sure why, try opening the folder manually.");
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -147,16 +127,6 @@ namespace PresentMonLauncher
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("http://youtube.com/adoredtv");
-        }
-
-        private void label19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void scroll_CheckedChanged(object sender, EventArgs e)
-        {
-            textstring = textstring + " -scroll_toggle";
         }
     }
 }
