@@ -61,6 +61,7 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.argument = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // launch
@@ -393,11 +394,20 @@
             this.linkLabel3.Text = "AdoredTV";
             this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
             // 
+            // argument
+            // 
+            this.argument.AutoSize = true;
+            this.argument.Location = new System.Drawing.Point(519, 333);
+            this.argument.Name = "argument";
+            this.argument.Size = new System.Drawing.Size(0, 13);
+            this.argument.TabIndex = 35;
+            // 
             // PresentMonLauncher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1108, 366);
+            this.Controls.Add(this.argument);
             this.Controls.Add(this.linkLabel3);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
@@ -477,6 +487,7 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel3;
+        private System.Windows.Forms.Label argument;
     }
 }
 

@@ -87,7 +87,7 @@ namespace PresentMonLauncher
 
         private void process_list_SelectedIndexChanged(object sender, EventArgs e)
         {
-            textstring = "-process_name " + Convert.ToString(process_list.SelectedItem);
+            textstring = "-process_name " + Convert.ToString(process_list.SelectedItem)+ ".exe";
             currentflags.Text = Convert.ToString(process_list.SelectedItem);
         }            
 
