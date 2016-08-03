@@ -46,9 +46,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.delay = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.time = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.currentflags = new System.Windows.Forms.Label();
@@ -62,6 +60,10 @@
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.argument = new System.Windows.Forms.Label();
             this.scroll = new System.Windows.Forms.CheckBox();
+            this.nud_Delay = new System.Windows.Forms.NumericUpDown();
+            this.nud_Duration = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Delay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Duration)).BeginInit();
             this.SuspendLayout();
             // 
             // launch
@@ -121,7 +123,6 @@
             this.Simple.TabIndex = 7;
             this.Simple.Text = "Simple";
             this.Simple.UseVisualStyleBackColor = true;
-            this.Simple.CheckedChanged += new System.EventHandler(this.Simple_CheckedChanged);
             // 
             // nocsv
             // 
@@ -132,7 +133,6 @@
             this.nocsv.TabIndex = 8;
             this.nocsv.Text = "No CSV Output";
             this.nocsv.UseVisualStyleBackColor = true;
-            this.nocsv.CheckedChanged += new System.EventHandler(this.nocsv_CheckedChanged);
             // 
             // process_list
             // 
@@ -143,7 +143,6 @@
             this.process_list.ScrollAlwaysVisible = true;
             this.process_list.Size = new System.Drawing.Size(680, 139);
             this.process_list.TabIndex = 9;
-            this.process_list.SelectedIndexChanged += new System.EventHandler(this.process_list_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -171,8 +170,6 @@
             this.flags.Name = "flags";
             this.flags.Size = new System.Drawing.Size(617, 20);
             this.flags.TabIndex = 13;
-            this.flags.Text = " ";
-            this.flags.TextChanged += new System.EventHandler(this.flags_TextChanged);
             // 
             // label9
             // 
@@ -239,15 +236,6 @@
             this.label15.TabIndex = 20;
             this.label15.Text = "MsUntilDisplayed: time between present start and frame display.";
             // 
-            // delay
-            // 
-            this.delay.Location = new System.Drawing.Point(368, 195);
-            this.delay.Name = "delay";
-            this.delay.Size = new System.Drawing.Size(86, 20);
-            this.delay.TabIndex = 22;
-            this.delay.Text = " ";
-            this.delay.TextChanged += new System.EventHandler(this.delay_TextChanged);
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -257,15 +245,6 @@
             this.label16.Size = new System.Drawing.Size(110, 25);
             this.label16.TabIndex = 21;
             this.label16.Text = "Delay (s): ";
-            // 
-            // time
-            // 
-            this.time.Location = new System.Drawing.Point(562, 195);
-            this.time.Name = "time";
-            this.time.Size = new System.Drawing.Size(130, 20);
-            this.time.TabIndex = 24;
-            this.time.Text = " ";
-            this.time.TextChanged += new System.EventHandler(this.time_TextChanged);
             // 
             // label4
             // 
@@ -347,7 +326,6 @@
             this.label19.Size = new System.Drawing.Size(200, 13);
             this.label19.TabIndex = 31;
             this.label19.Text = "Hint: Enter your file names without \".csv\"";
-            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // linkLabel1
             // 
@@ -402,13 +380,38 @@
             this.scroll.TabIndex = 36;
             this.scroll.Text = "Scroll Toggle";
             this.scroll.UseVisualStyleBackColor = true;
-            this.scroll.CheckedChanged += new System.EventHandler(this.scroll_CheckedChanged);
+            // 
+            // nud_Delay
+            // 
+            this.nud_Delay.Location = new System.Drawing.Point(377, 198);
+            this.nud_Delay.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.nud_Delay.Name = "nud_Delay";
+            this.nud_Delay.Size = new System.Drawing.Size(86, 20);
+            this.nud_Delay.TabIndex = 37;
+            // 
+            // nud_Duration
+            // 
+            this.nud_Duration.Location = new System.Drawing.Point(571, 198);
+            this.nud_Duration.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.nud_Duration.Name = "nud_Duration";
+            this.nud_Duration.Size = new System.Drawing.Size(86, 20);
+            this.nud_Duration.TabIndex = 38;
             // 
             // PresentMonLauncher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1108, 366);
+            this.Controls.Add(this.nud_Duration);
+            this.Controls.Add(this.nud_Delay);
             this.Controls.Add(this.scroll);
             this.Controls.Add(this.argument);
             this.Controls.Add(this.linkLabel3);
@@ -421,9 +424,7 @@
             this.Controls.Add(this.refresh);
             this.Controls.Add(this.currentflags);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.time);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.delay);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -449,6 +450,8 @@
             this.ShowIcon = false;
             this.Text = "PresentMonLauncher";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Delay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Duration)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -474,9 +477,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox delay;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox time;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label currentflags;
@@ -490,6 +491,8 @@
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.Label argument;
         private System.Windows.Forms.CheckBox scroll;
+        private System.Windows.Forms.NumericUpDown nud_Delay;
+        private System.Windows.Forms.NumericUpDown nud_Duration;
     }
 }
 
