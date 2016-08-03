@@ -33,7 +33,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.Simple = new System.Windows.Forms.CheckBox();
             this.nocsv = new System.Windows.Forms.CheckBox();
             this.process_list = new System.Windows.Forms.CheckedListBox();
@@ -62,6 +61,7 @@
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.argument = new System.Windows.Forms.Label();
+            this.scroll = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // launch
@@ -111,15 +111,6 @@
             this.label5.Size = new System.Drawing.Size(317, 13);
             this.label5.TabIndex = 5;
             this.label5.Text = "-exclude_dropped: exclude dropped presents from the csv output.";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(724, 124);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(293, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "-scroll_toggle: only record events while scroll lock is enabled.";
             // 
             // Simple
             // 
@@ -186,7 +177,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(724, 176);
+            this.label9.Location = new System.Drawing.Point(724, 158);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(269, 13);
             this.label9.TabIndex = 15;
@@ -196,7 +187,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(722, 146);
+            this.label10.Location = new System.Drawing.Point(722, 128);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(270, 25);
             this.label10.TabIndex = 14;
@@ -205,7 +196,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(724, 195);
+            this.label11.Location = new System.Drawing.Point(724, 177);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(382, 13);
             this.label11.TabIndex = 16;
@@ -214,7 +205,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(724, 215);
+            this.label12.Location = new System.Drawing.Point(724, 197);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(352, 26);
             this.label12.TabIndex = 17;
@@ -224,7 +215,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(724, 249);
+            this.label13.Location = new System.Drawing.Point(724, 231);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(272, 13);
             this.label13.TabIndex = 18;
@@ -233,7 +224,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(725, 271);
+            this.label14.Location = new System.Drawing.Point(725, 253);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(381, 13);
             this.label14.TabIndex = 19;
@@ -242,7 +233,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(725, 292);
+            this.label15.Location = new System.Drawing.Point(725, 274);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(306, 13);
             this.label15.TabIndex = 20;
@@ -250,9 +241,9 @@
             // 
             // delay
             // 
-            this.delay.Location = new System.Drawing.Point(287, 197);
+            this.delay.Location = new System.Drawing.Point(368, 195);
             this.delay.Name = "delay";
-            this.delay.Size = new System.Drawing.Size(131, 20);
+            this.delay.Size = new System.Drawing.Size(86, 20);
             this.delay.TabIndex = 22;
             this.delay.Text = " ";
             this.delay.TextChanged += new System.EventHandler(this.delay_TextChanged);
@@ -261,7 +252,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(189, 193);
+            this.label16.Location = new System.Drawing.Point(267, 192);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(110, 25);
             this.label16.TabIndex = 21;
@@ -269,9 +260,9 @@
             // 
             // time
             // 
-            this.time.Location = new System.Drawing.Point(535, 195);
+            this.time.Location = new System.Drawing.Point(562, 195);
             this.time.Name = "time";
-            this.time.Size = new System.Drawing.Size(157, 20);
+            this.time.Size = new System.Drawing.Size(130, 20);
             this.time.TabIndex = 24;
             this.time.Text = " ";
             this.time.TextChanged += new System.EventHandler(this.time_TextChanged);
@@ -280,7 +271,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(444, 191);
+            this.label4.Location = new System.Drawing.Point(469, 193);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 25);
             this.label4.TabIndex = 23;
@@ -402,11 +393,23 @@
             this.argument.Size = new System.Drawing.Size(0, 13);
             this.argument.TabIndex = 35;
             // 
+            // scroll
+            // 
+            this.scroll.AutoSize = true;
+            this.scroll.Location = new System.Drawing.Point(173, 198);
+            this.scroll.Name = "scroll";
+            this.scroll.Size = new System.Drawing.Size(88, 17);
+            this.scroll.TabIndex = 36;
+            this.scroll.Text = "Scroll Toggle";
+            this.scroll.UseVisualStyleBackColor = true;
+            this.scroll.CheckedChanged += new System.EventHandler(this.scroll_CheckedChanged);
+            // 
             // PresentMonLauncher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1108, 366);
+            this.Controls.Add(this.scroll);
             this.Controls.Add(this.argument);
             this.Controls.Add(this.linkLabel3);
             this.Controls.Add(this.linkLabel2);
@@ -435,7 +438,6 @@
             this.Controls.Add(this.process_list);
             this.Controls.Add(this.nocsv);
             this.Controls.Add(this.Simple);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -459,7 +461,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox Simple;
         private System.Windows.Forms.CheckBox nocsv;
         private System.Windows.Forms.CheckedListBox process_list;
@@ -488,6 +489,7 @@
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.Label argument;
+        private System.Windows.Forms.CheckBox scroll;
     }
 }
 

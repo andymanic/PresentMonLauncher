@@ -153,5 +153,10 @@ namespace PresentMonLauncher
         {
 
         }
+
+        private void scroll_CheckedChanged(object sender, EventArgs e)
+        {
+            textstring = textstring + " -scroll_toggle";
+        }
     }
 }
