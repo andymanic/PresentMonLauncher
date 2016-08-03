@@ -8,5 +8,7 @@ Installer also includes a built copy of AdoredTV's presentmonbencher application
 
 Massive thank you to Daniel T. Holtzclaw for helping improve the launcher, check him out here: https://sites.google.com/site/danielscompendium/pro
 
+Thank you to h0rnman for adding some more validation especially of the checkboxes! Check him out here: https://github.com/h0rnman and https://veryposh.wordpress.com/
+
 I make no claim on PresentMon or it's copyright. This includes a built copy of PresentMon, but done so in good faith with no intention of resale.
 For any issues, please contact inbox@techteamgb.com 
