@@ -6,7 +6,7 @@ IMPORTANT:
 Installer includes a built copy of PresentMon already, along with all supporting files.
 Installer also includes a built copy of AdoredTV's presentmonbencher application.
 
-Massive thank you to Daniel T. Holtzclaw for helping improve the launcher, check him out here: https://sites.google.com/site/danielscompendium/pro
+Ridiculously massive thank you to Daniel T. Holtzclaw for helping improve the launcher and rewriting the bencher application to C#, check him out here: https://sites.google.com/site/danielscompendium/pro
 
 Thank you to h0rnman for adding some more validation especially of the checkboxes! Check him out here: https://github.com/h0rnman and https://veryposh.wordpress.com/
 
