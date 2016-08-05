@@ -23,6 +23,7 @@ namespace PresentMonLauncher
 
     int delaynum = 0;
     int timenum = 0;
+        string workingdir = "";
 
 
     public PresentMonLauncher()
@@ -143,7 +144,8 @@ namespace PresentMonLauncher
     {
       try
       {
-        Process.Start("explorer.exe", @"C:\PresentMonLauncher");
+            workingdir = Program.default_config_directory;
+            Process.Start(Directory.GetCurrentDirectory().ToString());
       }
       catch (Win32Exception ex)
       {
@@ -155,6 +157,7 @@ namespace PresentMonLauncher
 
     private void bencher_Click(object sender, EventArgs e)
     {
+      //Process.Start("presentmonbencher.exe");
       BencherWindow bencher = new BencherWindow();
       bencher.Show();
     }

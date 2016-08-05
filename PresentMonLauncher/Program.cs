@@ -42,8 +42,8 @@ namespace PresentMonLauncher
   static class Program
   {
     public static string
-      default_present_mon_directory = @"C:\PresentMonLauncher\",
-      default_config_directory = @"C:\PresentMonLauncher\config\";
+      app_location = AppDomain.CurrentDomain.BaseDirectory,
+      default_config_directory = AppDomain.CurrentDomain.BaseDirectory + @"\config\";
 
     /// <summary>
     /// The main entry point for the application.
@@ -51,31 +51,38 @@ namespace PresentMonLauncher
     [STAThread]
     static void Main()
     {
-      // Set the working Directory to the default PresentMon location
-      if (!Directory.Exists(default_present_mon_directory))
-      {
-        Directory.CreateDirectory(default_present_mon_directory);
-        Directory.CreateDirectory(default_config_directory);
-      }
-
-      else if (Directory.Exists(default_present_mon_directory) && !Directory.Exists(default_config_directory))
-        Directory.CreateDirectory(default_config_directory);
-
-      Directory.SetCurrentDirectory(@"C:\PresentMonLauncher");
-
       //These always need to run before there's any kind of window,
       //  else SetCompatibleTextRenderingDefault will except.
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
 
-      /*
-      // If (PresentMon64.exe not found), in essence.
+      string temp_path = "";
+
+      // If (PresentMon64.exe not found where this executable is), in essence.
       //  Prompt user for a folder to look in.
       // else run normally.
-      if (Directory.GetFiles(Directory.GetCurrentDirectory(), "PresentMon64.exe").Length == 0)
+      if (Directory.GetFiles(app_location, "PresentMon64.exe").Length == 0)
       {
+        // Look for path.cfg
+        bool no_path = Directory.GetFiles(app_location, @"path.cfg").Length == 0;
         // Control variable.
         bool file_found = false;
+
+
+        if (!no_path)
+        {
+          StreamReader read_stream = new StreamReader(File.OpenRead(app_location + @"path.cfg"));
+
+          temp_path = read_stream.ReadLine();
+
+          if (!Directory.Exists(temp_path))
+            no_path = true;
+          else
+            file_found = Directory.GetFiles(temp_path, "PresentMon64.exe").Length != 0;
+
+          read_stream.Close();
+        }
+ 
 
         while (!file_found)
         {
@@ -97,12 +104,31 @@ namespace PresentMonLauncher
               // Set the new directory.
               Directory.SetCurrentDirectory(folder_browser.SelectedPath);
               file_found = true;
+
+              // Write to file.
+              using (FileStream fs = File.Open(app_location + @"\path.cfg", FileMode.Create, FileAccess.Write))
+              {
+                StreamWriter write_stream = new StreamWriter(fs);
+
+                write_stream.WriteLine(Directory.GetCurrentDirectory());
+
+                write_stream.Close();
+              }
             }
           }
+          // Makes PresentMon a dependency.
+          else
+            return;
         }
+
+        if (no_path)
+          File.Create(app_location + @"\path.cfg");
       }
       // If PresentMon64.exe IS found then it will continue as normal.
-      */
+
+      // Set the working Directory to the default PresentMon location
+      if (!Directory.Exists(default_config_directory))
+        Directory.CreateDirectory(default_config_directory);
 
       // Run the Launcher.
       Application.Run(new PresentMonLauncher());
