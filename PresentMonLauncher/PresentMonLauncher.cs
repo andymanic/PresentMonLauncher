@@ -211,6 +211,9 @@ namespace PresentMonLauncher
       sfdialog.Filter = "Configuration File|*.cfg";
       sfdialog.Title = "Save Configuration Details";
 
+      if (Directory.Exists(Path.Combine(Application.StartupPath, "config")))
+         sfdialog.InitialDirectory = Path.Combine(Application.StartupPath, "config");
+
       string save_to = "";
 
       DialogResult save_cancel = sfdialog.ShowDialog();
@@ -270,6 +273,10 @@ namespace PresentMonLauncher
       OpenFileDialog ofdialog = new OpenFileDialog();
       ofdialog.Filter = "Configuration File|*.cfg";
       ofdialog.Title = "Open Configuration File";
+
+      if (Directory.Exists(Path.Combine(Application.StartupPath, "config")))
+            ofdialog.InitialDirectory = Path.Combine(Application.StartupPath, "config");
+
 
       // Save user input data.
       string open_file = "";
