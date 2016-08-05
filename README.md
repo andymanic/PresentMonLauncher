@@ -1,6 +1,6 @@
-IMPORTANT:
--Make sure to run the launcher after opening the game, PresentMon doesn't seem to like being run before the game is loaded.
--Make sure to install in C:\PresentMonLauncher (default) otherwise the program won't run PresentMon.
+IMPORTANT: Make sure to run the launcher after opening the game, PresentMon doesn't seem to like being run before the game is loaded.
+
+You should now be able to install this anywhere and it will find itself just fine. C:\PresentMonLauncher is still recommended for easy access/updating, but now not required.
 
 
 Installer includes a built copy of PresentMon already, along with all supporting files.
