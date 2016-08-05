@@ -29,14 +29,13 @@ namespace PresentMonLauncher
     string
       backup_dir = @"C:\PresentMonLauncher\";
 
-    bool manual_file;
-
     // Contains the directory where the program is.
     string min_max_avg_filename = @"\MinMaxAvg.txt";
 
     string[] min_max_avg;
 
 
+    // Initializing the window. All goes here.
     public BencherWindow()
     {
       InitializeComponent();
@@ -56,6 +55,7 @@ namespace PresentMonLauncher
       if (file_listbox.SelectedIndex == -1)
         return;
 
+      // Instantiate new lists.
       cumulative_time = new List<double>();
       present_milliseconds = new List<double>();
       present_fps = new List<double>();
@@ -79,11 +79,13 @@ namespace PresentMonLauncher
           return;
         }
         double temp = 0;
+
+        double.TryParse(values[9], out temp);
+        cumulative_time.Add(temp);
+
         double.TryParse(values[10], out temp);
         present_milliseconds.Add(temp);
         present_fps.Add(1000 / temp);
-        double.TryParse(values[9], out temp);
-        cumulative_time.Add(temp);
       }
       read_stream.Close();
 
@@ -116,6 +118,7 @@ namespace PresentMonLauncher
       if (!string.IsNullOrEmpty(gpu_textbox.Text))
         run_info += gpu_textbox.Text + ", ";
 
+      // Grab the first word.
       run_info += file_listbox.SelectedItem.ToString().Split(' ')[0];
 
       if (!string.IsNullOrEmpty(resolution_textbox.Text))
@@ -127,14 +130,19 @@ namespace PresentMonLauncher
       File.AppendAllLines(Directory.GetCurrentDirectory() + min_max_avg_filename, min_max_avg);
       status_label.Text = "Saved to MinMaxAvg.txt";
 
+      // Create and prepare the safe file dialog,
       SaveFileDialog sfdialog = new SaveFileDialog();
       sfdialog.Filter = "Comma Separated Values|*.csv";
       sfdialog.Title = "Save Cumulative Time, Frametimes, and FPS Data";
       sfdialog.FileName = Path.GetFileNameWithoutExtension(file_listbox.SelectedItem.ToString()) + "-results.csv";
 
+      // Variable for storing the directory.
       string save_to = "";
 
+      // Prompt user action.
       DialogResult save_cancel = sfdialog.ShowDialog();
+
+      // Process user action.
       if (save_cancel == DialogResult.OK)
         save_to = sfdialog.FileName;
       else
@@ -142,9 +150,11 @@ namespace PresentMonLauncher
 
       status_label.Text = "Saving run data.";
 
+      // Prepare for overwriting.
       if (File.Exists(save_to))
         File.Delete(save_to);
 
+      // Write to file.
       using (FileStream fs = File.Open(save_to, FileMode.Create))
       {
         StreamWriter write_stream = new StreamWriter(fs);
@@ -158,20 +168,25 @@ namespace PresentMonLauncher
 
         write_stream.Close();
       }
+
       status_label.Text = "File saved.";
+
       refreshList();
     }
 
 
     public void refreshList()
     {
+      // Clear out old items.
       file_listbox.Items.Clear();
 
+      // Get all new ones.
       string[] file_list = Directory.GetFiles(Directory.GetCurrentDirectory(), "*.csv");
 
       // This will alphabetize the files (hopefully).
       file_list = file_list.OrderBy(n => n).ToArray();
 
+      // Add them to the file list.
       foreach (string val in file_list)
         file_listbox.Items.Add(val);
     }
@@ -180,7 +195,11 @@ namespace PresentMonLauncher
     private void file_listbox_SelectedIndexChanged(object sender, EventArgs e)
     {
       status_label.Text = "Processing.";
+
+      // Run the data.
       runBencher();
+
+      // Update strings.
       status_label.Text = "Ready.";
       min_fps_label.Text = "Min FPS: " + min_fps.ToString();
       max_fps_label.Text = "Max FPS: " + max_fps.ToString();
@@ -189,17 +208,8 @@ namespace PresentMonLauncher
 
 
     private void refresh_list_button_Click(object sender, EventArgs e)
-    {
-      file_listbox.Items.Clear();
+      => refreshList();
 
-      string[] file_list = Directory.GetFiles(Directory.GetCurrentDirectory(),"*.csv");
-
-      // This will alphabetize the files (hopefully).
-      file_list = file_list.OrderBy(n => n).ToArray();
-
-      foreach (string val in file_list)
-        file_listbox.Items.Add(val);
-    }
 
     private void file_listbox_DoubleClick(object sender, EventArgs e)
     {
@@ -207,8 +217,10 @@ namespace PresentMonLauncher
         Process.Start(file_listbox.SelectedItem.ToString());
     }
 
+
     private void open_folder_button_Click(object sender, EventArgs e)
      =>  Process.Start(Directory.GetCurrentDirectory().ToString());
+
 
     private void save_results_button_Click(object sender, EventArgs e)
      => saveInfo();
@@ -239,7 +251,6 @@ namespace PresentMonLauncher
         return;
 
       status_label.Text = "Loaded manual file.";
-      manual_file = true;
 
       runBencher(true, open_file);
     }
