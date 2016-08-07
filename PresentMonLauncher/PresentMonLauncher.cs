@@ -20,19 +20,13 @@ namespace PresentMonLauncher
   public partial class PresentMonLauncher : Form
   {
     string textstring = "";
-
-    int delaynum = 0;
-    int timenum = 0;
-        string workingdir = "";
-
+    string workingdir = "";
+    bool restoring = false;
 
     public PresentMonLauncher()
     {
       InitializeComponent();
       Process[] processlist = Process.GetProcesses();
-
-      // This will alphabetize the processes.
-      processlist = processlist.OrderBy(n => n.ProcessName).ToArray();
 
       foreach (Process theprocess in processlist)
         process_list.Items.Add(theprocess.ProcessName);
@@ -44,11 +38,14 @@ namespace PresentMonLauncher
     private void launch_Click(object sender, EventArgs e)
     {
       if (process_list.SelectedIndex == -1)
+      {
+        MessageBox.Show("Please select a process.");
         return;
+      }
 
       textstring = "-process_name " + Convert.ToString(process_list.SelectedItem) + ".exe";
 
-      if (!string.IsNullOrEmpty(delay.Text))
+      /*if (!string.IsNullOrEmpty(delay.Text))
       {
         // TryParse here will ensure that invalid input, say "1wvm-1j842" or such nonsense
         //   won't break the program. If it's invalid, delaynum will be set to 0.
@@ -63,11 +60,15 @@ namespace PresentMonLauncher
         int.TryParse(time.Text, out timenum);
         time.Text = timenum.ToString();
         textstring = textstring + " -timed " + time.Text;
-      }
+      }*/
+
+
+      textstring += " -delay " + (int)delay_updown.Value;
+
+      textstring += " -timed " + (int)time_updown.Value;
 
       if (!string.IsNullOrEmpty(flags.Text))
         textstring = textstring + " " + flags.Text;
-
 
       if (!textstring.Contains("-output_file") && process_list.CheckedItems.Count > 0)
       {
@@ -87,6 +88,9 @@ namespace PresentMonLauncher
 
       if (scroll.Checked)
         textstring = textstring + " -scroll_toggle";
+
+      if (exclude.Checked)
+        textstring += " -exclude_dropped ";
 
       if (process_list.SelectedIndex == -1)
       {
@@ -118,6 +122,7 @@ namespace PresentMonLauncher
         MessageBox.Show("Source: " + ex.Source + "\nMessage: " + ex.Message);
       }
 
+      // Without this reset the program will not reconfigure correctly.
       textstring = "";
     }
 
@@ -131,9 +136,6 @@ namespace PresentMonLauncher
       process_list.Items.Clear();
 
       Process[] processlist = Process.GetProcesses();
-
-      // This will alphabetize the processes.
-      processlist = processlist.OrderBy(n => n.ProcessName).ToArray();
 
       foreach (Process theprocess in processlist)
         process_list.Items.Add(theprocess.ProcessName);
@@ -243,7 +245,11 @@ namespace PresentMonLauncher
         if (scroll.Checked)
           write_stream.WriteLine("Scroll: yes");
 
-        if (!string.IsNullOrEmpty(time.Text))
+        if (exclude.Checked)
+          write_stream.WriteLine("Exclude: yes");
+
+
+        /*if (!string.IsNullOrEmpty(time.Text))
         {
           int temp;
           int.TryParse(time.Text, out temp);
@@ -255,7 +261,13 @@ namespace PresentMonLauncher
           int temp;
           int.TryParse(delay.Text, out temp);
           write_stream.WriteLine("Delay: " + temp.ToString());
-        }
+        }*/
+
+        if (time_updown.Value > 0)
+          write_stream.WriteLine("Time: " + (int)time_updown.Value);
+
+        if (delay_updown.Value > 0)
+          write_stream.WriteLine("Delay: " + (int)time_updown.Value);
 
         if (!string.IsNullOrEmpty(flags.Text))
           write_stream.WriteLine("Flags: " + flags.Text);
@@ -269,6 +281,8 @@ namespace PresentMonLauncher
 
     private void load_config_button_Click(object sender, EventArgs e)
     {
+      config_dropdown.SelectedIndex = -1;
+
       // Create dialog info.
       OpenFileDialog ofdialog = new OpenFileDialog();
       ofdialog.Filter = "Configuration File|*.cfg";
@@ -292,15 +306,14 @@ namespace PresentMonLauncher
         return;
 
       displayCurrentConfig(open_file);
-
-      config_dropdown.SelectedIndex = -1;
     }
 
 
     private void config_dropdown_SelectedIndexChanged(object sender, EventArgs e)
     {
-      if (config_dropdown.SelectedIndex != -1)
-        displayCurrentConfig(config_dropdown.SelectedItem.ToString());
+      if (!restoring)
+        if (config_dropdown.SelectedIndex != -1)
+          displayCurrentConfig(Program.default_config_directory + config_dropdown.SelectedItem.ToString() + ".cfg");
     }
 
 
@@ -314,7 +327,7 @@ namespace PresentMonLauncher
       file_list = file_list.OrderBy(n => n).ToArray();
 
       foreach (string val in file_list)
-        config_dropdown.Items.Add(val);
+        config_dropdown.Items.Add(Path.GetFileNameWithoutExtension(val));
     }
 
 
@@ -341,6 +354,8 @@ namespace PresentMonLauncher
             currentflags.Text = values[1] + ".exe";
             process_list.SelectedIndex = process_list.Items.IndexOf(values[1]);
           }
+          else
+            MessageBox.Show("Process in loaded configuation file not found. Please manually select it.");
         }
 
         else if (values[0] == "Simple:")
@@ -355,6 +370,15 @@ namespace PresentMonLauncher
         else if (values[0] == "Flags:")
           flags.Text = values[1];
 
+        else if (values[0] == "Exclude:")
+          exclude.Checked = (values[1] == "yes");
+
+        else if (values[0] == "Time:")
+          time_updown.Value = Convert.ToDecimal(values[1]);
+
+        else if (values[0] == "Delay:")
+          delay_updown.Value = Convert.ToDecimal(values[1]);
+        /*
         else if (values[0] == "Time:")
         {
           int temp;
@@ -367,11 +391,18 @@ namespace PresentMonLauncher
           int temp;
           int.TryParse(values[1], out temp);
           delay.Text = temp.ToString();
-        }
+        }*/
       }
 
       read_stream.Close();
+
+      restoring = true;
+
+      int temp = config_dropdown.SelectedIndex;
       loadConfigs();
+      config_dropdown.SelectedIndex = (config_dropdown.Items.Count >= temp -1) ? temp : -1;
+
+      restoring = false;
     }
   }
 }

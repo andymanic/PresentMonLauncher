@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
 
+// From Daniel to Chris: Thanks for your suggestions!
+
 namespace PresentMonLauncher
 {
   public partial class BencherWindow : Form
@@ -34,12 +36,13 @@ namespace PresentMonLauncher
 
     string[] min_max_avg;
 
+    bool manual_file = false;
 
     // Initializing the window. All goes here.
     public BencherWindow()
     {
       InitializeComponent();
-      directory_label.Text += "" + Directory.GetCurrentDirectory();
+      directory_label.Text += Directory.GetCurrentDirectory();
       backup_dir = Directory.GetCurrentDirectory();
       refreshList();
     }
@@ -51,9 +54,12 @@ namespace PresentMonLauncher
       if ((!loaded && file_name != "null") || (loaded && file_name == "null"))
         return;
 
-      // If no index is selected, do nothing.
-      if (file_listbox.SelectedIndex == -1)
+      // If no index is selected and no file is loaded, do nothing.
+      if (file_listbox.SelectedIndex == -1 && !loaded)
+      {
+        MessageBox.Show("Please select a file or load one in.");
         return;
+      }
 
       // Instantiate new lists.
       cumulative_time = new List<double>();
@@ -62,7 +68,7 @@ namespace PresentMonLauncher
 
       // Read data
       StreamReader read_stream = (!loaded)
-        ? new StreamReader(file_listbox.SelectedItem.ToString())
+        ? new StreamReader(Directory.GetCurrentDirectory() + '\\' + file_listbox.SelectedItem.ToString() + ".csv")
         : new StreamReader(File.OpenRead(file_name));
 
       // Gotta use up the label line.
@@ -103,7 +109,7 @@ namespace PresentMonLauncher
       if (min_fps == -1 || max_fps == -1 || ave_fps == -1)
         return;
 
-      if (file_listbox.SelectedIndex == -1)
+      if (file_listbox.SelectedIndex == -1 && !manual_file)
         return;
 
       status_label.Text = "Saving data.";
@@ -169,7 +175,7 @@ namespace PresentMonLauncher
         write_stream.Close();
       }
 
-      status_label.Text = "File saved.";
+      status_label.Text = (manual_file) ? "Manually selected file saved." : "File saved.";
 
       refreshList();
     }
@@ -183,12 +189,11 @@ namespace PresentMonLauncher
       // Get all new ones.
       string[] file_list = Directory.GetFiles(Directory.GetCurrentDirectory(), "*.csv");
 
-      // This will alphabetize the files (hopefully).
-      file_list = file_list.OrderBy(n => n).ToArray();
-
       // Add them to the file list.
       foreach (string val in file_list)
-        file_listbox.Items.Add(val);
+        file_listbox.Items.Add(Path.GetFileNameWithoutExtension(val));
+
+      this.toolTip1.SetToolTip(this.directory_label, Directory.GetCurrentDirectory());
     }
 
 
@@ -204,6 +209,10 @@ namespace PresentMonLauncher
       min_fps_label.Text = "Min FPS: " + min_fps.ToString();
       max_fps_label.Text = "Max FPS: " + max_fps.ToString();
       average_fps_label.Text = "Av. FPS: " + ave_fps.ToString();
+
+      manual_file = false;
+
+      status_label.Text = (manual_file) ? "Manual file ready to save." : "Ready to save.";
     }
 
 
@@ -253,6 +262,8 @@ namespace PresentMonLauncher
       status_label.Text = "Loaded manual file.";
 
       runBencher(true, open_file);
+
+      manual_file = true;
     }
 
 
@@ -268,6 +279,8 @@ namespace PresentMonLauncher
         return;
 
       Directory.SetCurrentDirectory(folder_browser.SelectedPath);
+
+      directory_label.Text = "Current Directory: " + Directory.GetCurrentDirectory();
 
       refreshList();
     }

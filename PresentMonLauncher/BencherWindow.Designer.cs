@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+            this.components = new System.ComponentModel.Container();
             this.file_list_label = new System.Windows.Forms.Label();
             this.file_listbox = new System.Windows.Forms.ListBox();
             this.load_manually_button = new System.Windows.Forms.Button();
@@ -44,6 +45,8 @@
             this.resolution_textbox = new System.Windows.Forms.TextBox();
             this.save_results_button = new System.Windows.Forms.Button();
             this.open_folder_button = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // file_list_label
@@ -62,6 +65,7 @@
             this.file_listbox.Location = new System.Drawing.Point(16, 30);
             this.file_listbox.Name = "file_listbox";
             this.file_listbox.Size = new System.Drawing.Size(482, 160);
+            this.file_listbox.Sorted = true;
             this.file_listbox.TabIndex = 1;
             this.file_listbox.SelectedIndexChanged += new System.EventHandler(this.file_listbox_SelectedIndexChanged);
             this.file_listbox.DoubleClick += new System.EventHandler(this.file_listbox_DoubleClick);
@@ -73,6 +77,7 @@
             this.load_manually_button.Size = new System.Drawing.Size(93, 23);
             this.load_manually_button.TabIndex = 2;
             this.load_manually_button.Text = "Load CSV";
+            this.toolTip1.SetToolTip(this.load_manually_button, "Manually load a CSV file from outside the current directory.");
             this.load_manually_button.UseVisualStyleBackColor = true;
             this.load_manually_button.Click += new System.EventHandler(this.load_manually_button_Click);
             // 
@@ -92,6 +97,7 @@
             this.change_directory_button.Size = new System.Drawing.Size(61, 23);
             this.change_directory_button.TabIndex = 4;
             this.change_directory_button.Text = "Change";
+            this.toolTip1.SetToolTip(this.change_directory_button, "Change the directory where the application looks for results files.");
             this.change_directory_button.UseVisualStyleBackColor = true;
             this.change_directory_button.Click += new System.EventHandler(this.change_directory_button_Click);
             // 
@@ -129,6 +135,7 @@
             this.refresh_list_button.Size = new System.Drawing.Size(93, 23);
             this.refresh_list_button.TabIndex = 8;
             this.refresh_list_button.Text = "Refresh";
+            this.toolTip1.SetToolTip(this.refresh_list_button, "Refresh the list of available files.");
             this.refresh_list_button.UseVisualStyleBackColor = true;
             this.refresh_list_button.Click += new System.EventHandler(this.refresh_list_button_Click);
             // 
@@ -156,6 +163,7 @@
             this.gpu_textbox.Name = "gpu_textbox";
             this.gpu_textbox.Size = new System.Drawing.Size(195, 20);
             this.gpu_textbox.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.gpu_textbox, "Type the name of the GPU used to be saved with Min/Max/AVG FPS in MinMaxAVG.txt.");
             // 
             // resolution_label
             // 
@@ -172,6 +180,7 @@
             this.resolution_textbox.Name = "resolution_textbox";
             this.resolution_textbox.Size = new System.Drawing.Size(179, 20);
             this.resolution_textbox.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.resolution_textbox, "Type the resolution used to be saved with Min/Max/AVG FPS in MinMaxAVG.txt");
             // 
             // save_results_button
             // 
@@ -180,6 +189,7 @@
             this.save_results_button.Size = new System.Drawing.Size(93, 23);
             this.save_results_button.TabIndex = 14;
             this.save_results_button.Text = "Save";
+            this.toolTip1.SetToolTip(this.save_results_button, "Save the results.");
             this.save_results_button.UseVisualStyleBackColor = true;
             this.save_results_button.Click += new System.EventHandler(this.save_results_button_Click);
             // 
@@ -193,11 +203,22 @@
             this.open_folder_button.UseVisualStyleBackColor = true;
             this.open_folder_button.Click += new System.EventHandler(this.open_folder_button_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 216);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(415, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Hint: This information is stored about the Min/Max/AVG FPS in the MinMaxAVG.txt f" +
+    "ile.";
+            // 
             // BencherWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(665, 225);
+            this.ClientSize = new System.Drawing.Size(603, 232);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.open_folder_button);
             this.Controls.Add(this.save_results_button);
             this.Controls.Add(this.resolution_textbox);
@@ -243,5 +264,7 @@
     private System.Windows.Forms.TextBox resolution_textbox;
     private System.Windows.Forms.Button save_results_button;
     private System.Windows.Forms.Button open_folder_button;
-  }
+    private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label label1;
+    }
 }

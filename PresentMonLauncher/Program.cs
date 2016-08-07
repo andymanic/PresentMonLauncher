@@ -43,7 +43,8 @@ namespace PresentMonLauncher
   {
     public static string
       app_location = AppDomain.CurrentDomain.BaseDirectory,
-      default_config_directory = AppDomain.CurrentDomain.BaseDirectory + @"\config\";
+      default_config_directory = AppDomain.CurrentDomain.BaseDirectory + @"config\",
+      psm_path = AppDomain.CurrentDomain.BaseDirectory + @"path.cfg";
 
     /// <summary>
     /// The main entry point for the application.
@@ -71,16 +72,17 @@ namespace PresentMonLauncher
 
         if (!no_path)
         {
-          StreamReader read_stream = new StreamReader(File.OpenRead(app_location + @"path.cfg"));
+          using (StreamReader read_stream = new StreamReader(File.OpenRead(psm_path)))
+          {
+            temp_path = read_stream.ReadLine();
 
-          temp_path = read_stream.ReadLine();
+            if (!Directory.Exists(temp_path))
+              no_path = true;
+            else
+              file_found = Directory.GetFiles(temp_path, "PresentMon64.exe").Length != 0;
 
-          if (!Directory.Exists(temp_path))
-            no_path = true;
-          else
-            file_found = Directory.GetFiles(temp_path, "PresentMon64.exe").Length != 0;
-
-          read_stream.Close();
+            read_stream.Close();
+          }
         }
  
 
@@ -106,14 +108,13 @@ namespace PresentMonLauncher
               file_found = true;
 
               // Write to file.
-              using (FileStream fs = File.Open(app_location + @"\path.cfg", FileMode.Create, FileAccess.Write))
+              File.Delete(psm_path);
+              using (StreamWriter sw = new StreamWriter(new FileStream(psm_path, FileMode.Create, FileAccess.Write)))
               {
-                StreamWriter write_stream = new StreamWriter(fs);
-
-                write_stream.WriteLine(Directory.GetCurrentDirectory());
-
-                write_stream.Close();
+                sw.WriteLine(Directory.GetCurrentDirectory());
+                sw.Close();
               }
+              no_path = false;
             }
           }
           // Makes PresentMon a dependency.
@@ -122,7 +123,7 @@ namespace PresentMonLauncher
         }
 
         if (no_path)
-          File.Create(app_location + @"\path.cfg");
+          File.Create(psm_path);
       }
       // If PresentMon64.exe IS found then it will continue as normal.
 
