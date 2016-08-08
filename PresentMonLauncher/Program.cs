@@ -79,7 +79,10 @@ namespace PresentMonLauncher
             if (!Directory.Exists(temp_path))
               no_path = true;
             else
+            {
+              Directory.SetCurrentDirectory(temp_path);
               file_found = Directory.GetFiles(temp_path, "PresentMon64.exe").Length != 0;
+            }
 
             read_stream.Close();
           }

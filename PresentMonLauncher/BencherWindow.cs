@@ -95,10 +95,14 @@ namespace PresentMonLauncher
       }
       read_stream.Close();
 
-      // Determine statistics.
-      ave_fps = present_fps.Count / cumulative_time.Last<double>();
-      min_fps = present_fps.Min();
-      max_fps = present_fps.Max();
+      if (present_fps.Count > 0)
+      {// Determine statistics.
+        ave_fps = present_fps.Count / cumulative_time.Last<double>();
+        min_fps = present_fps.Min();
+        max_fps = present_fps.Max();
+      }
+      else
+        MessageBox.Show("Invalid file submitted. Check contents.");
     }
 
 
@@ -223,7 +227,7 @@ namespace PresentMonLauncher
     private void file_listbox_DoubleClick(object sender, EventArgs e)
     {
       if (file_listbox.SelectedIndex != -1)
-        Process.Start(file_listbox.SelectedItem.ToString());
+        Process.Start(Directory.GetCurrentDirectory() + '\\' + file_listbox.SelectedItem.ToString() + ".csv");
     }
 
 
