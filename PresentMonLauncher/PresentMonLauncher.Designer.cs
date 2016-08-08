@@ -68,6 +68,7 @@
             this.time_updown = new System.Windows.Forms.NumericUpDown();
             this.exclude = new System.Windows.Forms.CheckBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.delay_updown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.time_updown)).BeginInit();
             this.SuspendLayout();
@@ -306,12 +307,13 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(797, 316);
+            this.label18.Location = new System.Drawing.Point(796, 304);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(309, 45);
+            this.label18.Size = new System.Drawing.Size(310, 60);
             this.label18.TabIndex = 29;
             this.label18.Text = "Created by Andrew from TechteamGB\r\nPresentMon created by Intel and available here" +
-    "\r\nBencher tool created by Jim from AdoredTV";
+    "\r\nBencher tool created by Jim from AdoredTV\r\nProgram re-written by Daniel T. Hol" +
+    "tzclaw, here";
             this.label18.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // bencher
@@ -340,7 +342,7 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(1017, 316);
+            this.linkLabel1.Location = new System.Drawing.Point(1017, 304);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(89, 15);
             this.linkLabel1.TabIndex = 32;
@@ -352,7 +354,7 @@
             // 
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.Location = new System.Drawing.Point(1070, 331);
+            this.linkLabel2.Location = new System.Drawing.Point(1070, 319);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(36, 15);
             this.linkLabel2.TabIndex = 33;
@@ -364,7 +366,7 @@
             // 
             this.linkLabel3.AutoSize = true;
             this.linkLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel3.Location = new System.Drawing.Point(1038, 346);
+            this.linkLabel3.Location = new System.Drawing.Point(1038, 334);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(68, 15);
             this.linkLabel3.TabIndex = 34;
@@ -471,11 +473,24 @@
             this.exclude.Text = "Exclude Dropped Presents";
             this.exclude.UseVisualStyleBackColor = true;
             // 
+            // linkLabel4
+            // 
+            this.linkLabel4.AutoSize = true;
+            this.linkLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel4.Location = new System.Drawing.Point(1069, 349);
+            this.linkLabel4.Name = "linkLabel4";
+            this.linkLabel4.Size = new System.Drawing.Size(36, 15);
+            this.linkLabel4.TabIndex = 44;
+            this.linkLabel4.TabStop = true;
+            this.linkLabel4.Text = "here";
+            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
+            // 
             // PresentMonLauncher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1108, 366);
+            this.Controls.Add(this.linkLabel4);
             this.Controls.Add(this.exclude);
             this.Controls.Add(this.time_updown);
             this.Controls.Add(this.delay_updown);
@@ -518,7 +533,7 @@
             this.MaximizeBox = false;
             this.Name = "PresentMonLauncher";
             this.ShowIcon = false;
-            this.Text = "PresentMonLauncher V0.3A";
+            this.Text = "PresentMonLauncher V0.4A";
             ((System.ComponentModel.ISupportInitialize)(this.delay_updown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.time_updown)).EndInit();
             this.ResumeLayout(false);
@@ -567,6 +582,7 @@
     private System.Windows.Forms.NumericUpDown time_updown;
     private System.Windows.Forms.CheckBox exclude;
     private System.Windows.Forms.ToolTip toolTip1;
-  }
+        private System.Windows.Forms.LinkLabel linkLabel4;
+    }
 }
 

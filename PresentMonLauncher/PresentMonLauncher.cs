@@ -176,10 +176,13 @@ namespace PresentMonLauncher
     private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
       => Process.Start("http://youtube.com/adoredtv");
 
+    private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+      => Process.Start("https://sites.google.com/site/danielscompendium/pro");
 
-    // The purpose of this one's to check/uncheck appropriately and ensure only
-    //   one item is visually checked.
-    private void process_list_ItemCheck(object sender, ItemCheckEventArgs e)
+
+        // The purpose of this one's to check/uncheck appropriately and ensure only
+        //   one item is visually checked.
+        private void process_list_ItemCheck(object sender, ItemCheckEventArgs e)
     {
       // If there's an item checked, else ignore.
       if (process_list.CheckedItems.Count == 1)
@@ -404,5 +407,7 @@ namespace PresentMonLauncher
 
       restoring = false;
     }
-  }
+
+        
+    }
 }
