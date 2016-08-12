@@ -208,6 +208,12 @@ namespace PresentMonLauncher
                     string fileNameNoExtension = Path.GetFileNameWithoutExtension(val);
                     file_listbox.Items.Add(fileNameNoExtension);
                     fileList.Add(fileNameNoExtension, new BenchFile(val, false));
+                    file0.Items.Add(fileNameNoExtension);
+                    file1.Items.Add(fileNameNoExtension);
+                    file2.Items.Add(fileNameNoExtension);
+                    file3.Items.Add(fileNameNoExtension);
+                    file4.Items.Add(fileNameNoExtension);
+                    file5.Items.Add(fileNameNoExtension);
                 }
             }
 
@@ -223,14 +229,17 @@ namespace PresentMonLauncher
 
       // Update strings.
       status_label.Text = "Ready.";
-      min_fps_label.Text = "Min FPS: " + min_fps.ToString();
-      max_fps_label.Text = "Max FPS: " + max_fps.ToString();
-      average_fps_label.Text = "Av. FPS: " + ave_fps.ToString();
+      min_fps_label.Text = "Min FPS: " + min_fps.ToString("##0.##");
+      max_fps_label.Text = "Max FPS: " + max_fps.ToString("##0.##");
+      average_fps_label.Text = "Avg. FPS: " + ave_fps.ToString("##0.##");
 
       manual_file = false;
 
       status_label.Text = (manual_file) ? "Manual file ready to save." : "Ready to save.";
-    }
+
+      
+
+        }
 
 
     private void refresh_list_button_Click(object sender, EventArgs e)
@@ -250,12 +259,21 @@ namespace PresentMonLauncher
         private void btn_ChartSelected_Click(object sender, EventArgs e)
         {
             // No point in continuing if the number of selected items exceeds what we support
-            if (file_listbox.SelectedItems.Count > 6 || file_listbox.SelectedItems.Count == 0)
+            /*if (file_listbox.SelectedItems.Count > 6)
             {
                 MessageBox.Show("Too many files selected.  Please limit to 6 items.");
                 return;
+            }*/
+            if (file0.SelectedIndex == -1)
+            {
+                MessageBox.Show("No items selected, please select at least one file.");
+                return;
             }
-
+            if (charttitle.Text == "")
+            {
+                MessageBox.Show("Please enter a title");
+                return;
+            }
             // Start building the chart
             Chart benchChart = new Chart();
 
@@ -264,7 +282,7 @@ namespace PresentMonLauncher
             benchChart.BackColor = Color.White;
 
             // Chart title, font, and position
-            benchChart.Titles.Add("Test Chart");
+            benchChart.Titles.Add(charttitle.Text);
             benchChart.Titles[0].Font = new Font("Arial", 13);
             benchChart.Titles[0].Alignment = ContentAlignment.TopRight;
 
@@ -295,12 +313,33 @@ namespace PresentMonLauncher
 
             List<string> paths = new List<string>();
             string[] colFileNames = { };
-            foreach (string item in file_listbox.SelectedItems)
+
+            List<string> fileselection = new List<string>();
+
+            List<ComboBox> seriesBoxes = new List<ComboBox>();
+            seriesBoxes.Add(file0);
+            seriesBoxes.Add(file1);
+            seriesBoxes.Add(file2);
+            seriesBoxes.Add(file3);
+            seriesBoxes.Add(file4);
+            seriesBoxes.Add(file5);
+            foreach (ComboBox cmb in seriesBoxes)
             {
-                paths.Add(fileList[item].Path);
+                if (cmb.SelectedIndex != -1)
+                {
+                    fileselection.Add(cmb.SelectedItem.ToString());
+                }
+                    
             }
 
+            foreach (string item in fileselection)
+            {
+              paths.Add(fileList[item].Path);
+            }
+            
             colFileNames = paths.ToArray();
+
+            string[] seriesname = { Series0.Text, Series1.Text, Series2.Text, Series3.Text, Series4.Text, Series5.Text };
 
             // Placeholder for color enumeration once we decide how to do this
             Color[] colors = { Color.Red, Color.Green, Color.Blue, Color.Orange, Color.Purple, Color.Black };
@@ -319,7 +358,9 @@ namespace PresentMonLauncher
                     //  All of these operations happen on colFileNames[i] so that the chartArea sees them as individual series on the same chart
                     //  Fortunately, System.Windows.Forms.DataVisualization allows us to reference the graph1.Series[] array by name
                     //  Note that not all ChartTypes support multiple series
-                    string SeriesName = Path.GetFileNameWithoutExtension(colFileNames[i]);
+                    
+                    
+                    string SeriesName = seriesname[i];                    
                     benchChart.Series.Add(SeriesName);
                     benchChart.Series[SeriesName].ChartType = SeriesChartType.Line;
                     benchChart.Series[SeriesName].IsVisibleInLegend = true;
