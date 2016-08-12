@@ -62,7 +62,7 @@ namespace PresentMonLauncher
       // If (PresentMon64.exe not found where this executable is), in essence.
       //  Prompt user for a folder to look in.
       // else run normally.
-      if (Directory.GetFiles(app_location, "PresentMon64.exe").Length == 0)
+      if (Directory.GetFiles(app_location, "PresentMon64.exe").Length != 0)
       {
         // Look for path.cfg
         bool no_path = Directory.GetFiles(app_location, @"path.cfg").Length == 0;

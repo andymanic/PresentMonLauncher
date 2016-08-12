@@ -1,0 +1,10 @@
+C:\Users\cfoltz\Source\Repos\PresentMonLauncher\PresentMonLauncher\bin\Debug\PresentMonLauncher.exe.config
+C:\Users\cfoltz\Source\Repos\PresentMonLauncher\PresentMonLauncher\bin\Debug\PresentMonLauncher.exe
+C:\Users\cfoltz\Source\Repos\PresentMonLauncher\PresentMonLauncher\bin\Debug\PresentMonLauncher.pdb
+C:\Users\cfoltz\Source\Repos\PresentMonLauncher\PresentMonLauncher\obj\Debug\PresentMonLauncher.csprojResolveAssemblyReference.cache
+C:\Users\cfoltz\Source\Repos\PresentMonLauncher\PresentMonLauncher\obj\Debug\PresentMonLauncher.BencherWindow.resources
+C:\Users\cfoltz\Source\Repos\PresentMonLauncher\PresentMonLauncher\obj\Debug\PresentMonLauncher.PresentMonLauncher.resources
+C:\Users\cfoltz\Source\Repos\PresentMonLauncher\PresentMonLauncher\obj\Debug\PresentMonLauncher.Properties.Resources.resources
+C:\Users\cfoltz\Source\Repos\PresentMonLauncher\PresentMonLauncher\obj\Debug\PresentMonLauncher.csproj.GenerateResource.Cache
+C:\Users\cfoltz\Source\Repos\PresentMonLauncher\PresentMonLauncher\obj\Debug\PresentMonLauncher.exe
+C:\Users\cfoltz\Source\Repos\PresentMonLauncher\PresentMonLauncher\obj\Debug\PresentMonLauncher.pdb

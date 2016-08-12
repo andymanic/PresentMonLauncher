@@ -47,6 +47,7 @@
             this.open_folder_button = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_ChartSelected = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // file_list_label
@@ -64,6 +65,7 @@
             this.file_listbox.FormattingEnabled = true;
             this.file_listbox.Location = new System.Drawing.Point(16, 30);
             this.file_listbox.Name = "file_listbox";
+            this.file_listbox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.file_listbox.Size = new System.Drawing.Size(482, 160);
             this.file_listbox.Sorted = true;
             this.file_listbox.TabIndex = 1;
@@ -206,18 +208,29 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 216);
+            this.label1.Location = new System.Drawing.Point(12, 241);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(415, 13);
             this.label1.TabIndex = 16;
             this.label1.Text = "Hint: This information is stored about the Min/Max/AVG FPS in the MinMaxAVG.txt f" +
     "ile.";
             // 
+            // btn_ChartSelected
+            // 
+            this.btn_ChartSelected.Location = new System.Drawing.Point(504, 236);
+            this.btn_ChartSelected.Name = "btn_ChartSelected";
+            this.btn_ChartSelected.Size = new System.Drawing.Size(93, 23);
+            this.btn_ChartSelected.TabIndex = 17;
+            this.btn_ChartSelected.Text = "Chart Selected";
+            this.btn_ChartSelected.UseVisualStyleBackColor = true;
+            this.btn_ChartSelected.Click += new System.EventHandler(this.btn_ChartSelected_Click);
+            // 
             // BencherWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 232);
+            this.ClientSize = new System.Drawing.Size(616, 277);
+            this.Controls.Add(this.btn_ChartSelected);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.open_folder_button);
             this.Controls.Add(this.save_results_button);
@@ -266,5 +279,6 @@
     private System.Windows.Forms.Button open_folder_button;
     private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_ChartSelected;
     }
 }
