@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Diagnostics;
 using System.IO;
 
@@ -38,6 +40,9 @@ namespace PresentMonLauncher
 
     bool manual_file = false;
 
+    Dictionary<string, BenchFile> fileList = new Dictionary<string, BenchFile>();
+
+
     // Initializing the window. All goes here.
     public BencherWindow()
     {
@@ -50,59 +55,61 @@ namespace PresentMonLauncher
 
     public void runBencher(bool loaded = false, string file_name = "null")
     {
-      // This is an invalid use case which should not be encountered ever.
-      if ((!loaded && file_name != "null") || (loaded && file_name == "null"))
-        return;
+        // This is an invalid use case which should not be encountered ever.
+        if ((!loaded && file_name != "null") || (loaded && file_name == "null"))
+            return;
 
-      // If no index is selected and no file is loaded, do nothing.
-      if (file_listbox.SelectedIndex == -1 && !loaded)
-      {
-        MessageBox.Show("Please select a file or load one in.");
-        return;
-      }
-
-      // Instantiate new lists.
-      cumulative_time = new List<double>();
-      present_milliseconds = new List<double>();
-      present_fps = new List<double>();
-
-      // Read data
-      StreamReader read_stream = (!loaded)
-        ? new StreamReader(Directory.GetCurrentDirectory() + '\\' + file_listbox.SelectedItem.ToString() + ".csv")
-        : new StreamReader(File.OpenRead(file_name));
-
-      // Gotta use up the label line.
-      string line = read_stream.ReadLine();
-      string[] values;
-
-      while (!read_stream.EndOfStream)
-      {
-        line = read_stream.ReadLine();
-        values = line.Split(',');
-        if (values.Length < 11)
+        // If no index is selected and no file is loaded, do nothing.
+        if (file_listbox.SelectedIndex == -1 && !loaded)
         {
-          MessageBox.Show("Invalid CSV (not enough columns). Either broken or in error.");
-          return;
+            MessageBox.Show("Please select a file or load one in.");
+            return;
         }
-        double temp = 0;
 
-        double.TryParse(values[9], out temp);
-        cumulative_time.Add(temp);
+        // Instantiate new lists.
+        cumulative_time = new List<double>();
+        present_milliseconds = new List<double>();
+        present_fps = new List<double>();
 
-        double.TryParse(values[10], out temp);
-        present_milliseconds.Add(temp);
-        present_fps.Add(1000 / temp);
-      }
-      read_stream.Close();
+        // Read data
+        StreamReader read_stream = (!loaded)
+            ? new StreamReader(fileList[file_listbox.SelectedItem.ToString()].Path)
+            : new StreamReader(File.OpenRead(file_name));
+            
+                
+        // Gotta use up the label line.
+        string line = read_stream.ReadLine();
+        string[] values;
 
-      if (present_fps.Count > 0)
-      {// Determine statistics.
-        ave_fps = present_fps.Count / cumulative_time.Last<double>();
-        min_fps = present_fps.Min();
-        max_fps = present_fps.Max();
-      }
-      else
-        MessageBox.Show("Invalid file submitted. Check contents.");
+        while (!read_stream.EndOfStream)
+        {
+            line = read_stream.ReadLine();
+            values = line.Split(',');
+            if (values.Length < 11)
+            {
+                MessageBox.Show("Invalid CSV (not enough columns). Either broken or in error.");
+                return;
+            }
+            double temp = 0;
+
+            double.TryParse(values[9], out temp);
+            cumulative_time.Add(temp);
+
+            double.TryParse(values[10], out temp);
+            present_milliseconds.Add(temp);
+            present_fps.Add(1000 / temp);
+        }
+        read_stream.Close();
+
+        if (present_fps.Count > 0)
+        {
+            // Determine statistics.
+            ave_fps = present_fps.Count / cumulative_time.Last<double>();
+            min_fps = present_fps.Min();
+            max_fps = present_fps.Max();
+        }
+        else
+            MessageBox.Show("Invalid file submitted. Check contents.");
     }
 
 
@@ -188,18 +195,24 @@ namespace PresentMonLauncher
     public void refreshList()
     {
       // Clear out old items.
-      file_listbox.Items.Clear();
+        file_listbox.Items.Clear();
+        fileList.Clear();
 
-      // Get all new ones.
-      string[] file_list = Directory.GetFiles(Directory.GetCurrentDirectory(), "*.csv");
+        // Get all new ones.
+        string[] file_list = Directory.GetFiles(Directory.GetCurrentDirectory(), "*.csv");
+            // Add them to the file list.
+            foreach (string val in file_list)
+            {
+                if (!val.EndsWith("-results.csv"))
+                {
+                    string fileNameNoExtension = Path.GetFileNameWithoutExtension(val);
+                    file_listbox.Items.Add(fileNameNoExtension);
+                    fileList.Add(fileNameNoExtension, new BenchFile(val, false));
+                }
+            }
 
-      // Add them to the file list.
-      foreach (string val in file_list)
-        file_listbox.Items.Add(Path.GetFileNameWithoutExtension(val));
-
-      this.toolTip1.SetToolTip(this.directory_label, Directory.GetCurrentDirectory());
+        this.toolTip1.SetToolTip(this.directory_label, Directory.GetCurrentDirectory());
     }
-
 
     private void file_listbox_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -232,10 +245,136 @@ namespace PresentMonLauncher
 
 
     private void open_folder_button_Click(object sender, EventArgs e)
-     =>  Process.Start(Directory.GetCurrentDirectory().ToString());
+     =>  Process.Start(Directory.GetCurrentDirectory().ToString()); 
 
+        private void btn_ChartSelected_Click(object sender, EventArgs e)
+        {
+            // No point in continuing if the number of selected items exceeds what we support
+            if (file_listbox.SelectedItems.Count > 6 || file_listbox.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Too many files selected.  Please limit to 6 items.");
+                return;
+            }
 
-    private void save_results_button_Click(object sender, EventArgs e)
+            // Start building the chart
+            Chart benchChart = new Chart();
+
+            // Chart size and color
+            benchChart.Width = 1024; benchChart.Height = 768;
+            benchChart.BackColor = Color.White;
+
+            // Chart title, font, and position
+            benchChart.Titles.Add("Test Chart");
+            benchChart.Titles[0].Font = new Font("Arial", 13);
+            benchChart.Titles[0].Alignment = ContentAlignment.TopRight;
+
+            //  The chart object is just a container.  All chart "draws" need to go on a ChartArea object.  This includes the chart Legend.
+            //  Multiple ChartAreas can go on the same Chart, if necessary
+            ChartArea graphArea = new ChartArea("GraphArea");
+
+            //  Chart labels
+            graphArea.AxisX.Title = "Time (s)";
+            graphArea.AxisY.Title = "FPS";
+
+            // Set the data point interval on the X axis to something reasonable
+            graphArea.AxisX.Interval = 5;
+
+            // Make sure to trim the decimal places on the X axis
+            graphArea.AxisX.LabelStyle.Format = "#";
+
+            // Disable X axis grid lines
+            graphArea.AxisX.MajorGrid.Enabled = false;
+
+            //  Add a legend
+            Legend graphLegend = new Legend("Legend");
+            graphLegend.Title = "Benchmark";
+
+            // Add the ChartArea and Legend to the Chart object
+            benchChart.ChartAreas.Add(graphArea);
+            benchChart.Legends.Add(graphLegend);
+
+            List<string> paths = new List<string>();
+            string[] colFileNames = { };
+            foreach (string item in file_listbox.SelectedItems)
+            {
+                paths.Add(fileList[item].Path);
+            }
+
+            colFileNames = paths.ToArray();
+
+            // Placeholder for color enumeration once we decide how to do this
+            Color[] colors = { Color.Red, Color.Green, Color.Blue, Color.Orange, Color.Purple, Color.Black };
+
+            // This can and should probably be refactored with generic collections
+            // Using the counter variable to track colors seems like it should be unnecessary
+            for (int i = 0; i < colFileNames.Length; i++)
+            {
+
+                using (StreamReader sr = new StreamReader(File.OpenRead(colFileNames[i])))
+                {
+
+                    int frame = 0;
+                    sr.ReadLine();
+
+                    //  All of these operations happen on colFileNames[i] so that the chartArea sees them as individual series on the same chart
+                    //  Fortunately, System.Windows.Forms.DataVisualization allows us to reference the graph1.Series[] array by name
+                    //  Note that not all ChartTypes support multiple series
+                    string SeriesName = Path.GetFileNameWithoutExtension(colFileNames[i]);
+                    benchChart.Series.Add(SeriesName);
+                    benchChart.Series[SeriesName].ChartType = SeriesChartType.Line;
+                    benchChart.Series[SeriesName].IsVisibleInLegend = true;
+
+                    // Set the line width to 1px
+                    benchChart.Series[SeriesName].BorderWidth = 1;
+
+                    // Add this series and legend to the default ChartArea defined above
+                    benchChart.Series[SeriesName].ChartArea = graphArea.Name;
+                    benchChart.Series[SeriesName].Legend = graphLegend.Name;
+                    benchChart.Series[SeriesName].Color = colors[i];
+
+                    while (!sr.EndOfStream)
+                    {
+                        string[] values = sr.ReadLine().Split(',');
+                        int FPS = 0;
+
+                        frame++;
+                        try
+                        { 
+                            FPS = (int)(1000 / (Convert.ToDouble(values[10])));
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString());
+                        }
+
+                        decimal Time = Convert.ToDecimal(values[9]);
+
+                        //  Add Time and FPS as data points to the current (colFileNames[i]) series
+                        benchChart.Series[SeriesName].Points.AddXY(Time, FPS);
+                    }
+
+                }
+            }
+
+            //  Save the chart to an Image.  It can also be displayed in a Window if we want.
+
+            SaveFileDialog chartOutput = new SaveFileDialog();
+            chartOutput.Title = "Select a file";
+            chartOutput.AddExtension = true;
+            chartOutput.DefaultExt = ".png";
+            chartOutput.Filter = "PNG Image|*.png";
+            chartOutput.FileName = "Benchmark.png";
+            chartOutput.InitialDirectory = Application.StartupPath;
+
+            DialogResult dr = chartOutput.ShowDialog();
+            if (DialogResult.OK == dr)
+            {
+                benchChart.SaveImage(chartOutput.FileName, ChartImageFormat.Png);
+            }
+                     
+        }
+
+        private void save_results_button_Click(object sender, EventArgs e)
      => saveInfo();
 
 
@@ -251,8 +390,8 @@ namespace PresentMonLauncher
       ofdialog.Title = "Open PresentMon Data";
 
       // Save user input data.
-      string open_file = "";
-
+            string open_file = "";
+            string fileNameNoExtension = string.Empty;
       // Show open file dialog.
       DialogResult save_cancel = ofdialog.ShowDialog();
 
@@ -263,11 +402,18 @@ namespace PresentMonLauncher
       else
         return;
 
-      status_label.Text = "Loaded manual file.";
+            
+            fileNameNoExtension = Path.GetFileNameWithoutExtension(open_file);
 
-      runBencher(true, open_file);
+            if (file_listbox.Items.Contains(fileNameNoExtension))
+            {
+                MessageBox.Show("File already exists.  Please choose another file.");
+                return;
+            }
 
-      manual_file = true;
+            fileList.Add(fileNameNoExtension,new BenchFile(open_file, true));
+            file_listbox.Items.Add(fileNameNoExtension);
+
     }
 
 
@@ -289,4 +435,28 @@ namespace PresentMonLauncher
       refreshList();
     }
   }
+  
+  public class BenchFile
+    {
+        public string Path;
+        public bool IsManuallyLoaded;
+
+        public BenchFile()
+        {
+            this.Path = string.Empty;
+            this.IsManuallyLoaded = false;
+        }
+
+        public BenchFile(string Path)
+            : this()
+        {
+            this.Path = Path;
+        }
+
+        public BenchFile(string Path, bool IsManuallyLoaded)
+        {
+            this.Path = Path;
+            this.IsManuallyLoaded = IsManuallyLoaded;
+        }
+    }
 }
