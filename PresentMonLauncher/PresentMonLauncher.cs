@@ -45,32 +45,17 @@ namespace PresentMonLauncher
 
       textstring = "-process_name " + Convert.ToString(process_list.SelectedItem) + ".exe";
 
-      /*if (!string.IsNullOrEmpty(delay.Text))
-      {
-        // TryParse here will ensure that invalid input, say "1wvm-1j842" or such nonsense
-        //   won't break the program. If it's invalid, delaynum will be set to 0.
-        int.TryParse(delay.Text, out delaynum);
-        delay.Text = delaynum.ToString(); //ToString() will do the same thing as Convert.ToString() but shorter.
-                                          // If the user input is invalid, it will change to zero upon launch_Click so there is visual feedback.
-        textstring = textstring + " -delay " + delay.Text;
-      }
-
-      if (!string.IsNullOrEmpty(time.Text))
-      {
-        int.TryParse(time.Text, out timenum);
-        time.Text = timenum.ToString();
-        textstring = textstring + " -timed " + time.Text;
-      }*/
-
-
       textstring += " -delay " + (int)delay_updown.Value;
 
       textstring += " -timed " + (int)time_updown.Value;
 
-      if (!string.IsNullOrEmpty(flags.Text))
-        textstring = textstring + " " + flags.Text;
+      if (outputcheck.Checked)
+        textstring = textstring + " -output_file " + outputfile.Text;
 
-      if (!textstring.Contains("-output_file") && process_list.CheckedItems.Count > 0)
+      if (etlcheck.Checked)
+        textstring = textstring + " -etl_file " + etlfile.Text;
+
+      if (!outputcheck.Checked && process_list.CheckedItems.Count > 0)
       {
         textstring +=
         (" -output_file \"" + process_list.SelectedItem.ToString()
@@ -94,7 +79,7 @@ namespace PresentMonLauncher
 
       if (process_list.SelectedIndex == -1)
       {
-        textstring = textstring + " " + flags.Text;
+        textstring = textstring + " " + outputfile.Text;
         MessageBox.Show("Please select a process to trace.");
         return; // Added return here to ensure that the program does not continue needlessly.
                 // Props to whomever added this code block.
@@ -251,29 +236,16 @@ namespace PresentMonLauncher
         if (exclude.Checked)
           write_stream.WriteLine("Exclude: yes");
 
+     
 
-        /*if (!string.IsNullOrEmpty(time.Text))
-        {
-          int temp;
-          int.TryParse(time.Text, out temp);
-          write_stream.WriteLine("Time: " + temp.ToString());
-        }
-
-        if (!string.IsNullOrEmpty(delay.Text))
-        {
-          int temp;
-          int.TryParse(delay.Text, out temp);
-          write_stream.WriteLine("Delay: " + temp.ToString());
-        }*/
-
-        if (time_updown.Value > 0)
+                if (time_updown.Value > 0)
           write_stream.WriteLine("Time: " + (int)time_updown.Value);
 
         if (delay_updown.Value > 0)
           write_stream.WriteLine("Delay: " + (int)time_updown.Value);
 
-        if (!string.IsNullOrEmpty(flags.Text))
-          write_stream.WriteLine("Flags: " + flags.Text);
+        if (!string.IsNullOrEmpty(outputfile.Text))
+          write_stream.WriteLine("Flags: " + outputfile.Text);
 
         write_stream.Close();
       }
@@ -371,7 +343,7 @@ namespace PresentMonLauncher
           scroll.Checked = (values[1] == "yes");
 
         else if (values[0] == "Flags:")
-          flags.Text = values[1];
+          outputfile.Text = values[1];
 
         else if (values[0] == "Exclude:")
           exclude.Checked = (values[1] == "yes");
@@ -381,20 +353,8 @@ namespace PresentMonLauncher
 
         else if (values[0] == "Delay:")
           delay_updown.Value = Convert.ToDecimal(values[1]);
-        /*
-        else if (values[0] == "Time:")
-        {
-          int temp;
-          int.TryParse(values[1], out temp);
-          time.Text = temp.ToString();
-        }
+        
 
-        else if (values[0] == "Delay:")
-        {
-          int temp;
-          int.TryParse(values[1], out temp);
-          delay.Text = temp.ToString();
-        }*/
       }
 
       read_stream.Close();
@@ -408,6 +368,68 @@ namespace PresentMonLauncher
       restoring = false;
     }
 
-        
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Override the default output path.");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Consume events from an ETL file instead of real-time.");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Create dialog info.
+            OpenFileDialog ofdialog = new OpenFileDialog();
+            ofdialog.Filter = "Comma Separated Values|*.csv";
+            ofdialog.Title = "Save PresentMon Data";
+
+            // Save user input data.
+            string open_file = "";
+            string fileNameNoExtension = string.Empty;
+            // Show open file dialog.
+            DialogResult save_cancel = ofdialog.ShowDialog();
+
+            // If "OK" then save file name,
+            // Else exit function.
+            if (save_cancel == DialogResult.OK)
+                open_file = ofdialog.FileName;
+            else
+                return;
+
+
+            fileNameNoExtension = Path.GetFileNameWithoutExtension(open_file);
+
+            outputfile.Text = fileNameNoExtension;
+
+            
+        }
+
+        private void etlbutton_Click(object sender, EventArgs e)
+        {
+            // Create dialog info.
+            OpenFileDialog ofdialog = new OpenFileDialog();
+            ofdialog.Filter = "ETL File|*.etl";
+            ofdialog.Title = "Open ETL Data";
+
+            // Save user input data.
+            string open_file = "";
+            string fileNameNoExtension = string.Empty;
+            // Show open file dialog.
+            DialogResult save_cancel = ofdialog.ShowDialog();
+
+            // If "OK" then save file name,
+            // Else exit function.
+            if (save_cancel == DialogResult.OK)
+                open_file = ofdialog.FileName;
+            else
+                return;
+
+
+            fileNameNoExtension = Path.GetFileNameWithoutExtension(open_file);
+
+            etlfile.Text = fileNameNoExtension;
+        }
     }
 }
