@@ -197,9 +197,16 @@ namespace PresentMonLauncher
       // Clear out old items.
         file_listbox.Items.Clear();
         fileList.Clear();
+        file0.Items.Clear();
+        file1.Items.Clear();
+        file2.Items.Clear();
+        file3.Items.Clear();
+        file4.Items.Clear();
+        file5.Items.Clear();
+            
 
-        // Get all new ones.
-        string[] file_list = Directory.GetFiles(Directory.GetCurrentDirectory(), "*.csv");
+            // Get all new ones.
+            string[] file_list = Directory.GetFiles(Directory.GetCurrentDirectory(), "*.csv");
             // Add them to the file list.
             foreach (string val in file_list)
             {

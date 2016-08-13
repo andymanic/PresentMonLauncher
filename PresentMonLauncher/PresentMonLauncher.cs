@@ -44,10 +44,12 @@ namespace PresentMonLauncher
       }
 
       textstring = "-process_name " + Convert.ToString(process_list.SelectedItem) + ".exe";
+      
+      if(delay_updown.Value != 0)
+            textstring += " -delay " + (int)delay_updown.Value;
 
-      textstring += " -delay " + (int)delay_updown.Value;
-
-      textstring += " -timed " + (int)time_updown.Value;
+      if (time_updown.Value != 0)
+            textstring += " -timed " + (int)time_updown.Value;
 
       if (outputcheck.Checked)
         textstring = textstring + " -output_file " + outputfile.Text;
@@ -84,7 +86,7 @@ namespace PresentMonLauncher
         return; // Added return here to ensure that the program does not continue needlessly.
                 // Props to whomever added this code block.
       }
-            MessageBox.Show(textstring);
+           
 
       ProcessStartInfo startInfo = new ProcessStartInfo();
       startInfo.FileName = @"C:\PresentMonLauncher\PresentMon64.exe";
