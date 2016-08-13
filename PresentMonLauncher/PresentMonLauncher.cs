@@ -84,7 +84,7 @@ namespace PresentMonLauncher
         return; // Added return here to ensure that the program does not continue needlessly.
                 // Props to whomever added this code block.
       }
-
+            MessageBox.Show(textstring);
 
       ProcessStartInfo startInfo = new ProcessStartInfo();
       startInfo.FileName = @"C:\PresentMonLauncher\PresentMon64.exe";
@@ -380,28 +380,31 @@ namespace PresentMonLauncher
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Create dialog info.
-            OpenFileDialog ofdialog = new OpenFileDialog();
-            ofdialog.Filter = "Comma Separated Values|*.csv";
-            ofdialog.Title = "Save PresentMon Data";
+            SaveFileDialog sfdialog = new SaveFileDialog();
+            sfdialog.Filter = "Comma Seperated Values|*.csv";
+            sfdialog.Title = "Save Output File";
 
-            // Save user input data.
-            string open_file = "";
-            string fileNameNoExtension = string.Empty;
-            // Show open file dialog.
-            DialogResult save_cancel = ofdialog.ShowDialog();
+            if (Directory.Exists(Path.Combine(Application.StartupPath)))
+                sfdialog.InitialDirectory = Path.Combine(Application.StartupPath);
 
-            // If "OK" then save file name,
-            // Else exit function.
+            string save_to = "";
+            string fileName = string.Empty;
+            DialogResult save_cancel = sfdialog.ShowDialog();
+
             if (save_cancel == DialogResult.OK)
-                open_file = ofdialog.FileName;
+                save_to = sfdialog.FileName;
             else
                 return;
 
+            if (File.Exists(save_to))
+                File.Delete(save_to);
 
-            fileNameNoExtension = Path.GetFileNameWithoutExtension(open_file);
+            // Will overwrite.
 
-            outputfile.Text = fileNameNoExtension;
+
+            fileName = Path.GetDirectoryName(save_to) + "\\" + Path.GetFileName(save_to);
+
+            outputfile.Text = fileName;
 
             
         }
@@ -415,7 +418,7 @@ namespace PresentMonLauncher
 
             // Save user input data.
             string open_file = "";
-            string fileNameNoExtension = string.Empty;
+            string fileName = string.Empty;
             // Show open file dialog.
             DialogResult save_cancel = ofdialog.ShowDialog();
 
@@ -427,9 +430,9 @@ namespace PresentMonLauncher
                 return;
 
 
-            fileNameNoExtension = Path.GetFileNameWithoutExtension(open_file);
+            fileName = Path.GetDirectoryName(open_file) + "\\" + Path.GetFileName(open_file);
 
-            etlfile.Text = fileNameNoExtension;
+            etlfile.Text = fileName;
         }
     }
 }
