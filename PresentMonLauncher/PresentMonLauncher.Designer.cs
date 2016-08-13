@@ -177,7 +177,7 @@
             // 
             // refresh
             // 
-            this.refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refresh.Location = new System.Drawing.Point(415, 12);
             this.refresh.Name = "refresh";
             this.refresh.Size = new System.Drawing.Size(95, 25);
@@ -189,7 +189,7 @@
             // 
             // openfolder
             // 
-            this.openfolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.openfolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.openfolder.Location = new System.Drawing.Point(513, 12);
             this.openfolder.Name = "openfolder";
             this.openfolder.Size = new System.Drawing.Size(95, 25);
