@@ -372,7 +372,7 @@ namespace PresentMonLauncher
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Override the default output path.");
+            MessageBox.Show("Override the default output path." + Environment.NewLine + Environment.NewLine + "CSV Column Explanations" + Environment.NewLine + "-Dropped: boolean indication. 1 = dropped, 0 = displayed" + Environment.NewLine + "-MSBetweenPresents: time between this Present() API call and the previous one." + Environment.NewLine + "-MsBetweenDisplayChange: time between when this frame was displayed and the previous was displayed." + Environment.NewLine + "-MsInPresentAPI: time spend inside the Present() API call." + Environment.NewLine + "-MsUntilRenderComplete: time between present start and GPU work completion." + Environment.NewLine + "-MsUntilDisplayed: time between present start and frame display.");
         }
 
         private void button4_Click(object sender, EventArgs e)
