@@ -55,14 +55,14 @@
             this.time_updown = new System.Windows.Forms.NumericUpDown();
             this.exclude = new System.Windows.Forms.CheckBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.outputcheck = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.etlbutton = new System.Windows.Forms.Button();
-            this.etlcheck = new System.Windows.Forms.CheckBox();
             this.etlfile = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
+            this.outputcheck = new System.Windows.Forms.CheckBox();
+            this.etlcheck = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -352,28 +352,6 @@
             this.exclude.Text = "Exclude Dropped";
             this.exclude.UseVisualStyleBackColor = true;
             // 
-            // linkLabel4
-            // 
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel4.Location = new System.Drawing.Point(538, 333);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(102, 13);
-            this.linkLabel4.TabIndex = 44;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "Daniel Holtzclaw";
-            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
-            // 
-            // outputcheck
-            // 
-            this.outputcheck.AutoSize = true;
-            this.outputcheck.Location = new System.Drawing.Point(12, 252);
-            this.outputcheck.Name = "outputcheck";
-            this.outputcheck.Size = new System.Drawing.Size(80, 17);
-            this.outputcheck.TabIndex = 45;
-            this.outputcheck.Text = "Output File:";
-            this.outputcheck.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -397,16 +375,6 @@
             this.toolTip1.SetToolTip(this.etlbutton, "Open in Windows Explorer.");
             this.etlbutton.UseVisualStyleBackColor = true;
             this.etlbutton.Click += new System.EventHandler(this.etlbutton_Click);
-            // 
-            // etlcheck
-            // 
-            this.etlcheck.AutoSize = true;
-            this.etlcheck.Location = new System.Drawing.Point(12, 301);
-            this.etlcheck.Name = "etlcheck";
-            this.etlcheck.Size = new System.Drawing.Size(65, 17);
-            this.etlcheck.TabIndex = 48;
-            this.etlcheck.Text = "ETL File";
-            this.etlcheck.UseVisualStyleBackColor = true;
             // 
             // etlfile
             // 
@@ -439,6 +407,38 @@
             this.toolTip1.SetToolTip(this.button4, "Open in Windows Explorer.");
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // linkLabel4
+            // 
+            this.linkLabel4.AutoSize = true;
+            this.linkLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel4.Location = new System.Drawing.Point(538, 333);
+            this.linkLabel4.Name = "linkLabel4";
+            this.linkLabel4.Size = new System.Drawing.Size(102, 13);
+            this.linkLabel4.TabIndex = 44;
+            this.linkLabel4.TabStop = true;
+            this.linkLabel4.Text = "Daniel Holtzclaw";
+            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
+            // 
+            // outputcheck
+            // 
+            this.outputcheck.AutoSize = true;
+            this.outputcheck.Location = new System.Drawing.Point(12, 252);
+            this.outputcheck.Name = "outputcheck";
+            this.outputcheck.Size = new System.Drawing.Size(80, 17);
+            this.outputcheck.TabIndex = 45;
+            this.outputcheck.Text = "Output File:";
+            this.outputcheck.UseVisualStyleBackColor = true;
+            // 
+            // etlcheck
+            // 
+            this.etlcheck.AutoSize = true;
+            this.etlcheck.Location = new System.Drawing.Point(12, 301);
+            this.etlcheck.Name = "etlcheck";
+            this.etlcheck.Size = new System.Drawing.Size(65, 17);
+            this.etlcheck.TabIndex = 48;
+            this.etlcheck.Text = "ETL File";
+            this.etlcheck.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -520,7 +520,7 @@
             this.MaximizeBox = false;
             this.Name = "PresentMonLauncher";
             this.ShowIcon = false;
-            this.Text = "PresentMonLauncher V0.4A";
+            this.Text = "PresentMonLauncher V0.5A";
             ((System.ComponentModel.ISupportInitialize)(this.delay_updown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.time_updown)).EndInit();
             this.panel2.ResumeLayout(false);

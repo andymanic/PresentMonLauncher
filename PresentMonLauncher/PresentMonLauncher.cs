@@ -244,7 +244,7 @@ namespace PresentMonLauncher
           write_stream.WriteLine("Time: " + (int)time_updown.Value);
 
         if (delay_updown.Value > 0)
-          write_stream.WriteLine("Delay: " + (int)time_updown.Value);
+          write_stream.WriteLine("Delay: " + (int)delay_updown.Value);
 
         if (!string.IsNullOrEmpty(outputfile.Text))
           write_stream.WriteLine("Flags: " + outputfile.Text);
