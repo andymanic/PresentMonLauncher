@@ -50,6 +50,7 @@ namespace PresentMonLauncher
       directory_label.Text += Directory.GetCurrentDirectory();
       backup_dir = Directory.GetCurrentDirectory();
       refreshList();
+      ReadHWInfo();
     }
 
 
@@ -482,7 +483,39 @@ namespace PresentMonLauncher
 
       refreshList();
     }
-  }
+        public void ReadHWInfo()
+        {
+            string open_file = "";
+            open_file = Path.Combine(Application.StartupPath) + "//HWInfo.txt";
+            StreamReader read_stream = new StreamReader(File.OpenRead(open_file));
+            string GPU;
+            string res;
+            string line;
+
+            while (!read_stream.EndOfStream)
+            {
+                line = read_stream.ReadLine();
+                if(line.Contains("DeviceName: "))
+                {
+                    GPU = line;
+                    string GPUName = GPU.Replace("   DeviceName: ", string.Empty);
+                    gpu_textbox.Text = GPUName;
+                }
+                else if(line.Contains("VideoModeDescription: "))
+                {
+                    res = line;
+                    string Resolution = res.Remove(0,25);
+                    char[] MyChar = {  '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'c', 'o', 'l', 's', 'r', ' ' };
+                    string restrim = Resolution.TrimEnd(MyChar);
+                    char[] MyChar2 = { 'x', ' ' };
+                    string resfinal = restrim.TrimEnd(MyChar2);
+                    resolution_textbox.Text = resfinal;
+                }
+            }
+             
+
+        }
+    }
   
   public class BenchFile
     {

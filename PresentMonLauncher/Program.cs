@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Management;
+using System.Management.Instrumentation;
 
 namespace PresentMonLauncher
 {
@@ -46,96 +48,210 @@ namespace PresentMonLauncher
       default_config_directory = AppDomain.CurrentDomain.BaseDirectory + @"config\",
       psm_path = AppDomain.CurrentDomain.BaseDirectory + @"path.cfg";
 
-    /// <summary>
-    /// The main entry point for the application.
-    /// </summary>
-    [STAThread]
-    static void Main()
-    {
-      //These always need to run before there's any kind of window,
-      //  else SetCompatibleTextRenderingDefault will except.
-      Application.EnableVisualStyles();
-      Application.SetCompatibleTextRenderingDefault(false);
-
-      string temp_path = "";
-
-      // If (PresentMon64.exe not found where this executable is), in essence.
-      //  Prompt user for a folder to look in.
-      // else run normally.
-      if (Directory.GetFiles(app_location, "PresentMon64.exe").Length == 0)
-      {
-        // Look for path.cfg
-        bool no_path = Directory.GetFiles(app_location, @"path.cfg").Length == 0;
-        // Control variable.
-        bool file_found = false;
-
-
-        if (!no_path)
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
         {
-          using (StreamReader read_stream = new StreamReader(File.OpenRead(psm_path)))
-          {
-            temp_path = read_stream.ReadLine();
+            //These always need to run before there's any kind of window,
+            //  else SetCompatibleTextRenderingDefault will except.
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
 
-            if (!Directory.Exists(temp_path))
-              no_path = true;
-            else
+            string temp_path = "";
+
+            // If (PresentMon64.exe not found where this executable is), in essence.
+            //  Prompt user for a folder to look in.
+            // else run normally.
+            if (Directory.GetFiles(app_location, "PresentMon64.exe").Length == 0)
             {
-              Directory.SetCurrentDirectory(temp_path);
-              file_found = Directory.GetFiles(temp_path, "PresentMon64.exe").Length != 0;
+                // Look for path.cfg
+                bool no_path = Directory.GetFiles(app_location, @"path.cfg").Length == 0;
+                // Control variable.
+                bool file_found = false;
+
+
+                if (!no_path)
+                {
+                    using (StreamReader read_stream = new StreamReader(File.OpenRead(psm_path)))
+                    {
+                        temp_path = read_stream.ReadLine();
+
+                        if (!Directory.Exists(temp_path))
+                            no_path = true;
+                        else
+                        {
+                            Directory.SetCurrentDirectory(temp_path);
+                            file_found = Directory.GetFiles(temp_path, "PresentMon64.exe").Length != 0;
+                        }
+
+                        read_stream.Close();
+                    }
+                }
+
+
+                while (!file_found)
+                {
+                    // Alert the user.
+                    MessageBox.Show("PresentMon64.exe not found.");
+
+                    // Prompt them for a new folder to look in.
+                    FolderBrowserDialog folder_browser = new FolderBrowserDialog();
+
+                    // Store the button click (if they clicked OK, Cancel, et al.)
+                    DialogResult diag_result = folder_browser.ShowDialog();
+
+                    // If the user clicked OK (clicking anything else will restart the loop).
+                    if (diag_result == DialogResult.OK)
+                    {
+                        // If found, exit loop. Else keep looping.
+                        if (Directory.GetFiles(folder_browser.SelectedPath, "PresentMon64.exe").Length != 0)
+                        {
+                            // Set the new directory.
+                            Directory.SetCurrentDirectory(folder_browser.SelectedPath);
+                            file_found = true;
+
+                            // Write to file.
+                            File.Delete(psm_path);
+                            using (StreamWriter sw = new StreamWriter(new FileStream(psm_path, FileMode.Create, FileAccess.Write)))
+                            {
+                                sw.WriteLine(Directory.GetCurrentDirectory());
+                                sw.Close();
+                            }
+                            no_path = false;
+                        }
+                    }
+                    // Makes PresentMon a dependency.
+                    else
+                        return;
+                }
+
+                if (no_path)
+                    File.Create(psm_path);
             }
+            // If PresentMon64.exe IS found then it will continue as normal.
 
-            read_stream.Close();
-          }
+            // Set the working Directory to the default PresentMon location
+            if (!Directory.Exists(default_config_directory))
+                Directory.CreateDirectory(default_config_directory);
+
+            //Collect system info and store in a .txt file
+            HWInfo();
+
+            // Run the Launcher.
+            Application.Run(new PresentMonLauncher());
         }
- 
-
-        while (!file_found)
+        public static void HWInfo()
         {
-          // Alert the user.
-          MessageBox.Show("PresentMon64.exe not found.");
+            //Code from Daniel T. Holtzclaw's "DeviceRegister" application.
 
-          // Prompt them for a new folder to look in.
-          FolderBrowserDialog folder_browser = new FolderBrowserDialog();
+            string save_to = "";
+            save_to = Path.Combine(Application.StartupPath) + "//HWinfo.txt";
+            
+            if (File.Exists(save_to))
+                File.Delete(save_to);
 
-          // Store the button click (if they clicked OK, Cancel, et al.)
-          DialogResult diag_result = folder_browser.ShowDialog();
-
-          // If the user clicked OK (clicking anything else will restart the loop).
-          if (diag_result == DialogResult.OK)
-          {
-            // If found, exit loop. Else keep looping.
-            if (Directory.GetFiles(folder_browser.SelectedPath, "PresentMon64.exe").Length != 0)
+            // Will overwrite.
+            using (FileStream fs = File.Open(save_to, FileMode.Create))
             {
-              // Set the new directory.
-              Directory.SetCurrentDirectory(folder_browser.SelectedPath);
-              file_found = true;
+                StreamWriter write_stream = new StreamWriter(fs);
 
-              // Write to file.
-              File.Delete(psm_path);
-              using (StreamWriter sw = new StreamWriter(new FileStream(psm_path, FileMode.Create, FileAccess.Write)))
-              {
-                sw.WriteLine(Directory.GetCurrentDirectory());
-                sw.Close();
-              }
-              no_path = false;
+
+
+                //Logical Disks = "Win32_LogicalDisk"
+                //Processes = "Win32_Process"
+                //Processors = "Win32_Processor"
+                //Graphics = "Win32_DisplayConfiguration"
+                //??? = "Win32_Account"
+                //??? = "Win32_AllocatedResource"
+                //??? = "Win32_BootConfiguration"
+                //??? = "Win32_ClassCOMApplicationClasses"
+
+                //CONSULT: https://msdn.microsoft.com/en-us/library/dn792258%28v=vs.85%29.aspx
+
+                //Logical Disks
+                
+
+                //CPU's
+                ManagementObjectCollection cpu_collection = new ManagementClass(new ManagementPath("Win32_Processor")).GetInstances();
+                //Graphics
+                ManagementObjectCollection gpu_collection = new ManagementClass(new ManagementPath("Win32_DisplayConfiguration")).GetInstances();
+                //Graphics take two
+                ManagementObjectCollection gpu_controller = new ManagementClass(new ManagementPath("Win32_VideoController")).GetInstances();
+
+
+                int count = 0;
+
+                
+
+                write_stream.WriteLine("\n\n\nPROCESS-----------------------------------------");
+                count = 0;
+                foreach (ManagementObject obj in cpu_collection)
+                {
+                    PropertyDataCollection prop_collection = obj.Properties;
+                    write_stream.WriteLine("Processor: " + count++);
+                    foreach (PropertyData data in prop_collection)
+                    {
+                        if (data != null)
+                        {
+                            //if (data.Value != null)
+                            // {
+                            //if (!String.IsNullOrEmpty(data.Value.ToString()))
+                            write_stream.WriteLine("   " + data.Name + ": " + data.Value);
+                            //}
+                        }
+                    }
+                    write_stream.WriteLine();
+                }
+
+                write_stream.WriteLine("\n\n\nGRAPHICS-----------------------------------------");
+                count = 0;
+                foreach (ManagementObject obj in gpu_collection)
+                {
+                    PropertyDataCollection prop_collection = obj.Properties;
+                    write_stream.WriteLine("GPU: " + count++);
+                    foreach (PropertyData data in prop_collection)
+                    {
+                        if (data != null)
+                        {
+                            //if (data.Value != null)
+                            //{
+                            //if (!String.IsNullOrEmpty(data.Value.ToString()))
+                            write_stream.WriteLine("   " + data.Name + ": " + data.Value);
+                            //}
+                        }
+                    }
+                    write_stream.WriteLine();
+                }
+
+                write_stream.WriteLine("\n\n\nGRAPHICS Controller----------------------------------");
+                count = 0;
+                foreach (ManagementObject obj in gpu_controller)
+                {
+                    PropertyDataCollection prop_collection = obj.Properties;
+                    write_stream.WriteLine("GPU: " + count++);
+                    foreach (PropertyData data in prop_collection)
+                    {
+                        if (data != null)
+                        {
+                            //if (data.Value != null)
+                            //{
+                            //if (!String.IsNullOrEmpty(data.Value.ToString()))
+                            write_stream.WriteLine("   " + data.Name + ": " + data.Value);
+                            //}
+                        }
+                    }
+                    write_stream.WriteLine();
+                }
+
+                write_stream.Close();
+
+                cpu_collection.Dispose();
+                gpu_collection.Dispose();
+                
             }
-          }
-          // Makes PresentMon a dependency.
-          else
-            return;
         }
-
-        if (no_path)
-          File.Create(psm_path);
-      }
-      // If PresentMon64.exe IS found then it will continue as normal.
-
-      // Set the working Directory to the default PresentMon location
-      if (!Directory.Exists(default_config_directory))
-        Directory.CreateDirectory(default_config_directory);
-
-      // Run the Launcher.
-      Application.Run(new PresentMonLauncher());
     }
-  }
+    
 }
