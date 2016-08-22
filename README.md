@@ -9,6 +9,7 @@ Installer includes a built copy of PresentMon already, along with all supporting
 A big thanks the contributors on this project:
 
 Daniel T. Holtzclaw | https://sites.google.com/site/danielscompendium/pro 
+ 
 Christopher Foltz | https://github.com/h0rnman | https://veryposh.wordpress.com/
 
 Original concept by: Andrew McDonald | http://techteamgb.co.uk/ | http://www.techteamgb.com
