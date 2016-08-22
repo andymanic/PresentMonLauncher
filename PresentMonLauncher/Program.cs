@@ -47,13 +47,14 @@ namespace PresentMonLauncher
       app_location = AppDomain.CurrentDomain.BaseDirectory,
       default_config_directory = AppDomain.CurrentDomain.BaseDirectory + @"config\",
       psm_path = AppDomain.CurrentDomain.BaseDirectory + @"path.cfg";
-
+       static string VersionNumber = "V0.6";
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
+            
             //These always need to run before there's any kind of window,
             //  else SetCompatibleTextRenderingDefault will except.
             Application.EnableVisualStyles();
@@ -135,6 +136,10 @@ namespace PresentMonLauncher
             // Set the working Directory to the default PresentMon location
             if (!Directory.Exists(default_config_directory))
                 Directory.CreateDirectory(default_config_directory);
+
+            //Check version number
+            VersionNo();
+            
 
             //Collect system info and store in a .txt file
             HWInfo();
@@ -251,6 +256,23 @@ namespace PresentMonLauncher
                 gpu_collection.Dispose();
                 
             }
+        }
+        public static void VersionNo()
+        {
+            System.Net.WebClient wc = new System.Net.WebClient();
+            byte[] raw = wc.DownloadData("https://raw.githubusercontent.com/andymanic/PresentMonLauncher/master/VersionNo.txt");
+
+            string VNo = System.Text.Encoding.UTF8.GetString(raw);
+            if (VNo != VersionNumber)
+            {
+                if(MessageBox.Show("Update available, visit download page?", "Update Available", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+                {
+                    System.Diagnostics.Process.Start("https://github.com/andymanic/PresentMonLauncher/blob/master/PresentMonLauncher%20Installer.exe");
+                    return;
+                }
+                return;
+            }
+
         }
     }
     
