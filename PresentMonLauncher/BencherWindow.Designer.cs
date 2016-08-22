@@ -40,9 +40,7 @@
             this.refresh_list_button = new System.Windows.Forms.Button();
             this.status_label = new System.Windows.Forms.Label();
             this.gpu_label = new System.Windows.Forms.Label();
-            this.gpu_textbox = new System.Windows.Forms.TextBox();
             this.resolution_label = new System.Windows.Forms.Label();
-            this.resolution_textbox = new System.Windows.Forms.TextBox();
             this.save_results_button = new System.Windows.Forms.Button();
             this.open_folder_button = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -77,6 +75,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmb_Resolutions = new System.Windows.Forms.ComboBox();
+            this.cmb_GPUs = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,7 +95,6 @@
             this.file_listbox.FormattingEnabled = true;
             this.file_listbox.Location = new System.Drawing.Point(16, 30);
             this.file_listbox.Name = "file_listbox";
-            this.file_listbox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.file_listbox.Size = new System.Drawing.Size(482, 160);
             this.file_listbox.Sorted = true;
             this.file_listbox.TabIndex = 1;
@@ -189,14 +188,6 @@
             this.gpu_label.TabIndex = 10;
             this.gpu_label.Text = "GPU:";
             // 
-            // gpu_textbox
-            // 
-            this.gpu_textbox.Location = new System.Drawing.Point(52, 196);
-            this.gpu_textbox.Name = "gpu_textbox";
-            this.gpu_textbox.Size = new System.Drawing.Size(195, 20);
-            this.gpu_textbox.TabIndex = 11;
-            this.toolTip1.SetToolTip(this.gpu_textbox, "Type the name of the GPU used to be saved with Min/Max/AVG FPS in MinMaxAVG.txt.");
-            // 
             // resolution_label
             // 
             this.resolution_label.AutoSize = true;
@@ -205,14 +196,6 @@
             this.resolution_label.Size = new System.Drawing.Size(60, 13);
             this.resolution_label.TabIndex = 12;
             this.resolution_label.Text = "Resolution:";
-            // 
-            // resolution_textbox
-            // 
-            this.resolution_textbox.Location = new System.Drawing.Point(319, 196);
-            this.resolution_textbox.Name = "resolution_textbox";
-            this.resolution_textbox.Size = new System.Drawing.Size(179, 20);
-            this.resolution_textbox.TabIndex = 13;
-            this.toolTip1.SetToolTip(this.resolution_textbox, "Type the resolution used to be saved with Min/Max/AVG FPS in MinMaxAVG.txt");
             // 
             // save_results_button
             // 
@@ -506,11 +489,106 @@
             this.panel1.Size = new System.Drawing.Size(623, 179);
             this.panel1.TabIndex = 46;
             // 
+            // cmb_Resolutions
+            // 
+            this.cmb_Resolutions.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_Resolutions.FormattingEnabled = true;
+            this.cmb_Resolutions.Items.AddRange(new object[] {
+            "---- 4:3 ----",
+            "800x600",
+            "1024x768",
+            "1152x864",
+            "1600x1200",
+            "---- 16:9 ----",
+            "1280x720",
+            "1366x768",
+            "1600x900",
+            "1920x1080",
+            "2560x1440",
+            "3840x2160",
+            "---- 16:10 ----",
+            "1280x800",
+            "1440x900",
+            "1680x1050",
+            "1920x1200",
+            "2560x1600"});
+            this.cmb_Resolutions.Location = new System.Drawing.Point(319, 196);
+            this.cmb_Resolutions.Name = "cmb_Resolutions";
+            this.cmb_Resolutions.Size = new System.Drawing.Size(179, 21);
+            this.cmb_Resolutions.TabIndex = 47;
+            this.cmb_Resolutions.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cmb_Resolutions_DrawItem);
+            this.cmb_Resolutions.SelectedIndexChanged += new System.EventHandler(this.cmb_Resolutions_SelectedIndexChanged);
+            // 
+            // cmb_GPUs
+            // 
+            this.cmb_GPUs.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_GPUs.FormattingEnabled = true;
+            this.cmb_GPUs.Items.AddRange(new object[] {
+            "---- AMD ----",
+            "Radeon HD 7700",
+            "Radeon HD 7800",
+            "Radeon HD 7900",
+            "Radeon HD 7990",
+            "Radeon R9 270",
+            "Radeon R9 270X",
+            "Radeon R9 280",
+            "Radeon R9 280X",
+            "Radeon R9 285",
+            "Radeon R9 290",
+            "Radeon R9 290X",
+            "Radeon R9 295X2",
+            "Radeon R9 380",
+            "​Radeon R9 380X",
+            "Radeon R9 390",
+            "Radeon R9 390X",
+            "Radeon R9 Fury",
+            "Radeon R9 Fury X",
+            "Radeon R9 Nano",
+            "Radeon RX 460",
+            "Radeon RX 470",
+            "Radeon RX 480",
+            "---- Intel ----",
+            "HD3000",
+            "HD4000",
+            "HD5000",
+            "---- Nvidia ----",
+            "GTX 660",
+            "GTX 660ti",
+            "GTX 670",
+            "GTX 680",
+            "GTX 680",
+            "GTX 750ti",
+            "GTX 760",
+            "GTX 770",
+            "GTX 780",
+            "GTX 780ti",
+            "GTX Titan (GK110)",
+            "GTX Titan Black (GK110)",
+            "GTX Titan Z (GK110)",
+            "GTX 950",
+            "GTX 960",
+            "GTX 970",
+            "GTX 980",
+            "GTX 980ti",
+            "GTX Titan X (GM200)",
+            "GTX 1060",
+            "GTX 1070",
+            "GTX 1080",
+            "GTX Titan X (GP102-400)"});
+            this.cmb_GPUs.Location = new System.Drawing.Point(52, 196);
+            this.cmb_GPUs.Name = "cmb_GPUs";
+            this.cmb_GPUs.Size = new System.Drawing.Size(195, 21);
+            this.cmb_GPUs.TabIndex = 48;
+            this.cmb_GPUs.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cmb_GPUs_DrawItem);
+            this.cmb_GPUs.SelectedIndexChanged += new System.EventHandler(this.cmb_GPUs_SelectedIndexChanged);
+            // 
             // BencherWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(639, 438);
+            this.Controls.Add(this.cmb_GPUs);
+            this.Controls.Add(this.cmb_Resolutions);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label13);
@@ -540,9 +618,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.open_folder_button);
             this.Controls.Add(this.save_results_button);
-            this.Controls.Add(this.resolution_textbox);
             this.Controls.Add(this.resolution_label);
-            this.Controls.Add(this.gpu_textbox);
             this.Controls.Add(this.gpu_label);
             this.Controls.Add(this.status_label);
             this.Controls.Add(this.refresh_list_button);
@@ -581,9 +657,7 @@
     private System.Windows.Forms.Button refresh_list_button;
     private System.Windows.Forms.Label status_label;
     private System.Windows.Forms.Label gpu_label;
-    private System.Windows.Forms.TextBox gpu_textbox;
     private System.Windows.Forms.Label resolution_label;
-    private System.Windows.Forms.TextBox resolution_textbox;
     private System.Windows.Forms.Button save_results_button;
     private System.Windows.Forms.Button open_folder_button;
     private System.Windows.Forms.ToolTip toolTip1;
@@ -618,5 +692,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox cmb_Resolutions;
+        private System.Windows.Forms.ComboBox cmb_GPUs;
     }
 }
