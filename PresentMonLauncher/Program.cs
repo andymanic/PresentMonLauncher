@@ -47,7 +47,7 @@ namespace PresentMonLauncher
       app_location = AppDomain.CurrentDomain.BaseDirectory,
       default_config_directory = AppDomain.CurrentDomain.BaseDirectory + @"config\",
       psm_path = AppDomain.CurrentDomain.BaseDirectory + @"path.cfg";
-       static string VersionNumber = "V0.6";
+        static double VersionNumber = 0.6;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -263,7 +263,8 @@ namespace PresentMonLauncher
             byte[] raw = wc.DownloadData("https://raw.githubusercontent.com/andymanic/PresentMonLauncher/master/VersionNo.txt");
 
             string VNo = System.Text.Encoding.UTF8.GetString(raw);
-            if (VNo != VersionNumber)
+            double Vnum = Convert.ToDouble(VNo);
+            if (Vnum != VersionNumber)
             {
                 if(MessageBox.Show("Update available, visit download page?", "Update Available", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
                 {
