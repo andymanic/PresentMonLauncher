@@ -2,7 +2,16 @@
 
 IMPORTANT: Make sure to run the launcher after opening the game, PresentMon doesn't seem to like being run before the game is loaded.
 
-If you are doing clean pulls of the source files, you'll need to add references to the ETW library manually.
+External packages are excluded by the .gitignore file.  You will need to manually install the following NuGet packages:
+
+*  Microsoft.Diagnostics.Tracing.TraceEvent
+*  Microsoft.Diagnostics.Tracing.TraceEventSamples
+*  Newtonsoft.Json
+*  Rx-Core
+*  Rx-Interfaces
+*  Rx-Linq
+*  Rx-Main
+*  Rx-PlatformServices
 
 You should now be able to install this anywhere and it will find itself just fine. C:\PresentMonLauncher is still recommended for easy access/updating, but now not required.
 
