@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
+using Newtonsoft.Json.Linq;
 
 namespace PresentMonLauncher
 {
@@ -22,15 +23,14 @@ namespace PresentMonLauncher
     string textstring = "";
     string workingdir = "";
     bool restoring = false;
+    List<GameData> games = new List<GameData>();
+    string GameDataFile = Path.Combine(Application.StartupPath, Properties.Settings.Default.GameDataFile);
 
     public PresentMonLauncher()
     {
       InitializeComponent();
-      Process[] processlist = Process.GetProcesses();
-
-      foreach (Process theprocess in processlist)
-        process_list.Items.Add(theprocess.ProcessName);
-
+      LoadGameData();
+      GenerateProcessList(process_list);
       loadConfigs();
     }
 
@@ -120,14 +120,91 @@ namespace PresentMonLauncher
 
     private void refresh_Click(object sender, EventArgs e)
     {
-      process_list.Items.Clear();
-
-      Process[] processlist = Process.GetProcesses();
-
-      foreach (Process theprocess in processlist)
-        process_list.Items.Add(theprocess.ProcessName);
+      GenerateProcessList(process_list);
     }
+    
+    private void LoadGameData()
+        {
+            if (File.Exists(GameDataFile))
+            {
+                string jsonData = File.ReadAllText(GameDataFile);
+                JArray parsedJson = JArray.Parse(jsonData);
 
+                foreach (var item in parsedJson)
+                {
+                    GameData thisGame = new GameData();
+                    thisGame.Name = item["Name"].ToString();
+                    thisGame.Executable = item["Exe"].ToString().Substring(0, item["Exe"].ToString().Length - 4);
+                    switch (item["Engine"].ToString())
+                    {
+                        case "DirectX9":
+                            thisGame.Engine = API.DirectX9;
+                            break;
+                        case "DirectX10":
+                            thisGame.Engine = API.DirectX10;
+                            break;
+                        case "DirectX11":
+                            thisGame.Engine = API.DirectX11;
+                            break;
+                        case "DirectX12":
+                            thisGame.Engine = API.DirectX12;
+                            break;
+                        case "OpenGL":
+                            thisGame.Engine = API.OpenGL;
+                            break;
+                        case "Vulkan":
+                            thisGame.Engine = API.Vulkan;
+                            break;
+                        case "Unknown":
+                            thisGame.Engine = API.Unknown;
+                            break;
+                        default:
+                            thisGame.Engine = API.Unknown;
+                            break;
+                    }
+                    games.Add(thisGame);
+                }
+            }
+        }
+
+    private void GenerateProcessList(CheckedListBox target)
+        {
+            List<string> ProcessNames = new List<string>();
+            bool foundRunningApplication = false;
+            
+            target.Items.Clear();
+
+            foreach (Process p in Process.GetProcesses())
+            {
+                ProcessNames.Add(p.ProcessName);
+            }
+
+            ProcessNames.Sort();
+
+            if (games.Count > 0)
+            {
+                foreach (GameData game in games)
+                {
+                    if (ProcessNames.Contains(game.Executable))
+                    {
+                        ProcessNames.Remove(game.Executable);
+                        ProcessNames.Insert(0, game.Executable);
+                        foundRunningApplication = true;
+                    }
+                }
+            }
+
+            foreach (string item in ProcessNames)
+            {
+                target.Items.Add(item);
+            }
+
+            if (foundRunningApplication)
+            {
+                target.SetItemCheckState(0, CheckState.Checked);
+            }
+
+        }
 
     private void openfolder_Click(object sender, EventArgs e)
     {

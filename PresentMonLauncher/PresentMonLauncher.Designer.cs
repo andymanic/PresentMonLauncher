@@ -114,7 +114,6 @@
             this.process_list.Name = "process_list";
             this.process_list.ScrollAlwaysVisible = true;
             this.process_list.Size = new System.Drawing.Size(385, 154);
-            this.process_list.Sorted = true;
             this.process_list.TabIndex = 9;
             this.toolTip1.SetToolTip(this.process_list, "Available processes.");
             this.process_list.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.process_list_ItemCheck);
