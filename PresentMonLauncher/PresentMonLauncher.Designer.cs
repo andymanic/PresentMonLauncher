@@ -519,7 +519,7 @@
             this.MaximizeBox = false;
             this.Name = "PresentMonLauncher";
             this.ShowIcon = false;
-            this.Text = "PresentMonLauncher V0.6A";
+            this.Text = "PresentMonLauncher V0.7A";
             ((System.ComponentModel.ISupportInitialize)(this.delay_updown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.time_updown)).EndInit();
             this.panel2.ResumeLayout(false);
