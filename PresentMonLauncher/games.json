@@ -584,6 +584,16 @@
         "Exe":  "dontstarve_steam.exe",
         "Engine":  ""
     },
+	{
+		"Name":  "Doom (OGL)",
+		"Exe":  "Doomx64.exe",
+		"Engine":  "OpenGL"
+	},
+	{
+		"Name":  "Doom (Vulkan)",
+		"Exe":  "Doomx64vk.exe",
+		"Engine": "Vulkan"
+	},
     {
         "Name":  "DOTA",
         "Exe":  "dota.exe",
