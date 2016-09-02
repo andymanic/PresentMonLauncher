@@ -774,6 +774,11 @@
         "Exe":  "FalloutNV.exe",
         "Engine":  ""
     },
+	{
+		"Name": "Fallout 4",
+		"Exe": "Fallout4.exe",
+		"Engine": ""
+	},
     {
         "Name":  "Far Cry 2",
         "Exe":  "FarCry2.exe",

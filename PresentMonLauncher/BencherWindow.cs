@@ -135,14 +135,13 @@ namespace PresentMonLauncher
             //   will use the first word.
             string run_info = "";
 
-            if (!string.IsNullOrEmpty(cmb_GPUs.SelectedItem.ToString()))
-                run_info += cmb_GPUs.Text + ", ";
-
+            if (!string.IsNullOrEmpty(cmb_GPUs.Text))
+                run_info += cmb_GPUs.Text.Trim() + ", ";
             // Grab the first word.
             run_info += file_listbox.SelectedItem.ToString().Split(' ')[0];
 
-            if (!string.IsNullOrEmpty(cmb_Resolutions.SelectedItem.ToString()))
-                run_info += ", " + cmb_Resolutions.Text;
+            if (!string.IsNullOrEmpty(cmb_Resolutions.Text))
+                run_info += cmb_Resolutions.Text.Trim() + ", ";
 
             min_max_avg = new string[5] { "\n", run_info, "Minimum: " + min_fps, "Maximum: " + max_fps, "\nAverage: " + ave_fps + "\n\n" };
 
