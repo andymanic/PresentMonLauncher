@@ -202,6 +202,7 @@ namespace PresentMonLauncher
             if (foundRunningApplication)
             {
                 target.SetItemCheckState(0, CheckState.Checked);
+				target.SelectedIndex = 0;
             }
 
         }
