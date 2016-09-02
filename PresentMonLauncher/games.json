@@ -1,0 +1,2572 @@
+[
+    {
+        "Name":  "100% Orange Juice",
+        "Exe":  "100orange.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "7DaysToDie",
+        "Exe":  "7DaysToDie.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Assassin\u0027s Creed 3",
+        "Exe":  "AC3SP.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Assassin\u0027s Creed: Brotherhood",
+        "Exe":  "ACBMP.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Asheron\u0027s Call",
+        "Exe":  "acclient.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "War Thunder",
+        "Exe":  "aces.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "AdVenture Capitalist",
+        "Exe":  "adventure-capitalist.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "If My Heart Had Wings",
+        "Exe":  "AdvHD.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Age of Empires II: The Conquerors",
+        "Exe":  "age2_x1.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Age of Empires III",
+        "Exe":  "age3y.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Aion",
+        "Exe":  "aion.bin",
+        "Engine":  ""
+    },
+    {
+        "Name":  "AI War",
+        "Exe":  "AIWar.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Alan Wake\u0027s American Nightmare",
+        "Exe":  "alan_wakes_american_nightmare.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Alan Wake",
+        "Exe":  "AlanWake.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Alien Breed 2: Assault",
+        "Exe":  "AlienBreed2Assault.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Allegiance",
+        "Exe":  "Allegiance.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Alltitude",
+        "Exe":  "altitude.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Amnesia: The Dark Descent",
+        "Exe":  "Amnesia.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Anno 2070",
+        "Exe":  "anno5.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Age of Empires II",
+        "Exe":  "AoK HD.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "APB Reloaded",
+        "Exe":  "APB.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Banished",
+        "Exe":  "Application-x64.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "ArcheAge",
+        "Exe":  "ArcheAge.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "ArmA 2",
+        "Exe":  "arma2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "ArmA 2: Operation Arrowhead",
+        "Exe":  "ArmA2OA.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "ArmA 3",
+        "Exe":  "arma3.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Armored Warfare",
+        "Exe":  "armoredwarfare.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Assetto Corsa",
+        "Exe":  "AssettoCorsa.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "The Vanishing of Ethan Carter",
+        "Exe":  "AstronautsGame-Win64-Shipping.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Total War Attila",
+        "Exe":  "Atilla.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Audiosurf",
+        "Exe":  "audiosurf.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Audiosurf 2",
+        "Exe":  "audiosurf2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Awesomenauts",
+        "Exe":  "Awesomenauts.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Charles Barkley: Shut Up and Jam Gaiden",
+        "Exe":  "BarkleyV120.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Bastion",
+        "Exe":  "Bastion.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Batman Arkham Knight",
+        "Exe":  "BatmanAK.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "BattleBlock Theater",
+        "Exe":  "BattleBlockTheater.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Star Wars Battlefront",
+        "Exe":  "battlefront.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Battle vs Chess",
+        "Exe":  "battlevschess.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Beat Hazard",
+        "Exe":  "BeatHazard.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Bejeweled 3",
+        "Exe":  "bejeweled3.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Besiege",
+        "Exe":  "Besiege.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Battlefield 2",
+        "Exe":  "BF2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Battlefield 3",
+        "Exe":  "bf3.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Battlefield 4",
+        "Exe":  "bf4.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Battlefield: Bad Company 2",
+        "Exe":  "BFBC2Game.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Battlefield Hardline",
+        "Exe":  "bfh.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Go! Go! Nippon! ~My First Trip to Japan~",
+        "Exe":  "BGI.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "The Binding of Isaac",
+        "Exe":  "Binding_of_Isaac.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Bioshock",
+        "Exe":  "Bioshock.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "BioShock II",
+        "Exe":  "Bioshock2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "BioShock Infinite",
+        "Exe":  "BioShockInfinite.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Black Desert Online",
+        "Exe":  "BlackDesert64.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Blockland",
+        "Exe":  "Blockland.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Blood Bowl 2",
+        "Exe":  "BloodBowl2_GL_32.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Boid",
+        "Exe":  "Boid.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Borderlands",
+        "Exe":  "Borderlands.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Borderlands 2",
+        "Exe":  "Borderlands2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Braid",
+        "Exe":  "braid.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Brawlhalla",
+        "Exe":  "Brawlhalla.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Broforce",
+        "Exe":  "broforce_beta.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Brothers - A Tale of Two Sons",
+        "Exe":  "Brothers.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "BBLiT",
+        "Exe":  "Bugs.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Cabal 2",
+        "Exe":  "cabal2main.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Cabal Online",
+        "Exe":  "CabalMain.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Carrier Command Gaea Mission",
+        "Exe":  "carrier.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Castle Crashers",
+        "Exe":  "castle.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Cataclysm: Dark Days Ahead",
+        "Exe":  "cataclysm-tiles.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Poker Night at the Inventory",
+        "Exe":  "CelebrityPoker.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Cities Skylines",
+        "Exe":  "Cities.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Civilization Beyond Earth",
+        "Exe":  "CivilizationBE_Mantle.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Civilization V",
+        "Exe":  "CivilizationV_DX11.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Clicker Heroes",
+        "Exe":  "Clicker Heroes.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Tree of Savior",
+        "Exe":  "Client_tos.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Clonk Rage",
+        "Exe":  "clonk.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Cloudbuilt",
+        "Exe":  "Cloudbuilt.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Call of Duty 2:",
+        "Exe":  "CoD2MP_s.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Call of Duty: World at War",
+        "Exe":  "CoDWaw.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Crysis 4  ",
+        "Exe":  "Crysis.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Crysis 2",
+        "Exe":  "Crysis2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Crysis 3",
+        "Exe":  "Crysis3.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Crysis",
+        "Exe":  "Crysis64.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Counter-Strike: Global Offensive",
+        "Exe":  "csgo.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Cube World",
+        "Exe":  "Cube.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Closers Dimension Conflict",
+        "Exe":  "cw.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Cyphers",
+        "Exe":  "cyphers.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dragon Age: Origins",
+        "Exe":  "daorigins.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Darkest",
+        "Exe":  "Darkest.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Darksiders 2",
+        "Exe":  "Darksiders2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Darksiders",
+        "Exe":  "DarksidersPC.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dark Souls II",
+        "Exe":  "DarkSoulsII.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dark Souls",
+        "Exe":  "DATA.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dangerous Dave",
+        "Exe":  "dave.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Day Z",
+        "Exe":  "dayz.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dragon Ball XenoVerse",
+        "Exe":  "DBXV.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "DC Universe Online",
+        "Exe":  "DCGAME.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "DeadCore",
+        "Exe":  "DeadCore.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dead Island",
+        "Exe":  "DeadIslandGame.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dead Island Riptide",
+        "Exe":  "DeadIslandGame_x86_rwdi.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dead Space 2",
+        "Exe":  "deadspace2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Defcon",
+        "Exe":  "defcon.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Devilian",
+        "Exe":  "Devilian.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Devil May Cry 4",
+        "Exe":  "DeviMayCry4.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Delta Force Black Hawk Down",
+        "Exe":  "dfbhd.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dungeon Fighter Online",
+        "Exe":  "dfo.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Darkfall: Unholy Wars",
+        "Exe":  "dfuw.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Diablo 2",
+        "Exe":  "diablo ii.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Diablo 3",
+        "Exe":  "Diablo III.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Diablo",
+        "Exe":  "diablo.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "DiRT 2",
+        "Exe":  "dirt2_game.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dirt 3 Complete Edition",
+        "Exe":  "dirt3_game.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Robot Roller-Derby Disco Dodgeball",
+        "Exe":  "Disco Dodgeball.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "DmC Devil May Cry",
+        "Exe":  "DMC-DevilMayCry.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dungeon \u0026 Fighter",
+        "Exe":  "DNF.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dofus",
+        "Exe":  "Dofus.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dolphin",
+        "Exe":  "Dolphin.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Don\u0027t Starve Together",
+        "Exe":  "dontstarve_steam.exe",
+        "Engine":  ""
+    },
+	{
+		"Name":  "Doom (OGL)",
+		"Exe":  "DOOMx64.exe",
+		"Engine":  "OpenGL"
+	},
+	{
+		"Name":  "Doom (Vulkan)",
+		"Exe":  "DOOMx64vk.exe",
+		"Engine": "Vulkan"
+	},
+    {
+        "Name":  "DOTA",
+        "Exe":  "dota.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "DOTA 2",
+        "Exe":  "dota2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Magic the Gathering 2014",
+        "Exe":  "DotP_D14.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Double Dragon Neon",
+        "Exe":  "DoubleDragon.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Downwell",
+        "Exe":  "downwell.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dragon Age II",
+        "Exe":  "DragonAge2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dragon Age Inquisition",
+        "Exe":  "DragonAgeInquisition.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dragon Nest",
+        "Exe":  "DragonNest.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dirt Rally",
+        "Exe":  "drt.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Duck Game",
+        "Exe":  "DuckGame.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Duelyst",
+        "Exe":  "Duelyst.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Duke Nukem Forever",
+        "Exe":  "DukeForever.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dungeon Defenders II",
+        "Exe":  "DunDefLauncher.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dungeon of the Endless",
+        "Exe":  "DungeonoftheEndless.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dungeon Souls",
+        "Exe":  "DungeonSouls.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dust: An Elysian Tail",
+        "Exe":  "DustAET.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dustforce",
+        "Exe":  "dustforce.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dwarf Fortress",
+        "Exe":  "Dwarf Fortress.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Deus Ex: Human Revolution",
+        "Exe":  "dxhr.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Deus Ex: Human Revolution - Director\u0027s Cut",
+        "Exe":  "DXHRDC.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "The Legend of Heroes: Trails in the Sky",
+        "Exe":  "ed6_win.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Elite: Dangerous",
+        "Exe":  "EliteDangerous32.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Empire: Total War",
+        "Exe":  "Empire.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Endless Legend",
+        "Exe":  "EndlessLegend.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "F.E.A.R.",
+        "Exe":  "Engine.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Divinity - Original Sin",
+        "Exe":  "EoCApp.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "EverQuest",
+        "Exe":  "eqgame.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "The Elder Scrolls Online",
+        "Exe":  "eso.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "The Vanishing of Ethan Carter Redux",
+        "Exe":  "EthanCarter-Win64-Shipping.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Europa Universalis 4",
+        "Exe":  "eu4.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Euro Truck Simulator 2",
+        "Exe":  "eurotrucks2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "EverQuest II",
+        "Exe":  "EverQuest2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Eve Online",
+        "Exe":  "exefile.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Fable: The Lost Chapters",
+        "Exe":  "fable.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Fallout 3",
+        "Exe":  "fallout3.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Fallout: New Vegas",
+        "Exe":  "FalloutNV.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Far Cry 2",
+        "Exe":  "FarCry2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Far Cry 3",
+        "Exe":  "farcry3.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Farming Simulator 15",
+        "Exe":  "FarmingSimulator2015Game.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "F.E.A.R. 2: Project Origin",
+        "Exe":  "FEAR2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Final Fantasy III",
+        "Exe":  "FF3_Launcher.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Final Fantasy XIII",
+        "Exe":  "ffxiiiimg.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "FINAL FANTASY XIV",
+        "Exe":  "ffxiv.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "FIFA 15",
+        "Exe":  "fifa15.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "FIFA 16",
+        "Exe":  "fifa16.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Final Exam",
+        "Exe":  "final_exam.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Firefall",
+        "Exe":  "FirefallCLient.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Assassin\u0027s Creed IV Black",
+        "Exe":  "FlagAC4BFSP.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Football Manager 2014",
+        "Exe":  "fm.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Freestyle Basketball 2",
+        "Exe":  "FreeStyle2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "From The Depths",
+        "Exe":  "From_The_Depths.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Microsoft Flight Simulator X",
+        "Exe":  "fsx.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "FTL",
+        "Exe":  "FTLGame.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Full Mojo Rampage",
+        "Exe":  "FullMojo.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Tom Clancy\u0027s Ghost Recon: Future Solider",
+        "Exe":  "Future Soldier.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Galactic Civilizations II",
+        "Exe":  "GalCiv2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Galactic Civilization 3",
+        "Exe":  "GalCiv3.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Command \u0026 Conquer: Red Alert 2",
+        "Exe":  "gamemd.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Granado Espada",
+        "Exe":  "ge.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Command \u0026 Conquer Generals: Zero Hour",
+        "Exe":  "generals.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Geometry Wars",
+        "Exe":  "GeometryWars.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Guitar Hero III: Legends of Rock",
+        "Exe":  "gh3.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Guitar Hero World Tour",
+        "Exe":  "GHWT.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Gnomoria",
+        "Exe":  "Gnomoria.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Goat Simulator",
+        "Exe":  "GoatGame-Win32-Shipping.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Grid 2",
+        "Exe":  "grid2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Grow Home",
+        "Exe":  "GrowHome.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Grand Theft Auto: San Andreas",
+        "Exe":  "gta_sa.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Grand Theft Auto 5",
+        "Exe":  "GTA5.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Grand Theft Auto 4",
+        "Exe":  "GTAIV.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Guacamelee",
+        "Exe":  "Guac.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Guild Wars",
+        "Exe":  "Gw.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Guild Wars 2",
+        "Exe":  "gw2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "H1Z1",
+        "Exe":  "H1Z1.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Hammerwatch",
+        "Exe":  "Hammerwatch.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Hatoful Boyfriend",
+        "Exe":  "hatoful.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Hearthstone",
+        "Exe":  "Hearthstone.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Hero Siege",
+        "Exe":  "Hero_Siege.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Heroes of the Storm",
+        "Exe":  "Heroes of the Storm.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Mabinogi Heroes (Vindictus)  ",
+        "Exe":  "heroes.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Heroes \u0026 Generals",
+        "Exe":  "HeroesAndGeneralsDesktop.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Hexcells Plus",
+        "Exe":  "Hexcells Plus.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Hexcells",
+        "Exe":  "Hexcells.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Hex: Shards of Fate",
+        "Exe":  "HexPatch.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Half Life",
+        "Exe":  "hl.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Half Life 2",
+        "Exe":  "HL2HL2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Portal",
+        "Exe":  "hl2P.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Team Fortress 2",
+        "Exe":  "hl2TF.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Hitman: Absolution",
+        "Exe":  "HMA.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Heroes and Generals",
+        "Exe":  "hng.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Homefront",
+        "Exe":  "HOMEFRONT.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Heroes of Newerth",
+        "Exe":  "Hon.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Hotline Miami",
+        "Exe":  "HotlineMiami.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "HuniePop",
+        "Exe":  "HuniePop.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "ibb \u0026 obb",
+        "Exe":  "ibbobb.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Infantry",
+        "Exe":  "infantry.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Insurgency",
+        "Exe":  "Insurgency.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Invisible Inc.",
+        "Exe":  "invisibleinc.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "iRacing",
+        "Exe":  "iracinglauncher.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "The Binding of Isaac: Rebirth",
+        "Exe":  "isaac-ng.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Call of Duty 4: Modern Warfare",
+        "Exe":  "iw3sp.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Call of Duty: Modern Warfare 2",
+        "Exe":  "iw4mp.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Call of Duty: Modern Warfare 3",
+        "Exe":  "iw5mp.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "I Wanna Be The Guy",
+        "Exe":  "iwbtgbeta(fs).exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Just Cause",
+        "Exe":  "JustCause.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Just Cause 2",
+        "Exe":  "JustCause2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "King Arthur\u0027s Gold",
+        "Exe":  "KAG.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "KanColle ",
+        "Exe":  "KanColleViewer.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Killing Floor 2",
+        "Exe":  "KFGame.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Killing Floor",
+        "Exe":  "KillingFloor.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Kingdom",
+        "Exe":  "Kingdom.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "The King of Fighters XIII",
+        "Exe":  "kofxiii.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Kerbal Space Program",
+        "Exe":  "KSP.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Keep Talking and Nobody Explodes",
+        "Exe":  "ktane.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Landmark",
+        "Exe":  "Landmark64.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "L.A. Noire",
+        "Exe":  "LANoire.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "League of Legends",
+        "Exe":  "League of Legends.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Left 4 Dead",
+        "Exe":  "left4dead.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Left 4 Dead 2",
+        "Exe":  "left4dead2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Life Is Strange",
+        "Exe":  "LifeIsStrange.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Limbo",
+        "Exe":  "limbo.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Lineage",
+        "Exe":  "lineage.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Long Live The Queen",
+        "Exe":  "LongLiveTheQueen.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Lost Saga",
+        "Exe":  "lostsaga.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Deadlight",
+        "Exe":  "LOTDGame.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Lovely Planet",
+        "Exe":  "LovelyPlanet.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Lovers in a Dangerous Spacetime",
+        "Exe":  "LoversInADangerousSpacetime.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Lumini",
+        "Exe":  "lumini_Win64.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "LYNE",
+        "Exe":  "lyne.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Mabinogi",
+        "Exe":  "mabinogi.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Mad Max",
+        "Exe":  "MadMax.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Magicka",
+        "Exe":  "Magicka.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Maniaplanet",
+        "Exe":  "maniaplanet.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "MapleStory",
+        "Exe":  "MapleStory.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "MapleStory 2",
+        "Exe":  "MapleStory2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Marvel Heroes 2015",
+        "Exe":  "MarvelHeroes2015.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Mass Effect",
+        "Exe":  "MassEffect.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Mass Effect 2",
+        "Exe":  "MassEffect2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Mass Effect 3",
+        "Exe":  "MassEffect3Demo.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Melty Blood Actress Again: Current Code",
+        "Exe":  "MBAA.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Metal Gear Rising: Revengeance",
+        "Exe":  "METAL GEAR RISING REVENGEANCE.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Metro 2033",
+        "Exe":  "metro2033.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Metro Last Light",
+        "Exe":  "MetroLL.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Metal Gear Solid 2: Substance",
+        "Exe":  "mgs2_sse.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Metal Gear Solid V: Ground Zeroes",
+        "Exe":  "MgsGroundZeroes.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Metal Gear Solid",
+        "Exe":  "mgsi.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Metal Gear Solid V: The Phantom Pain",
+        "Exe":  "mgsvtpp.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Might \u0026 Magic Heroes VI",
+        "Exe":  "Might \u0026 Magic Heroes VI.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Minecraft",
+        "Exe":  "minecraft.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Mirrors Edge",
+        "Exe":  "mirrorsedge.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "??????????????NET??????????????MJ",
+        "Exe":  "MJ.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Mortal Kombat X",
+        "Exe":  "MK10.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Mortal Kombat Komplete Edition",
+        "Exe":  "MKKE.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dark Messiah of Might \u0026 Magic",
+        "Exe":  "mm.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Monaco: What\u0027s Yours Is Mine",
+        "Exe":  "MONACO.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Morrowind",
+        "Exe":  "morrowind.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Mountain",
+        "Exe":  "Mountain.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Mudlet",
+        "Exe":  "mudlet.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "MechWarrior Online",
+        "Exe":  "mwoclient.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Napoleon: Total War",
+        "Exe":  "Napoleon.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Crypt of the NecroDancer",
+        "Exe":  "NecroDancer.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Nekopara Vol. 0",
+        "Exe":  "nekopara_vol0.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Nekopara Vol. 1",
+        "Exe":  "nekopara_vol1.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "NEO AQUARIUM - The King of Crustaceans",
+        "Exe":  "NeoAquarium.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "NEO Scavenger",
+        "Exe":  "NEOScavenger.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Nicole (Otome Version)",
+        "Exe":  "Nicole.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Nidhogg",
+        "Exe":  "Nidhogg.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Nitronic Rush",
+        "Exe":  "NitronicRush.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Not the Robots",
+        "Exe":  "Not the Robots.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Nova Ragnarok Online",
+        "Exe":  "NovaRO.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Naruto Shippuden Ultimate Ninja Storm 3 Full Burst",
+        "Exe":  "NS3FB.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Naruto Shippuden Ultimate Ninja Storm Revolution",
+        "Exe":  "NSUNSR.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Nuclear Throne",
+        "Exe":  "nuclearthrone.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "The Elder Scrolls 4: Oblivion",
+        "Exe":  "Oblivion.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Outlast",
+        "Exe":  "OLGame.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "OlliOlli2",
+        "Exe":  "olliolli2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "One Finger Death Punch",
+        "Exe":  "One Finger Death Punch.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Oolite",
+        "Exe":  "oolite.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Orcs Must Die! 2",
+        "Exe":  "OrcsMustDie2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Order of Battle",
+        "Exe":  "Order of Battle - Pacific.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Ori and the Blind Forest",
+        "Exe":  "ori.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "RuneScape",
+        "Exe":  "OSBuddy.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "osu!",
+        "Exe":  "osu!.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Overture",
+        "Exe":  "Overture.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Overwatch",
+        "Exe":  "overwatch.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Planetary Annihilation",
+        "Exe":  "PA.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "PAC-MAN",
+        "Exe":  "PAC-MAN.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Pandora: Eclipse of Nashira",
+        "Exe":  "Pandora.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Papers, Please",
+        "Exe":  "PapersPlease.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Path of Exile",
+        "Exe":  "PathOfExileSteam.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Rise of Nations Extended",
+        "Exe":  "patriots.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "PAYDAY",
+        "Exe":  "payday_win32_release.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Payday 2",
+        "Exe":  "payday2_win32_release.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Phantom Break: Baggle Grounds",
+        "Exe":  "pbbg_win32.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Project Cars",
+        "Exe":  "pCARS.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Pixel Dungeon",
+        "Exe":  "PD.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Phase Shift",
+        "Exe":  "phase_shift.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Pillars of Eternity",
+        "Exe":  "PillarsOfEternity.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "3D Pinball: Space Cadet",
+        "Exe":  "PINBALL.EXE",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Planetside 2",
+        "Exe":  "PlanetSide2_x64.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "PokeMMO",
+        "Exe":  "PokeMMO.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Poker Night 2",
+        "Exe":  "PokerNight2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "FINAL FANTASY XI",
+        "Exe":  "pol.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Polynomial",
+        "Exe":  "Polynomial.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Portal 2",
+        "Exe":  "portal2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "PPSSPP",
+        "Exe":  "PPSSPPWindows.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Prepar3D",
+        "Exe":  "Prepar3D.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Primal Cargnage",
+        "Exe":  "PrimalCarnageGame.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Prison Architect",
+        "Exe":  "Prison Architect.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "PangYa!",
+        "Exe":  "ProjectG.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Project Zomboid",
+        "Exe":  "ProjectZomboid.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Phantasy Star Online 2",
+        "Exe":  "pso2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Pyrite Heart",
+        "Exe":  "Pyrite Heart.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Quake I",
+        "Exe":  "quake1.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Quake II",
+        "Exe":  "quake2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Quake III",
+        "Exe":  "quake3.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Quake Live",
+        "Exe":  "quakelive_steam.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Race The Sun",
+        "Exe":  "RaceTheSun.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "RAGE",
+        "Exe":  "Rage.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Ragnarok Online",
+        "Exe":  "ragexe.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Sid Meier\u0027s Railroads!",
+        "Exe":  "Railroads.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Rainbow Six Siege",
+        "Exe":  "RainbowSix.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Really Big Sky",
+        "Exe":  "Really Big Sky.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Reassembly",
+        "Exe":  "ReassemblyRelease.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Rebel Galaxy",
+        "Exe":  "RebelGalaxyGOG.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Reflex",
+        "Exe":  "reflex.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Company of Heroes",
+        "Exe":  "RelicCOH.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Company of Heroes 2",
+        "Exe":  "RelicCoH2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Reprisal Universe",
+        "Exe":  "reprisaluniverse.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Reus",
+        "Exe":  "Reus.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "rFactor",
+        "Exe":  "rFactor.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Rift",
+        "Exe":  "rift.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "RimWorld",
+        "Exe":  "RimWorld914Win.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Risk of Rain",
+        "Exe":  "Risk of Rain.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Rivals of Aether",
+        "Exe":  "RivalsofAether.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "ROBLOX",
+        "Exe":  "RobloxPlayerBeta.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "ROBLOX Studio",
+        "Exe":  "RobloxStudioBeta.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Robocraft",
+        "Exe":  "Robocraft.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Rocket League",
+        "Exe":  "RocketLeague.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Rocksmith 2014",
+        "Exe":  "Rocksmith2014.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Rising Storm/Red Orchestra 2",
+        "Exe":  "ROGame.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Total War Rome II",
+        "Exe":  "Rome2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Rotaku Society",
+        "Exe":  "rotaku.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Rust",
+        "Exe":  "RustClient.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Saints Row IV",
+        "Exe":  "SaintsRowIV.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Saints Row 3",
+        "Exe":  "SaintsRowTheThird_DX11.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Sakura Angels",
+        "Exe":  "Sakura Angels.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Sakura Clicker",
+        "Exe":  "Sakura Clicker.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Sakura Spirit",
+        "Exe":  "Sakura Spirit.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Sanctum II",
+        "Exe":  "SanctumGame-Win32-Shipping.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Starcraft II",
+        "Exe":  "SC2_x64.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "SC2VN: The e-sport Visual Novel",
+        "Exe":  "SC2VN.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Screencheat",
+        "Exe":  "screencheat.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Scribblenauts",
+        "Exe":  "Scribble.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Scrivener",
+        "Exe":  "Scrivener.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Space Empires IV",
+        "Exe":  "Se4.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Secret Ponchos",
+        "Exe":  "SecretPonchosD3D11.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Silent Hunters Wolves of the Pacific",
+        "Exe":  "sh4.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Shadowgrounds",
+        "Exe":  "Shadowgrounds.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Middle-earth: Shadow of Mordor",
+        "Exe":  "ShadowOfMordor.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Shadowrun",
+        "Exe":  "Shadowrun.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Shattered Planet",
+        "Exe":  "shatteredplanet.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Bulletstorm",
+        "Exe":  "ShippingPC-StormGame.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Total War Shogun II",
+        "Exe":  "Shogun2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "ARK: Survival Evolved",
+        "Exe":  "ShooterGame.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dirty Bomb",
+        "Exe":  "ShooterGame-Win32-Shipping.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Shovel Knight",
+        "Exe":  "ShovelKnight.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "SimCity",
+        "Exe":  "SimCity.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "The Simpsons: Hit \u0026 Run",
+        "Exe":  "Simpsons.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Sins of a Solar Empire: Rebellion",
+        "Exe":  "Sins of a Solar Empire Rebellion.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Sir You Are Being Hunted",
+        "Exe":  "sir.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "SkullGirls",
+        "Exe":  "SkullGirls.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Skyforge",
+        "Exe":  "Skyforge.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Smite",
+        "Exe":  "smite.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Swords of the Stars II",
+        "Exe":  "sots2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "SpaceChem",
+        "Exe":  "SpaceChem.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Space Engineers",
+        "Exe":  "SpaceEngineers.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Fractured Space",
+        "Exe":  "spacegame-Win64-shipping.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Need For Speed Most Wanted",
+        "Exe":  "speed.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "SpeedRunners",
+        "Exe":  "SpeedRunners.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Spore",
+        "Exe":  "SporeApp.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Shadowrun: Hong Kong",
+        "Exe":  "SRHK.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Ultra Street Fighter IV",
+        "Exe":  "SSFIV.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Shallow Space",
+        "Exe":  "sspace.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "S.T.A.L.K.E.R.: Call of Pripyat",
+        "Exe":  "Stalker-COP.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Star Trek Online",
+        "Exe":  "Star_Trek_Online.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Starbound",
+        "Exe":  "starbound_opengl.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Star Citizen",
+        "Exe":  "StarCitizen.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Starcraft",
+        "Exe":  "starcraft.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Star Drive",
+        "Exe":  "StarDrive.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Star Wars: Battlefront",
+        "Exe":  "starwarsbattlefront.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Step Mania",
+        "Exe":  "StepMania.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Strife",
+        "Exe":  "strife.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Strife: Veteran Edition",
+        "Exe":  "strife-ve.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Sublevel Zero",
+        "Exe":  "SublevelZero.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Subnautica",
+        "Exe":  "Subnautica.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Sunless Sea",
+        "Exe":  "Sunless Sea.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Super Hexagon",
+        "Exe":  "superhexagon.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Super Meat Boy",
+        "Exe":  "SuperMeatBoy.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Supernova",
+        "Exe":  "Supernova.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Shadowgrounds: Survivor",
+        "Exe":  "survivor.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Sword of Asumi",
+        "Exe":  "Sword of Asumi.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Superbrothers: Sword \u0026 Sworcery EP",
+        "Exe":  "swordandsworcery_pc.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Sword Coast Legends",
+        "Exe":  "SwordCoast.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Star Wars: The Old Republic",
+        "Exe":  "swtor.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Call of Duty: Black Ops",
+        "Exe":  "t6sp.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Tabletop Simulator",
+        "Exe":  "Tabletop Simulator.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Tales of Zestira",
+        "Exe":  "Tales of Zestiria.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Talisman: Digital Edition",
+        "Exe":  "Talisman.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "TERA",
+        "Exe":  "TERA.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Terraria",
+        "Exe":  "Terraria.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "The Elder Scrolls V: Skyrim",
+        "Exe":  "TESV.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "TH12.3 Hisoutensoku",
+        "Exe":  "th123e.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "TH13.5 Hopeless Mascarade",
+        "Exe":  "th135e.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "TH14.5 Urban Legend in Limbo",
+        "Exe":  "th145.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "The Sacred Tears TRUE",
+        "Exe":  "The Sacred Tears TRUE.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "The Crew",
+        "Exe":  "TheCrew.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Tony Hawk\u0027s Underground 2",
+        "Exe":  "THEMOD 1.3.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "The Secret World",
+        "Exe":  "TheSecretWorld.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Ascent - The Space Game",
+        "Exe":  "thespacegame.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "The Walking Dead Season Two",
+        "Exe":  "TheWalkingDead2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "The Wolf Among Us",
+        "Exe":  "TheWolfAmongUs.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "They Bleed Pixels",
+        "Exe":  "They Bleed Pixels PC.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Tony Hawk\u0027s Underground",
+        "Exe":  "THUG.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "THUG Pro",
+        "Exe":  "THUGPro.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Tidalis",
+        "Exe":  "Tidalis.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Timberman",
+        "Exe":  "Timberman.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Time Clickers",
+        "Exe":  "timeclickers.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "TIS-100",
+        "Exe":  "tis100.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Titanfall",
+        "Exe":  "Titanfall.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Jackbox Party Pack",
+        "Exe":  "TJPP.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Take On Mars",
+        "Exe":  "TKOM.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "The Long Dark",
+        "Exe":  "tld.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "The Last Remnant",
+        "Exe":  "TLR.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Trackmania United Forever",
+        "Exe":  "TmUnitedForever.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Tomb Raider",
+        "Exe":  "TombRaider.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Tooth \u0026 Tail",
+        "Exe":  "ToothAndTail.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Torchlight",
+        "Exe":  "Torchlight.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Torchlight 2",
+        "Exe":  "Torchlight2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Toribash",
+        "Exe":  "toribash.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Planescape: Torment",
+        "Exe":  "Torment.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Town of Salem",
+        "Exe":  "TownOfSalem.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "TOXIKK",
+        "Exe":  "TOXIKK.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Trench Run",
+        "Exe":  "TR.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Transistor",
+        "Exe":  "Transistor.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Tales Runner",
+        "Exe":  "trgame.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Tribes Ascend",
+        "Exe":  "TribesAscend.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Trine",
+        "Exe":  "trine.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Trine 2",
+        "Exe":  "Trine2_32bit.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Trove",
+        "Exe":  "Trove.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "The Sims 3",
+        "Exe":  "ts3w.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "The Sims 4",
+        "Exe":  "TS4.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Toontown",
+        "Exe":  "TTREngine.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Dungeons \u0026 Dragons Online",
+        "Exe":  "TurbineLauncher.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Antichamber",
+        "Exe":  "UDK.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Unreal Tournament 4",
+        "Exe":  "UE4-Win64-Test.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Undertale",
+        "Exe":  "UNDERTALE.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Unity",
+        "Exe":  "Unity.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Unturned",
+        "Exe":  "Unturned.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Ultima Online",
+        "Exe":  "UOKR.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Uplink",
+        "Exe":  "uplink.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Victoria II",
+        "Exe":  "v2game.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Valkyria Chronicles",
+        "Exe":  "Valkyria.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Warhammer End Times: Vermintide",
+        "Exe":  "vermintide.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Vindictus",
+        "Exe":  "vindictus.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Wakfu",
+        "Exe":  "Wakfu.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "The Walking Dead",
+        "Exe":  "WALKINGDEAD101.EXE",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Warhammer Online",
+        "Exe":  "WAR.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Warcraft II",
+        "Exe":  "Warcraft II BNE.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Warframe",
+        "Exe":  "Warframe.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Watch Dogs",
+        "Exe":  "watch_dogs.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Waves",
+        "Exe":  "Waves.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Warcraft 3: Reign of Chaos",
+        "Exe":  "wc3.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "War For the Overworld",
+        "Exe":  "WFTOGame.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "WildStar",
+        "Exe":  "WildStar64.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Windward",
+        "Exe":  "Windward.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "The Witcher 3",
+        "Exe":  "witcher3.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Wzard101",
+        "Exe":  "wizard101.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Magicka Wizard Wars",
+        "Exe":  "WizardWarsLauncher.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Wasteland II",
+        "Exe":  "WL2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Wolfenstein: The Old Blood",
+        "Exe":  "WolfOldBlood_x64.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "World of Goo",
+        "Exe":  "WorldOfGoo.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "World of Tanks",
+        "Exe":  "WorldOfTanks.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "World of Warcraft",
+        "Exe":  "Wow-64.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "World of Warships",
+        "Exe":  "WoWSLauncher.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Elsword",
+        "Exe":  "x2.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "X3 Albion Prelude",
+        "Exe":  "X3AP_n.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "X3 Terran Conflict",
+        "Exe":  "X3TC.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "XCOM: Enemy Unknown",
+        "Exe":  "XComGame.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "X-Plane",
+        "Exe":  "X-Plane-32bit.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "X Rebirth",
+        "Exe":  "XRebirth.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Yu-gi-oh Pro",
+        "Exe":  "ygopro_vs.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Ys Origin",
+        "Exe":  "yso_win.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Zigfrak",
+        "Exe":  "Zigfrak.exe",
+        "Engine":  ""
+    },
+    {
+        "Name":  "Ziggurat",
+        "Exe":  "Ziggurat.exe",
+        "Engine":  ""
+    }
+]
