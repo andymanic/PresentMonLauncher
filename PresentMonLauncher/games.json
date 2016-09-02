@@ -586,12 +586,12 @@
     },
 	{
 		"Name":  "Doom (OGL)",
-		"Exe":  "Doomx64.exe",
+		"Exe":  "DOOMx64.exe",
 		"Engine":  "OpenGL"
 	},
 	{
 		"Name":  "Doom (Vulkan)",
-		"Exe":  "Doomx64vk.exe",
+		"Exe":  "DOOMx64vk.exe",
 		"Engine": "Vulkan"
 	},
     {
