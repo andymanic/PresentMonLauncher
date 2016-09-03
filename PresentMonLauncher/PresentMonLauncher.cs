@@ -25,6 +25,7 @@ namespace PresentMonLauncher
     bool restoring = false;
     List<GameData> games = new List<GameData>();
     string GameDataFile = Path.Combine(Application.StartupPath, Properties.Settings.Default.GameDataFile);
+    string selprof =  "";
 
     public PresentMonLauncher()
     {
@@ -202,9 +203,28 @@ namespace PresentMonLauncher
             if (foundRunningApplication)
             {
                 target.SetItemCheckState(0, CheckState.Checked);
-				target.SelectedIndex = 0;
+                target.SelectedIndex = 0;
+                
+                //auto-loading the approriate config for selected game
+                string[] file_list = Directory.GetFiles(Program.default_config_directory, "*.cfg");
+                string line;
+                string filename;
+                foreach (string item in file_list)
+                {
+                    StreamReader read_stream = new StreamReader(File.OpenRead(item));
+                    line = read_stream.ReadLine();
+                    filename = line.Split(':')[1].Trim();
+                    if (filename == target.SelectedItem.ToString())
+                    {
+                        displayCurrentConfig(item);
+                        int fileindex = config_dropdown.Items.IndexOf(Path.GetFileNameWithoutExtension(item));
+                        selprof = (Path.GetFileNameWithoutExtension(item));
+                        read_stream.Close();
+                        return;
+                    }
+                    read_stream.Close();
+                }
             }
-
         }
 
     private void openfolder_Click(object sender, EventArgs e)
@@ -383,6 +403,11 @@ namespace PresentMonLauncher
 
       foreach (string val in file_list)
         config_dropdown.Items.Add(Path.GetFileNameWithoutExtension(val));
+
+      if(selprof != "")
+      {
+                config_dropdown.SelectedIndex = config_dropdown.FindStringExact(selprof);
+      }
     }
 
 
@@ -443,7 +468,7 @@ namespace PresentMonLauncher
 
       int temp = config_dropdown.SelectedIndex;
       loadConfigs();
-      config_dropdown.SelectedIndex = (config_dropdown.Items.Count >= temp -1) ? temp : -1;
+      //config_dropdown.SelectedIndex = (config_dropdown.Items.Count >= temp -1) ? temp : -1;
 
       restoring = false;
     }
@@ -514,5 +539,5 @@ namespace PresentMonLauncher
 
             etlfile.Text = fileName;
         }
-    }
+     }
 }
