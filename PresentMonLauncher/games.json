@@ -2574,4 +2574,139 @@
         "Exe":  "Ziggurat.exe",
         "Engine":  ""
     }
+	{
+		"Name": "FINAL FANTASY XI",
+		"Exe": "pol.exe",
+		"Engine": ""
+	},
+	{
+		"Name": "FINAL FANTASY XIV",
+		"Exe": "ffxiv_dx11.exe",
+		"Engine": ""
+	},
+	{
+		"Name": "World of Warcraft",
+		"Exe": "Wow.exe",
+		"Engine": ""
+	},
+	{
+		"Name": "League of Legends",
+		"Exe": "LolClient.exe",
+		"Engine": ""
+	},
+	{
+		"Name": "Heroes of the Storm",
+		"Exe": "HeroesOfTheStorm_x64.exe",
+		"Engine": ""
+	},
+	{
+		"Name": "Heroes of the Storm",
+		"Exe": "HeroesOfTheStorm.exe",
+		"Engine": ""
+	},
+	{
+		"Name": "Starcraft II",
+		"Exe": "starcraft ii.exe",
+		"Engine": ""
+	},
+	{
+		"Name": "Starcraft II",
+		"Exe": "SC2.exe",
+		"Engine": ""
+	},
+	{
+		"Name": "Age of Empires II",
+		"Exe": "AoK HD.exe",
+		"Engine": ""
+	},
+	{
+		"Name": "Age of Empires II",
+		"Exe": "empires2.exe",
+		"Engine": ""
+	},
+	{
+		"Name": "Besiege",
+		"Exe": "Besiege.exe",
+		"Engine": ""
+	},
+	{
+		"Name": "Call of Duty: Modern Warfare 2",
+		"Exe": "iw4sp.exe",
+		"Engine": ""
+	},
+	{
+		"Name": "Dark Souls",
+		"Exe": "DARKSOULS.exe",
+		"Engine": ""
+	},
+	{
+		"Name": "Devil May Cry 4",
+		"Exe": "DevilMayCry4_DX10.exe",
+		"Engine": ""
+	},
+	{
+		"Name": "Devil May Cry 4",
+		"Exe": "DevilMayCry4_DX9.exe",
+		"Engine": ""
+	},
+	{
+		"Name": "DmC Devil May Cry",
+		"Exe": "DMC-DevilMayCry.exe",
+		"Engine": ""
+	},
+	{
+		"Name": "Dragon Age: Origins",
+		"Exe": "daorigins.exe",
+		"Engine": ""
+	},
+	{
+		"Name": "Planet Side 2",
+		"Exe": "planetside2_x86.exe",
+		"Engine": ""
+	},
+	{
+		"Name": "Starbound",
+		"Exe": "starbound.exe",
+		"Engine": ""
+	},
+	{
+		"Name": "Rise of the Tomb Raider",
+		"Exe": "ROTTR.exe",
+		"Engine": ""
+	},
+	{
+		"Name": "Deus Ex: Mankind Divided",
+		"Exe": "engine.exe",
+		"Engine": ""
+	},
+	{
+		"Name": "Deus Ex: Mankind Divided",
+		"Exe": "DXMD.exe",
+		"Engine": ""
+	},
+	{
+		"Name": "Total War: WARHAMMER",
+		"Exe": "Warhammer.exe",
+		"Engine": ""
+	},
+	{
+		"Name": "Battlefield 1",
+		"Exe": "bf1.exe",
+		"Engine": ""
+	},	
+	{
+		"Name": "HITMAN",
+		"Exe": "Launcher.exe",
+		"Engine": ""
+	},
+	{
+		"Name": "Ashes of the Singularity",
+		"Exe": "Ashes_DX12.exe",
+		"Engine": ""
+	},
+	{
+		"Name": "Ashes of the Singularity",
+		"Exe": "Ashes_DX11.exe",
+		"Engine": ""
+	},
 ]
