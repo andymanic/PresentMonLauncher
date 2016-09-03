@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PresentMonLauncher));
             this.launch = new System.Windows.Forms.Button();
             this.Simple = new System.Windows.Forms.CheckBox();
             this.nocsv = new System.Windows.Forms.CheckBox();
@@ -516,9 +517,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "PresentMonLauncher";
-            this.ShowIcon = false;
             this.Text = "PresentMonLauncher V0.7A";
             ((System.ComponentModel.ISupportInitialize)(this.delay_updown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.time_updown)).EndInit();

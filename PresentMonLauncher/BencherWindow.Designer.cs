@@ -29,6 +29,7 @@
     private void InitializeComponent()
     {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BencherWindow));
             this.file_list_label = new System.Windows.Forms.Label();
             this.file_listbox = new System.Windows.Forms.ListBox();
             this.load_manually_button = new System.Windows.Forms.Button();
@@ -635,9 +636,9 @@
             this.Controls.Add(this.file_list_label);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "BencherWindow";
-            this.ShowIcon = false;
             this.Text = "Bencher";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BencherWindow_FormClosed);
             this.Load += new System.EventHandler(this.BencherWindow_Load);

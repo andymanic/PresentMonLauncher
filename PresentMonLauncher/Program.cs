@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Management;
 using System.Management.Instrumentation;
+using System.Security.Cryptography;
 
 namespace PresentMonLauncher
 {
@@ -47,7 +48,7 @@ namespace PresentMonLauncher
       app_location = AppDomain.CurrentDomain.BaseDirectory,
       default_config_directory = AppDomain.CurrentDomain.BaseDirectory + @"config\",
       psm_path = AppDomain.CurrentDomain.BaseDirectory + @"path.cfg";
-        static double VersionNumber = 0.7;
+        static double VersionNumber = 0.8;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -139,7 +140,9 @@ namespace PresentMonLauncher
 
             //Check version number
             VersionNo();
-            
+
+            //Check the games.json file
+            GameListCheck();
 
             //Collect system info and store in a .txt file
             HWInfo();
@@ -264,7 +267,7 @@ namespace PresentMonLauncher
 
             string VNo = System.Text.Encoding.UTF8.GetString(raw);
             double Vnum = Convert.ToDouble(VNo);
-            if (Vnum != VersionNumber)
+            if (Vnum > VersionNumber)
             {
                 if(MessageBox.Show("Update available, visit download page?", "Update Available", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
                 {
@@ -274,6 +277,68 @@ namespace PresentMonLauncher
                 return;
             }
 
+        }
+
+        public static void GameListCheck()
+        {
+            byte[] hashlocal;
+            byte[] hashremote;
+
+            try
+            {
+                System.Net.WebClient gamefile = new System.Net.WebClient();
+                gamefile.DownloadFile("https://raw.githubusercontent.com/andymanic/PresentMonLauncher/master/PresentMonLauncher/games.json", Path.Combine(Application.StartupPath) + "\\remotegames.json");
+            }
+            catch
+            {
+                if (MessageBox.Show("We tried to check the 'Games' file online but couldn't reach it, would you like to try checking again?", "Games file check", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        System.Net.WebClient gamefile = new System.Net.WebClient();
+                        gamefile.DownloadFile("https://raw.githubusercontent.com/andymanic/PresentMonLauncher/master/PresentMonLauncher/games.json", Path.Combine(Application.StartupPath) + "\\remotegames.json");
+                    }
+                    catch
+                    {
+                        if (MessageBox.Show("We tried to check the 'Games' file online but couldn't reach it, would you like to try checking again?", "Games file check", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+                        {
+                            System.Net.WebClient gamefile = new System.Net.WebClient();
+                            gamefile.DownloadFile("https://raw.githubusercontent.com/andymanic/PresentMonLauncher/master/PresentMonLauncher/games.json", Path.Combine(Application.StartupPath) + "\\remotegames.json");
+                        }
+                        else
+                        {
+                            MessageBox.Show("This isn't working, perhaps try again later.");
+                            return;
+                        }
+                        return;
+
+                    }
+                }
+                return;
+            }
+            
+
+            using (var md5 = MD5.Create())
+            {
+                using (var stream = File.OpenRead(Path.Combine(Application.StartupPath) + "\\games.json"))
+                {
+                    hashlocal = md5.ComputeHash(stream);
+                   
+                }
+                using (var stream2 = File.OpenRead(Path.Combine(Application.StartupPath) + "\\remotegames.json"))
+                {
+                    hashremote = md5.ComputeHash(stream2);
+                }
+            }
+            if (hashlocal.SequenceEqual(hashremote))
+            {
+                System.IO.File.Delete("remotegames.json");
+            }
+            else
+            {
+                System.IO.File.Delete("games.json");
+                System.IO.File.Move("remotegames.json", "games.json");
+            }
         }
     }
     
