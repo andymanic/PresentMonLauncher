@@ -90,6 +90,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="BencherWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,13 @@
     </Compile>
     <Compile Include="Enums.cs" />
     <Compile Include="GameData.cs" />
+    <Compile Include="Hotkey.cs" />
+    <Compile Include="Options.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options.Designer.cs">
+      <DependentUpon>Options.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentMonLauncher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,8 +136,14 @@
     <Compile Include="TraceEventSamples\50_SimpleFileRelogger.cs" />
     <Compile Include="TraceEventSamples\51_SimpleMonitorRelogger.cs" />
     <Compile Include="TraceEventSamples\SupportFiles\EventProducer.cs" />
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BencherWindow.resx">
       <DependentUpon>BencherWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options.resx">
+      <DependentUpon>Options.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentMonLauncher.resx">
       <DependentUpon>PresentMonLauncher.cs</DependentUpon>
@@ -138,6 +157,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Content Include="About.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="games.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

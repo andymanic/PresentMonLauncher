@@ -292,3 +292,10 @@ paket-files/
 .Trashes
 ehthumbs.db
 Thumbs.db
+PresentMonLauncher/bin/Debug/PresentMonLauncher.exe
+PresentMonLauncher/bin/Debug/PresentMonLauncher.exe.config
+*.pdb
+PresentMonLauncher/bin/Debug/PresentMonLauncher.vshost.exe.config
+PresentMonLauncher/bin/Debug/PresentMonLauncher.exe
+*.config
+PresentMonLauncher/bin/Debug/PresentMonLauncher.pdb

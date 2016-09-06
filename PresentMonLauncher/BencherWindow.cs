@@ -137,6 +137,7 @@ namespace PresentMonLauncher
 
             if (!string.IsNullOrEmpty(cmb_GPUs.Text))
                 run_info += cmb_GPUs.Text.Trim() + ", ";
+
             // Grab the first word.
             run_info += file_listbox.SelectedItem.ToString().Split(' ')[0];
 

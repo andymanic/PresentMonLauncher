@@ -5,5 +5,8 @@
     <Setting Name="GameDataFile" Type="System.String" Scope="Application">
       <Value Profile="(Default)">games.json</Value>
     </Setting>
+    <Setting Name="Hotkey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CTRL+SHIFT+L</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

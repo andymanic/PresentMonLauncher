@@ -26,6 +26,7 @@ namespace PresentMonLauncher
     List<GameData> games = new List<GameData>();
     string GameDataFile = Path.Combine(Application.StartupPath, Properties.Settings.Default.GameDataFile);
     string selprof =  "";
+    Hotkey globalHotkey = new Hotkey();
 
     public PresentMonLauncher()
     {
@@ -33,6 +34,7 @@ namespace PresentMonLauncher
       LoadGameData();
       GenerateProcessList(process_list);
       loadConfigs();
+      CreateGlobalHotkey();
     }
 
 
@@ -248,21 +250,6 @@ namespace PresentMonLauncher
       BencherWindow bencher = new BencherWindow();
       bencher.Show();
     }
-
-
-    private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-      => Process.Start("http://youtube.com/techteamgb");
-
-
-    private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-      =>  Process.Start("https://github.com/GameTechDev/PresentMon");
-
-
-    private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-      => Process.Start("http://youtube.com/adoredtv");
-
-    private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-      => Process.Start("https://sites.google.com/site/danielscompendium/pro");
 
 
         // The purpose of this one's to check/uncheck appropriately and ensure only
@@ -539,5 +526,70 @@ namespace PresentMonLauncher
 
             etlfile.Text = fileName;
         }
-     }
+
+        private void submenu_About_Click(object sender, EventArgs e)
+        {
+            frm_About a = new frm_About();
+            a.ShowDialog();
+        }
+
+        private void submenu_Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void submenu_Options_Click(object sender, EventArgs e)
+        {
+            frm_Options o = new frm_Options();
+            o.ShowDialog();
+            CreateGlobalHotkey();
+        }
+
+    private void HotkeyEventHandler (object sender, EventArgs e)
+        {
+            //  This is the method to handle the hotkey
+        }
+
+    private void CreateGlobalHotkey()
+        {
+            Hotkey key = new Hotkey();
+            foreach (string token in Properties.Settings.Default.Hotkey.Split('+'))
+            {
+                switch (token)
+                {
+                    case "CTRL":
+                        key.Control = true;
+                        break;
+                    case "ALT":
+                        key.Alt = true;
+                        break;
+                    case "WIN":
+                        key.Windows = true;
+                        break;
+                    case "SHIFT":
+                        key.Shift = true;
+                        break;
+                    default:
+                        key.KeyCode = (Keys)Enum.Parse(typeof(Keys), token);
+                        break;
+                }
+            }
+
+            RegisterGlobalHotkey(key, HotkeyEventHandler);
+        }
+
+    private void RegisterGlobalHotkey(Hotkey HotKey, HandledEventHandler target)
+        {
+            if (globalHotkey.Registered)
+            {
+                globalHotkey.Unregister();
+            }
+
+            globalHotkey = HotKey;
+            globalHotkey.Pressed += new HandledEventHandler(target);
+            globalHotkey.Register(this);
+        }
+
+
+    }
 }
