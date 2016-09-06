@@ -48,7 +48,7 @@ namespace PresentMonLauncher
       app_location = AppDomain.CurrentDomain.BaseDirectory,
       default_config_directory = AppDomain.CurrentDomain.BaseDirectory + @"config\",
       psm_path = AppDomain.CurrentDomain.BaseDirectory + @"path.cfg";
-        static double VersionNumber = 0.8;
+      public static double VersionNumber = 0.8;
 
         /// <summary>
         /// The main entry point for the application.
