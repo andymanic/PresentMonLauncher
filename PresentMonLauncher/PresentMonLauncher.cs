@@ -33,6 +33,7 @@ namespace PresentMonLauncher
       LoadGameData();
       GenerateProcessList(process_list);
       loadConfigs();
+      CreateGlobalHotkey();
     }
 
 
