@@ -157,9 +157,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Content Include="About.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="games.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -14,10 +14,6 @@ namespace PresentMonLauncher
         private void frm_About_Load(object sender, EventArgs e)
         {
             lbl_Version.Text = "Version " + Program.VersionNumber.ToString();
-            string str_About = "file://" + Application.StartupPath + @"\about.html";
-            Uri about = new Uri(str_About);
-            browser_About.Url = about;
-
         }
 
         private void btn_OK_Click(object sender, EventArgs e)
@@ -35,5 +31,24 @@ namespace PresentMonLauncher
             Process.Start("mailto:"+lnk_ProjectEmail.Text);
         }
 
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://veryposh.wordpress.com");
+        }
+
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://sites.google.com/danielscompendium/pro");
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("http://www.techteamgb.co.uk");
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("http://www.youtube.com/techteamgb");
+        }
     }
 }

@@ -65,11 +65,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.menustrip_Title = new System.Windows.Forms.MenuStrip();
             this.menuitem_File = new System.Windows.Forms.ToolStripMenuItem();
+            this.submenu_Exit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuitem_Tools = new System.Windows.Forms.ToolStripMenuItem();
+            this.submenu_Options = new System.Windows.Forms.ToolStripMenuItem();
             this.menuitem_Help = new System.Windows.Forms.ToolStripMenuItem();
             this.submenu_About = new System.Windows.Forms.ToolStripMenuItem();
-            this.submenu_Options = new System.Windows.Forms.ToolStripMenuItem();
-            this.submenu_Exit = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.delay_updown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.time_updown)).BeginInit();
             this.panel2.SuspendLayout();
@@ -79,7 +79,7 @@
             // launch
             // 
             this.launch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.launch.Location = new System.Drawing.Point(499, 208);
+            this.launch.Location = new System.Drawing.Point(498, 195);
             this.launch.Name = "launch";
             this.launch.Size = new System.Drawing.Size(143, 45);
             this.launch.TabIndex = 0;
@@ -92,7 +92,7 @@
             // Simple
             // 
             this.Simple.AutoSize = true;
-            this.Simple.Location = new System.Drawing.Point(17, 241);
+            this.Simple.Location = new System.Drawing.Point(16, 228);
             this.Simple.Name = "Simple";
             this.Simple.Size = new System.Drawing.Size(57, 17);
             this.Simple.TabIndex = 7;
@@ -103,7 +103,7 @@
             // nocsv
             // 
             this.nocsv.AutoSize = true;
-            this.nocsv.Location = new System.Drawing.Point(130, 241);
+            this.nocsv.Location = new System.Drawing.Point(129, 228);
             this.nocsv.Name = "nocsv";
             this.nocsv.Size = new System.Drawing.Size(99, 17);
             this.nocsv.TabIndex = 8;
@@ -114,7 +114,7 @@
             // 
             this.process_list.CheckOnClick = true;
             this.process_list.FormattingEnabled = true;
-            this.process_list.Location = new System.Drawing.Point(17, 70);
+            this.process_list.Location = new System.Drawing.Point(16, 57);
             this.process_list.Name = "process_list";
             this.process_list.ScrollAlwaysVisible = true;
             this.process_list.Size = new System.Drawing.Size(385, 154);
@@ -127,7 +127,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(12, 40);
+            this.label8.Location = new System.Drawing.Point(11, 27);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(390, 25);
             this.label8.TabIndex = 12;
@@ -135,7 +135,7 @@
             // 
             // outputfile
             // 
-            this.outputfile.Location = new System.Drawing.Point(17, 310);
+            this.outputfile.Location = new System.Drawing.Point(16, 297);
             this.outputfile.Name = "outputfile";
             this.outputfile.Size = new System.Drawing.Size(329, 20);
             this.outputfile.TabIndex = 13;
@@ -145,7 +145,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(270, 239);
+            this.label16.Location = new System.Drawing.Point(269, 226);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(79, 20);
             this.label16.TabIndex = 21;
@@ -155,7 +155,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(275, 265);
+            this.label4.Location = new System.Drawing.Point(274, 252);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 20);
             this.label4.TabIndex = 23;
@@ -164,7 +164,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(417, 77);
+            this.label17.Location = new System.Drawing.Point(416, 64);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(92, 13);
             this.label17.TabIndex = 25;
@@ -173,7 +173,7 @@
             // currentflags
             // 
             this.currentflags.AutoSize = true;
-            this.currentflags.Location = new System.Drawing.Point(515, 77);
+            this.currentflags.Location = new System.Drawing.Point(514, 64);
             this.currentflags.Name = "currentflags";
             this.currentflags.Size = new System.Drawing.Size(0, 13);
             this.currentflags.TabIndex = 26;
@@ -181,7 +181,7 @@
             // refresh
             // 
             this.refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refresh.Location = new System.Drawing.Point(420, 47);
+            this.refresh.Location = new System.Drawing.Point(419, 34);
             this.refresh.Name = "refresh";
             this.refresh.Size = new System.Drawing.Size(95, 25);
             this.refresh.TabIndex = 27;
@@ -193,7 +193,7 @@
             // openfolder
             // 
             this.openfolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openfolder.Location = new System.Drawing.Point(518, 47);
+            this.openfolder.Location = new System.Drawing.Point(517, 34);
             this.openfolder.Name = "openfolder";
             this.openfolder.Size = new System.Drawing.Size(95, 25);
             this.openfolder.TabIndex = 28;
@@ -205,7 +205,7 @@
             // bencher
             // 
             this.bencher.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bencher.Location = new System.Drawing.Point(499, 261);
+            this.bencher.Location = new System.Drawing.Point(498, 248);
             this.bencher.Name = "bencher";
             this.bencher.Size = new System.Drawing.Size(143, 45);
             this.bencher.TabIndex = 30;
@@ -218,7 +218,7 @@
             // argument
             // 
             this.argument.AutoSize = true;
-            this.argument.Location = new System.Drawing.Point(524, 76);
+            this.argument.Location = new System.Drawing.Point(523, 63);
             this.argument.Name = "argument";
             this.argument.Size = new System.Drawing.Size(0, 13);
             this.argument.TabIndex = 35;
@@ -226,7 +226,7 @@
             // scroll
             // 
             this.scroll.AutoSize = true;
-            this.scroll.Location = new System.Drawing.Point(17, 264);
+            this.scroll.Location = new System.Drawing.Point(16, 251);
             this.scroll.Name = "scroll";
             this.scroll.Size = new System.Drawing.Size(88, 17);
             this.scroll.TabIndex = 36;
@@ -271,7 +271,7 @@
             // 
             // delay_updown
             // 
-            this.delay_updown.Location = new System.Drawing.Point(344, 241);
+            this.delay_updown.Location = new System.Drawing.Point(343, 228);
             this.delay_updown.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -285,7 +285,7 @@
             // 
             // time_updown
             // 
-            this.time_updown.Location = new System.Drawing.Point(344, 267);
+            this.time_updown.Location = new System.Drawing.Point(343, 254);
             this.time_updown.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -300,7 +300,7 @@
             // exclude
             // 
             this.exclude.AutoSize = true;
-            this.exclude.Location = new System.Drawing.Point(130, 264);
+            this.exclude.Location = new System.Drawing.Point(129, 251);
             this.exclude.Name = "exclude";
             this.exclude.Size = new System.Drawing.Size(108, 17);
             this.exclude.TabIndex = 43;
@@ -310,7 +310,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(350, 308);
+            this.button1.Location = new System.Drawing.Point(349, 295);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(52, 25);
             this.button1.TabIndex = 46;
@@ -322,7 +322,7 @@
             // etlbutton
             // 
             this.etlbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.etlbutton.Location = new System.Drawing.Point(350, 355);
+            this.etlbutton.Location = new System.Drawing.Point(349, 342);
             this.etlbutton.Name = "etlbutton";
             this.etlbutton.Size = new System.Drawing.Size(52, 25);
             this.etlbutton.TabIndex = 49;
@@ -333,7 +333,7 @@
             // 
             // etlfile
             // 
-            this.etlfile.Location = new System.Drawing.Point(17, 359);
+            this.etlfile.Location = new System.Drawing.Point(16, 346);
             this.etlfile.Name = "etlfile";
             this.etlfile.Size = new System.Drawing.Size(329, 20);
             this.etlfile.TabIndex = 47;
@@ -342,7 +342,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(90, 286);
+            this.button3.Location = new System.Drawing.Point(89, 273);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(27, 20);
             this.button3.TabIndex = 50;
@@ -354,7 +354,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(78, 334);
+            this.button4.Location = new System.Drawing.Point(77, 321);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(27, 20);
             this.button4.TabIndex = 51;
@@ -366,7 +366,7 @@
             // outputcheck
             // 
             this.outputcheck.AutoSize = true;
-            this.outputcheck.Location = new System.Drawing.Point(17, 287);
+            this.outputcheck.Location = new System.Drawing.Point(16, 274);
             this.outputcheck.Name = "outputcheck";
             this.outputcheck.Size = new System.Drawing.Size(80, 17);
             this.outputcheck.TabIndex = 45;
@@ -376,7 +376,7 @@
             // etlcheck
             // 
             this.etlcheck.AutoSize = true;
-            this.etlcheck.Location = new System.Drawing.Point(17, 336);
+            this.etlcheck.Location = new System.Drawing.Point(16, 323);
             this.etlcheck.Name = "etlcheck";
             this.etlcheck.Size = new System.Drawing.Size(65, 17);
             this.etlcheck.TabIndex = 48;
@@ -386,7 +386,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 225);
+            this.label1.Location = new System.Drawing.Point(16, 212);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 52;
@@ -395,7 +395,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(11, 229);
+            this.panel1.Location = new System.Drawing.Point(10, 216);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(399, 157);
             this.panel1.TabIndex = 53;
@@ -403,7 +403,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(425, 98);
+            this.label2.Location = new System.Drawing.Point(424, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 54;
@@ -415,7 +415,7 @@
             this.panel2.Controls.Add(this.config_dropdown);
             this.panel2.Controls.Add(this.save_config_button);
             this.panel2.Controls.Add(this.load_config_button);
-            this.panel2.Location = new System.Drawing.Point(415, 104);
+            this.panel2.Location = new System.Drawing.Point(414, 91);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(223, 93);
             this.panel2.TabIndex = 55;
@@ -440,6 +440,13 @@
             this.menuitem_File.Size = new System.Drawing.Size(37, 20);
             this.menuitem_File.Text = "&File";
             // 
+            // submenu_Exit
+            // 
+            this.submenu_Exit.Name = "submenu_Exit";
+            this.submenu_Exit.Size = new System.Drawing.Size(92, 22);
+            this.submenu_Exit.Text = "&Exit";
+            this.submenu_Exit.Click += new System.EventHandler(this.submenu_Exit_Click);
+            // 
             // menuitem_Tools
             // 
             this.menuitem_Tools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -447,6 +454,13 @@
             this.menuitem_Tools.Name = "menuitem_Tools";
             this.menuitem_Tools.Size = new System.Drawing.Size(47, 20);
             this.menuitem_Tools.Text = "&Tools";
+            // 
+            // submenu_Options
+            // 
+            this.submenu_Options.Name = "submenu_Options";
+            this.submenu_Options.Size = new System.Drawing.Size(116, 22);
+            this.submenu_Options.Text = "&Options";
+            this.submenu_Options.Click += new System.EventHandler(this.submenu_Options_Click);
             // 
             // menuitem_Help
             // 
@@ -459,29 +473,15 @@
             // submenu_About
             // 
             this.submenu_About.Name = "submenu_About";
-            this.submenu_About.Size = new System.Drawing.Size(152, 22);
+            this.submenu_About.Size = new System.Drawing.Size(107, 22);
             this.submenu_About.Text = "&About";
             this.submenu_About.Click += new System.EventHandler(this.submenu_About_Click);
-            // 
-            // submenu_Options
-            // 
-            this.submenu_Options.Name = "submenu_Options";
-            this.submenu_Options.Size = new System.Drawing.Size(152, 22);
-            this.submenu_Options.Text = "&Options";
-            this.submenu_Options.Click += new System.EventHandler(this.submenu_Options_Click);
-            // 
-            // submenu_Exit
-            // 
-            this.submenu_Exit.Name = "submenu_Exit";
-            this.submenu_Exit.Size = new System.Drawing.Size(152, 22);
-            this.submenu_Exit.Text = "&Exit";
-            this.submenu_Exit.Click += new System.EventHandler(this.submenu_Exit_Click);
             // 
             // PresentMonLauncher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(650, 398);
+            this.ClientSize = new System.Drawing.Size(650, 380);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
@@ -514,9 +514,6 @@
             this.Controls.Add(this.menustrip_Title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.Name = "PresentMonLauncher";
-            this.Text = "PresentMonLauncher V0.7A";
             this.MainMenuStrip = this.menustrip_Title;
             this.MaximizeBox = false;
             this.Name = "PresentMonLauncher";
