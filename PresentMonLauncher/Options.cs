@@ -19,6 +19,10 @@ namespace PresentMonLauncher
             {
                 cmb_KeyValue.Items.Add(keyCode);
             }
+            foreach (string FunctionKey in Enumerable.Range(1, 12).Select(s => "F" + s.ToString()).ToList())
+            {
+                cmb_KeyValue.Items.Add(FunctionKey);
+            }
 
             PopulateHotkey();
         }

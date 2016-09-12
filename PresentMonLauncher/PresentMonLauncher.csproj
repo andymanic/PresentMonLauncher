@@ -104,7 +104,7 @@
     </Compile>
     <Compile Include="Enums.cs" />
     <Compile Include="GameData.cs" />
-    <Compile Include="Hotkey.cs" />
+    <Compile Include="GlobalKeyboardHook.cs" />
     <Compile Include="Options.cs">
       <SubType>Form</SubType>
     </Compile>

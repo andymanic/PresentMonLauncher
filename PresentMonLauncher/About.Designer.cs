@@ -204,12 +204,12 @@
             // 
             this.linkLabel4.AutoSize = true;
             this.linkLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel4.Location = new System.Drawing.Point(174, 309);
+            this.linkLabel4.Location = new System.Drawing.Point(168, 309);
             this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(107, 16);
+            this.linkLabel4.Size = new System.Drawing.Size(122, 16);
             this.linkLabel4.TabIndex = 21;
             this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "Daniel Holtzclaw";
+            this.linkLabel4.Text = "Daniel T. Holtzclaw";
             this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
             // 
             // frm_About

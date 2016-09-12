@@ -44,7 +44,6 @@
             this.openfolder = new System.Windows.Forms.Button();
             this.bencher = new System.Windows.Forms.Button();
             this.argument = new System.Windows.Forms.Label();
-            this.scroll = new System.Windows.Forms.CheckBox();
             this.config_dropdown = new System.Windows.Forms.ComboBox();
             this.save_config_button = new System.Windows.Forms.Button();
             this.load_config_button = new System.Windows.Forms.Button();
@@ -72,6 +71,7 @@
             this.submenu_About = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.delay_updown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.time_updown)).BeginInit();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menustrip_Title.SuspendLayout();
             this.SuspendLayout();
@@ -223,16 +223,6 @@
             this.argument.Size = new System.Drawing.Size(0, 13);
             this.argument.TabIndex = 35;
             // 
-            // scroll
-            // 
-            this.scroll.AutoSize = true;
-            this.scroll.Location = new System.Drawing.Point(16, 251);
-            this.scroll.Name = "scroll";
-            this.scroll.Size = new System.Drawing.Size(88, 17);
-            this.scroll.TabIndex = 36;
-            this.scroll.Text = "Scroll Toggle";
-            this.scroll.UseVisualStyleBackColor = true;
-            // 
             // config_dropdown
             // 
             this.config_dropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -300,7 +290,7 @@
             // exclude
             // 
             this.exclude.AutoSize = true;
-            this.exclude.Location = new System.Drawing.Point(129, 251);
+            this.exclude.Location = new System.Drawing.Point(5, 32);
             this.exclude.Name = "exclude";
             this.exclude.Size = new System.Drawing.Size(108, 17);
             this.exclude.TabIndex = 43;
@@ -395,6 +385,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.exclude);
             this.panel1.Location = new System.Drawing.Point(10, 216);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(399, 157);
@@ -491,10 +482,8 @@
             this.Controls.Add(this.etlfile);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.outputcheck);
-            this.Controls.Add(this.exclude);
             this.Controls.Add(this.time_updown);
             this.Controls.Add(this.delay_updown);
-            this.Controls.Add(this.scroll);
             this.Controls.Add(this.argument);
             this.Controls.Add(this.bencher);
             this.Controls.Add(this.openfolder);
@@ -518,8 +507,11 @@
             this.MaximizeBox = false;
             this.Name = "PresentMonLauncher";
             this.Text = "PresentMonLauncher V0.8A";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PresentMonLauncher_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.delay_updown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.time_updown)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.menustrip_Title.ResumeLayout(false);
             this.menustrip_Title.PerformLayout();
@@ -544,7 +536,6 @@
         private System.Windows.Forms.Button openfolder;
         private System.Windows.Forms.Button bencher;
         private System.Windows.Forms.Label argument;
-        private System.Windows.Forms.CheckBox scroll;
     private System.Windows.Forms.ComboBox config_dropdown;
     private System.Windows.Forms.Button save_config_button;
     private System.Windows.Forms.Button load_config_button;

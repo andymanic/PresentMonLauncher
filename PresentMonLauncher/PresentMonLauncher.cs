@@ -26,8 +26,9 @@ namespace PresentMonLauncher
         List<GameData> games = new List<GameData>();
         string GameDataFile = Path.Combine(Application.StartupPath, Properties.Settings.Default.GameDataFile);
         string selprof = "";
-        Hotkey globalHotkey = new Hotkey();
-
+        GlobalKeyboardHook globalHotKey;
+        bool IsRecordingManually = false;
+        Process PresentMon64;
         
         public PresentMonLauncher()
         {
@@ -77,9 +78,6 @@ namespace PresentMonLauncher
             if (Simple.Checked)
                 textstring = textstring + " -simple";
 
-            if (scroll.Checked)
-                textstring = textstring + " -scroll_toggle";
-
             if (exclude.Checked)
                 textstring += " -exclude_dropped ";
 
@@ -95,11 +93,29 @@ namespace PresentMonLauncher
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.FileName = @"C:\PresentMonLauncher\PresentMon64.exe";
             startInfo.Arguments = textstring;
-
+            startInfo.UseShellExecute = false;
+            startInfo.CreateNoWindow = true;
             // Please re-examine this code block. It is likely that other exceptions can be thrown up other than Win32Exceptions
             try
             {
-                Process.Start(startInfo);
+                if (PresentMon64 == null || PresentMon64.HasExited)
+                {
+                    PresentMon64 = Process.Start(startInfo);
+                    if (time_updown.Value == 0)
+                    {
+                        IsRecordingManually = true;
+                    }
+                }
+                else
+                {
+                    PresentMon64.Kill();
+                    IsRecordingManually = false;
+                    PresentMon64 = Process.Start(startInfo);
+                    if (time_updown.Value == 0)
+                    {
+                        IsRecordingManually = true;
+                    }                    
+                }               
             }
 
             catch (Win32Exception ex)
@@ -318,9 +334,6 @@ namespace PresentMonLauncher
                 if (nocsv.Checked)
                     write_stream.WriteLine("NoCSV: yes");
 
-                if (scroll.Checked)
-                    write_stream.WriteLine("Scroll: yes");
-
                 if (exclude.Checked)
                     write_stream.WriteLine("Exclude: yes");
 
@@ -432,9 +445,6 @@ namespace PresentMonLauncher
                 else if (values[0] == "NoCSV:")
                     nocsv.Checked = (values[1] == "yes");
 
-                else if (values[0] == "Scroll:")
-                    scroll.Checked = (values[1] == "yes");
-
                 else if (values[0] == "Flags:")
                     outputfile.Text = values[1];
 
@@ -543,6 +553,12 @@ namespace PresentMonLauncher
         {
             frm_Options o = new frm_Options();
             o.ShowDialog();
+            //  This check is probably not necessary, but there might be some weird
+            //  condition that causes globalHotKey to end up NULL
+            if (globalHotKey != null)
+            {
+                globalHotKey.unhook();
+            }
             CreateGlobalHotkey();
         }
 
@@ -553,49 +569,56 @@ namespace PresentMonLauncher
 
         private void CreateGlobalHotkey()
         {
-            Hotkey key = new Hotkey();
+            globalHotKey = new GlobalKeyboardHook();
+
             foreach (string token in Properties.Settings.Default.Hotkey.Split('+'))
             {
                 switch (token)
                 {
                     case "CTRL":
-                        key.Control = true;
+                        globalHotKey.Ctrl = true;
                         break;
                     case "ALT":
-                        key.Alt = true;
+                        globalHotKey.Alt = true;
                         break;
                     case "WIN":
-                        key.Windows = true;
+                        globalHotKey.Windows = true;
                         break;
                     case "SHIFT":
-                        key.Shift = true;
+                        globalHotKey.Shift = true;
                         break;
                     default:
-                        key.KeyCode = (Keys)Enum.Parse(typeof(Keys), token);
+                        globalHotKey.HookedKeys.Add((Keys)Enum.Parse(typeof(Keys), token));
                         break;
                 }
             }
 
-            RegisterGlobalHotkey(key, HotKeyEvent);
+            RegisterGlobalHotkey(globalHotKey, HotKeyEvent);
         }
 
-        private void RegisterGlobalHotkey(Hotkey HotKey, HandledEventHandler target)
+        private void RegisterGlobalHotkey(GlobalKeyboardHook HotKey, KeyEventHandler target)
         {
-            if (globalHotkey.Registered)
+            HotKey.KeyDown += target;
+        }
+
+        private void HotKeyEvent(Object sender, KeyEventArgs e)
+        {
+            if (IsRecordingManually == true)
             {
-                globalHotkey.Unregister();
+                PresentMon64.Kill();
+                IsRecordingManually = false;
             }
+            else
+            {
+                GenerateProcessList(process_list);
 
-            globalHotkey = HotKey;
-            globalHotkey.Pressed += new HandledEventHandler(target);
-            globalHotkey.Register(this);
+                launch_Click(this, null);
+            }
         }
 
-        private void HotKeyEvent(Object sender, EventArgs e)
+        private void PresentMonLauncher_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //Test
-            MessageBox.Show("Congrats, you've pressed the right global hotkey!");
+            foreach (Process p in Process.GetProcessesByName("PresentMon64")) { p.Kill(); }
         }
-        
     }
 }
