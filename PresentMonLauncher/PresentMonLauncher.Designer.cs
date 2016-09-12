@@ -506,7 +506,7 @@
             this.MainMenuStrip = this.menustrip_Title;
             this.MaximizeBox = false;
             this.Name = "PresentMonLauncher";
-            this.Text = "PresentMonLauncher V0.8A";
+            this.Text = "PresentMonLauncher V0.9A";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PresentMonLauncher_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.delay_updown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.time_updown)).EndInit();
