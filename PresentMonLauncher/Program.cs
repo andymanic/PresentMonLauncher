@@ -332,12 +332,12 @@ namespace PresentMonLauncher
             }
             if (hashlocal.SequenceEqual(hashremote))
             {
-                System.IO.File.Delete("remotegames.json");
+                System.IO.File.Delete(Path.Combine(Application.StartupPath,"remotegames.json"));
             }
             else
             {
-                System.IO.File.Delete("games.json");
-                System.IO.File.Move("remotegames.json", "games.json");
+                System.IO.File.Delete(Path.Combine(Application.StartupPath, "games.json"));
+                System.IO.File.Move(Path.Combine(Application.StartupPath,"remotegames.json"), Path.Combine(Application.StartupPath,"games.json"));
             }
         }
     }
