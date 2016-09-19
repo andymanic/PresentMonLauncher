@@ -10,45 +10,13 @@ using System.Security.Cryptography;
 
 namespace PresentMonLauncher
 {
-/* ----------------------------Notes-------------------------------------------
- * 
- * On Directories and Install:
- * Right here in Main, there is something we need to address regarding the directory
- *   of the program and related files. Users are likely wanting to change their
- *   install directory, so I feel we should allow them to.
- *   
- * With the installer, we could create a registry entry for the install directory
- *   and have this program reference that.
- * 
- * Or, better yet, just use the location of this program as a reference point for
- *   the working directory. 
- * 
- * This will allow the users to install on specific drives or wherever they like
- *   and still keep the program functioning normal.
- * 
- * Default directory tree:
- *  ./
- *  ./config
- *  
- *  config is where I will be placing the .cfg files, which will have a pretty
- *    simple structure, such that they can be edited outside of the program.
- *    
- *  Process: <process_name>
- *  Simple: yes/no
- *  NoCSV: yes/no
- *  Scroll: yes/no
- *  Flags: <rest of the line>
- */
-
-
-
   static class Program
   {
     public static string
       app_location = AppDomain.CurrentDomain.BaseDirectory,
       default_config_directory = AppDomain.CurrentDomain.BaseDirectory + @"config\",
       psm_path = AppDomain.CurrentDomain.BaseDirectory + @"path.cfg";
-        public static double VersionNumber = 0.9;
+        public static double VersionNumber = 1.0;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -316,7 +284,18 @@ namespace PresentMonLauncher
                 }
                 return;
             }
-            
+            if (!File.Exists(Path.Combine(Application.StartupPath) + "\\games.json"))
+            {
+                try
+                {
+                    System.IO.File.Move(Path.Combine(Application.StartupPath, "remotegames.json"), Path.Combine(Application.StartupPath, "games.json"));
+                    return;
+                }
+                catch(Exception e)
+                {
+                    MessageBox.Show("We had a bit of a problem. Here's the error: " + e);
+                }
+            }
 
             using (var md5 = MD5.Create())
             {

@@ -11,10 +11,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
 using Newtonsoft.Json.Linq;
+using System.Media;
 
 namespace PresentMonLauncher
 {
@@ -29,7 +31,8 @@ namespace PresentMonLauncher
         GlobalKeyboardHook globalHotKey;
         bool IsRecordingManually = false;
         Process PresentMon64;
-        
+        static System.Windows.Forms.Timer aTimer = new System.Windows.Forms.Timer();
+
         public PresentMonLauncher()
         {
             InitializeComponent();
@@ -37,6 +40,7 @@ namespace PresentMonLauncher
             GenerateProcessList(process_list);
             loadConfigs();
             CreateGlobalHotkey();
+            over_ride_check();
         }
 
 
@@ -114,8 +118,8 @@ namespace PresentMonLauncher
                     if (time_updown.Value == 0)
                     {
                         IsRecordingManually = true;
-                    }                    
-                }               
+                    }
+                }
             }
 
             catch (Win32Exception ex)
@@ -131,6 +135,17 @@ namespace PresentMonLauncher
 
             // Without this reset the program will not reconfigure correctly.
             textstring = "";
+
+            //Sound stuff
+            System.Media.SystemSounds.Beep.Play();
+            if (time_updown.Value != 0)
+            {
+                int secs;
+                secs = (Convert.ToInt32(time_updown.Value) + 2) * 1000;
+                aTimer.Interval = secs;
+                aTimer.Tick += new EventHandler(TimerEvent);
+                aTimer.Start();
+            }
         }
 
 
@@ -228,20 +243,23 @@ namespace PresentMonLauncher
                 string[] file_list = Directory.GetFiles(Program.default_config_directory, "*.cfg");
                 string line;
                 string filename;
-                foreach (string item in file_list)
+                if (!ovr_prof_check.Checked)
                 {
-                    StreamReader read_stream = new StreamReader(File.OpenRead(item));
-                    line = read_stream.ReadLine();
-                    filename = line.Split(':')[1].Trim();
-                    if (filename == target.SelectedItem.ToString())
+                    foreach (string item in file_list)
                     {
-                        displayCurrentConfig(item);
-                        int fileindex = config_dropdown.Items.IndexOf(Path.GetFileNameWithoutExtension(item));
-                        selprof = (Path.GetFileNameWithoutExtension(item));
+                        StreamReader read_stream = new StreamReader(File.OpenRead(item));
+                        line = read_stream.ReadLine();
+                        filename = line.Split(':')[1].Trim();
+                        if (filename == target.SelectedItem.ToString())
+                        {
+                            displayCurrentConfig(item);
+                            int fileindex = config_dropdown.Items.IndexOf(Path.GetFileNameWithoutExtension(item));
+                            selprof = (Path.GetFileNameWithoutExtension(item));
+                            read_stream.Close();
+                            return;
+                        }
                         read_stream.Close();
-                        return;
                     }
-                    read_stream.Close();
                 }
             }
         }
@@ -594,6 +612,7 @@ namespace PresentMonLauncher
             }
 
             RegisterGlobalHotkey(globalHotKey, HotKeyEvent);
+            hotkey_label.Text = Properties.Settings.Default.Hotkey.ToString();
         }
 
         private void RegisterGlobalHotkey(GlobalKeyboardHook HotKey, KeyEventHandler target)
@@ -619,6 +638,109 @@ namespace PresentMonLauncher
         private void PresentMonLauncher_FormClosing(object sender, FormClosingEventArgs e)
         {
             foreach (Process p in Process.GetProcessesByName("PresentMon64")) { p.Kill(); }
+        }
+        private void hotkey_label_MouseClick(object sender, MouseEventArgs e)
+        {
+            frm_Options o = new frm_Options();
+            o.ShowDialog();
+            //  This check is probably not necessary, but there might be some weird
+            //  condition that causes globalHotKey to end up NULL
+            if (globalHotKey != null)
+            {
+                globalHotKey.unhook();
+            }
+            CreateGlobalHotkey();
+
+        }
+
+        private void label3_MouseClick(object sender, MouseEventArgs e)
+        {
+            frm_Options o = new frm_Options();
+            o.ShowDialog();
+            //  This check is probably not necessary, but there might be some weird
+            //  condition that causes globalHotKey to end up NULL
+            if (globalHotKey != null)
+            {
+                globalHotKey.unhook();
+            }
+            CreateGlobalHotkey();
+        }
+        private void over_ride_check()
+        {
+            Size normal = new Size(666, 268);
+            Size expanded = new Size(666, 482);
+            if (override_check.Checked)
+            {
+                this.Size = expanded;
+                process_list.Enabled = true;
+                refresh.Enabled = true;
+                stopbutton.Enabled = true;
+                launch.Enabled = true;
+            }
+            else
+            {
+                this.Size = normal;
+                process_list.Enabled = false;
+                refresh.Enabled = false;
+                stopbutton.Enabled = false;
+                launch.Enabled = false;
+            }
+        }
+
+        private void override_check_CheckedChanged(object sender, EventArgs e)
+        {
+            over_ride_check();
+        }
+
+        private void panel3_MouseClick(object sender, MouseEventArgs e)
+        {
+            frm_Options o = new frm_Options();
+            o.ShowDialog();
+            //  This check is probably not necessary, but there might be some weird
+            //  condition that causes globalHotKey to end up NULL
+            if (globalHotKey != null)
+            {
+                globalHotKey.unhook();
+            }
+            CreateGlobalHotkey();
+        }
+
+        private void stopbutton_Click(object sender, EventArgs e)
+        {
+            if (PresentMon64 != null)
+            {
+                if (IsRecordingManually == true)
+                {
+                    PresentMon64.Kill();
+                    IsRecordingManually = false;
+                }
+                else
+                {
+                    PresentMon64.Kill();
+                }
+            }
+            else
+            {
+                //had to add this to solve the issue of the user pressing stop twice and breaking the program
+                return;
+            }
+            System.Media.SystemSounds.Beep.Play(); //I tried doing this in a function of it's own but it wasn't worth the pain.
+        }
+
+        private void hk_button_Click(object sender, EventArgs e)
+        {
+            frm_Options o = new frm_Options();
+            o.ShowDialog();
+            if (globalHotKey != null)
+            {
+                globalHotKey.unhook();
+            }
+            CreateGlobalHotkey();
+        }
+        private static void TimerEvent(Object obj, EventArgs e)
+        {
+            aTimer.Stop();
+            System.Media.SystemSounds.Beep.Play();
         }
     }
 }
