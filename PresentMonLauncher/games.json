@@ -2708,5 +2708,10 @@
 		"Name": "Ashes of the Singularity",
 		"Exe": "Ashes_DX11.exe",
 		"Engine": ""
+	},
+	{
+		"Name": "Hitman",
+		"Exe": "HITMAN.exe",
+		"Engine": ""
 	}
 ]
