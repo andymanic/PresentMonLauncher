@@ -2710,6 +2710,11 @@
 		"Engine": ""
 	},
 	{
+        	"Name":  "Player Unknowns BattleGrounds",
+        	"Exe":  "tslgame.exe",
+        	"Engine":  ""
+   	},
+	{
 		"Name": "Hitman",
 		"Exe": "HITMAN.exe",
 		"Engine": ""
